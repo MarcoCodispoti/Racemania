@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.racemania.view1.ProfilePageControllerG">
+   <children>
+      <Text layoutX="236.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Il mio Profilo">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Text>
+      <AnchorPane prefHeight="740.0" prefWidth="214.0" style="-fx-background-color: red;">
+         <children>
+            <Label layoutX="10.0" layoutY="7.0" prefHeight="61.0" prefWidth="196.0" text="RACEMANIA" textFill="WHITE">
+               <font>
+                  <Font name="Avenir Heavy Oblique" size="32.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutY="74.0" prefHeight="6.0" prefWidth="217.0" style="-fx-background-color: white;" />
+            <AnchorPane layoutY="80.0" prefHeight="75.0" prefWidth="217.0">
+               <children>
+                  <AnchorPane layoutX="8.0" layoutY="74.0" prefHeight="1.0" prefWidth="201.0" style="-fx-background-color: white;" />
+                  <Hyperlink fx:id="HomepageHyperlink" layoutX="2.0" onAction="#ClickedOnHomepageHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Homepage" textFill="WHITE">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="154.0" prefHeight="75.0" prefWidth="217.0">
+               <children>
+                  <AnchorPane layoutX="8.0" layoutY="74.0" prefHeight="1.0" prefWidth="201.0" style="-fx-background-color: white;" />
+                  <Hyperlink fx:id="ReservationsHyperlink" layoutX="2.0" onAction="#ClickedOnReservationsHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Prenotazioni" textFill="WHITE">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="228.0" prefHeight="75.0" prefWidth="217.0">
+               <children>
+                  <AnchorPane layoutX="8.0" layoutY="74.0" prefHeight="1.0" prefWidth="201.0" style="-fx-background-color: white;" />
+                  <Hyperlink fx:id="CircuitsHyperlink" layoutX="2.0" onAction="#ClickedOnCircuitsHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Circuiti" textFill="WHITE">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="666.0" prefHeight="75.0" prefWidth="217.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="217.0" prefHeight="284.0" prefWidth="983.0">
+         <children>
+            <ImageView fitHeight="285.0" fitWidth="983.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/track.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Text layoutX="232.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informazioni sul mio profilo">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Text>
+      <Text layoutX="242.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Utente:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="242.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ruolo: ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="242.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="243.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Label fx:id="UsernameLabel" layoutX="358.0" layoutY="357.0" prefHeight="29.0" prefWidth="167.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="EmailLabel" layoutX="309.0" layoutY="397.0" prefHeight="29.0" prefWidth="269.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="UserIdLabel" layoutX="351.0" layoutY="437.0" prefHeight="29.0" prefWidth="167.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="RoleLabel" layoutX="309.0" layoutY="477.0" prefHeight="29.0" prefWidth="167.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="ErrorLabel" layoutX="34.0" layoutY="323.0" prefHeight="17.0" prefWidth="147.0" textFill="WHITE" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.racemania.view1.HomeControllerG">
+   <children>
+      <Text layoutX="236.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Homepage">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Text>
+      <AnchorPane prefHeight="740.0" prefWidth="214.0" style="-fx-background-color: red;">
+         <children>
+            <Label layoutX="10.0" layoutY="7.0" prefHeight="61.0" prefWidth="196.0" text="RACEMANIA" textFill="WHITE">
+               <font>
+                  <Font name="Avenir Heavy Oblique" size="32.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutY="74.0" prefHeight="6.0" prefWidth="217.0" style="-fx-background-color: white;" />
+            <AnchorPane layoutY="80.0" prefHeight="75.0" prefWidth="217.0">
+               <children>
+                  <AnchorPane layoutX="8.0" layoutY="74.0" prefHeight="1.0" prefWidth="201.0" style="-fx-background-color: white;" />
+                  <Hyperlink fx:id="ReservationsHyperlink" layoutX="2.0" onAction="#ClickedOnReservationsHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Prenotazioni" textFill="WHITE">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="154.0" prefHeight="75.0" prefWidth="217.0">
+               <children>
+                  <AnchorPane layoutX="8.0" layoutY="74.0" prefHeight="1.0" prefWidth="201.0" style="-fx-background-color: white;" />
+                  <Hyperlink layoutX="2.0" prefHeight="74.0" prefWidth="217.0" text=" Circuiti" textFill="WHITE">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="302.0" prefHeight="75.0" prefWidth="217.0" />
+            <AnchorPane layoutY="666.0" prefHeight="75.0" prefWidth="217.0">
+               <children>
+                  <Hyperlink fx:id="ProfileHyperlink" layoutX="2.0" onAction="#ClickedOnProfileHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Profilo" textFill="WHITE">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Hyperlink>
+                  <ImageView fitHeight="51.0" fitWidth="55.0" layoutX="100.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Profile.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="217.0" prefHeight="284.0" prefWidth="983.0">
+         <children>
+            <ImageView fitHeight="285.0" fitWidth="983.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/home.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Text layoutX="232.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Come vuoi scendere in pista?">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Text>
+      <Button fx:id="BookTDButton" layoutX="346.0" layoutY="416.0" mnemonicParsing="false" onAction="#ClickedOnBookTrackDay" prefHeight="78.0" prefWidth="283.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Prenota Track Day" textFill="WHITE">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Button>
+      <Button fx:id="DriveSupercarButton" layoutX="707.0" layoutY="418.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="283.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Guida Supercar" textFill="WHITE">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Button>
+      <AnchorPane layoutY="612.0" prefHeight="57.0" prefWidth="219.0">
+         <children>
+            <Hyperlink fx:id="logoutHyperlink" layoutX="6.0" onAction="#ClickedOnLogoutHyperlink" prefHeight="74.0" prefWidth="211.0" text=" Logout" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Hyperlink>
+            <ImageView fitHeight="51.0" fitWidth="55.0" layoutX="98.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logout.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

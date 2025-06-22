@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.racemania.view1.LoginPageControllerG">
+   <children>
+      <AnchorPane prefHeight="65.0" prefWidth="1200.0" style="-fx-background-color: red;">
+         <children>
+            <Label layoutX="17.0" layoutY="3.0" prefHeight="61.0" prefWidth="249.0" text="RACEMANIA" textFill="WHITE">
+               <font>
+                  <Font name="Avenir Heavy Oblique" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="65.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="1200.0">
+         <children>
+            <ImageView fitHeight="676.0" fitWidth="1200.0" opacity="0.85" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/accountselection.jpg" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="205.0" layoutY="138.0" prefHeight="461.0" prefWidth="780.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="57.0" layoutY="36.0" prefHeight="55.0" prefWidth="229.0" text="Login" textAlignment="CENTER">
+                     <font>
+                        <Font size="44.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="57.0" layoutY="93.0" prefHeight="46.0" prefWidth="518.0" text="Inserisci le tue credenziali di accesso" textAlignment="CENTER">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="LoginButton" layoutX="290.0" layoutY="321.0" mnemonicParsing="false" onAction="#ClickedOnLogin" prefHeight="54.0" prefWidth="200.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Login" textFill="WHITE">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="errorLabel" layoutX="194.0" layoutY="278.0" prefHeight="17.0" prefWidth="341.0" text="Label" visible="false" />
+               </children>
+            </AnchorPane>
+            <TextField fx:id="passwordTextField" layoutX="400.0" layoutY="362.0" prefHeight="27.0" prefWidth="170.0" promptText="Insert password" />
+            <TextField fx:id="emailTextField" layoutX="400.0" layoutY="311.0" prefHeight="27.0" prefWidth="170.0" promptText="Insert email" />
+            <Text layoutX="265.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="265.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.racemania.view2.OwnerActiveReservationsPageControllerG2">
+   <children>
+      <ImageView fitHeight="740.0" fitWidth="1200.0" mouseTransparent="true" opacity="0.25" preserveRatio="true">
+         <image>
+            <Image url="@../images/ui2backgroud.png" />
+         </image>
+      </ImageView>
+      <AnchorPane prefHeight="54.0" prefWidth="1200.0" style="-fx-background-color: white;">
+         <children>
+            <Hyperlink fx:id="homePageHyperlink" layoutX="1070.0" onAction="#ClickedOnHomePageHyperlink" prefHeight="54.0" prefWidth="129.0" text="Homepage" textFill="#3e3d80">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Hyperlink>
+            <Label fx:id="errorLabel" layoutX="857.0" layoutY="19.0" prefHeight="17.0" prefWidth="115.0" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="8.0" layoutY="-2.0" prefHeight="51.0" prefWidth="261.0" text="RACEMANIA" textFill="#3e3d80">
+         <font>
+            <Font name="Avenir Heavy Oblique" size="40.0" />
+         </font>
+         <padding>
+            <Insets left="1.0" />
+         </padding>
+      </Label>
+      <AnchorPane layoutX="66.0" layoutY="108.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="1076.0" style="-fx-background-color: white; -fx-border-color: #3e3d80; -fx-border-width: 3;">
+         <children>
+            <Label layoutX="36.0" layoutY="19.0" text="Active Reservations">
+               <font>
+                  <Font size="42.0" />
+               </font>
+            </Label>
+            <Label layoutX="192.0" layoutY="363.0" prefHeight="33.0" prefWidth="62.0" />
+            <Label layoutX="129.0" layoutY="101.0" prefHeight="34.0" prefWidth="131.0">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Label layoutX="116.0" layoutY="138.0" prefHeight="34.0" prefWidth="132.0">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Label layoutX="137.0" layoutY="184.0" prefHeight="34.0" prefWidth="108.0">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Label layoutX="105.0" layoutY="228.0" prefHeight="34.0" prefWidth="154.0">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <ScrollPane fx:id="ActiveReservationsScrollPane" layoutX="39.0" layoutY="81.0" prefHeight="476.0" prefWidth="996.0" style="-fx-border-color: #3d3e80; -fx-background-color: white;">
+               <content>
+                  <VBox fx:id="ActiveReservationsVBox" prefHeight="474.0" prefWidth="971.0" style="-fx-background-color: white;" />
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

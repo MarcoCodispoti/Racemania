@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.racemania.view1.VehiclePageControllerG">
+   <children>
+      <Text layoutX="236.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserisci Veicolo">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Text>
+      <AnchorPane prefHeight="740.0" prefWidth="214.0" style="-fx-background-color: red;">
+         <children>
+            <Label layoutX="10.0" layoutY="7.0" prefHeight="61.0" prefWidth="196.0" text="RACEMANIA" textFill="WHITE">
+               <font>
+                  <Font name="Avenir Heavy Oblique" size="32.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutY="74.0" prefHeight="6.0" prefWidth="217.0" style="-fx-background-color: white;" />
+            <AnchorPane layoutY="80.0" prefHeight="75.0" prefWidth="217.0">
+               <children>
+                  <AnchorPane layoutX="8.0" layoutY="74.0" prefHeight="1.0" prefWidth="201.0" style="-fx-background-color: white;" />
+                  <Hyperlink layoutX="2.0" prefHeight="74.0" prefWidth="217.0" text=" Homepage" textFill="WHITE">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="154.0" prefHeight="75.0" prefWidth="217.0">
+               <children>
+                  <AnchorPane layoutX="8.0" layoutY="74.0" prefHeight="1.0" prefWidth="201.0" style="-fx-background-color: white;" />
+                  <Hyperlink layoutX="2.0" prefHeight="74.0" prefWidth="217.0" text=" Circuiti" textFill="WHITE">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="228.0" prefHeight="75.0" prefWidth="217.0">
+               <children>
+                  <AnchorPane layoutX="8.0" layoutY="74.0" prefHeight="1.0" prefWidth="201.0" style="-fx-background-color: white;" />
+                  <Hyperlink layoutX="2.0" prefHeight="74.0" prefWidth="217.0" text=" Prenotazioni" textFill="WHITE">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="302.0" prefHeight="75.0" prefWidth="217.0" />
+            <AnchorPane layoutY="666.0" prefHeight="75.0" prefWidth="217.0">
+               <children>
+                  <Hyperlink layoutX="2.0" prefHeight="74.0" prefWidth="217.0" text=" Profilo" textFill="WHITE">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Hyperlink>
+                  <ImageView fitHeight="51.0" fitWidth="55.0" layoutX="100.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Profile.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="217.0" prefHeight="284.0" prefWidth="983.0">
+         <children>
+            <ImageView fitHeight="285.0" fitWidth="983.0" layoutY="1.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/vehicle.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Text layoutX="232.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserisci i dettagli del tuo veicolo">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Text>
+      <Button fx:id="ProceedButton" layoutX="966.0" layoutY="669.0" mnemonicParsing="false" onAction="#ClickedOnProceed" prefHeight="54.0" prefWidth="202.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Procedi" textFill="WHITE">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Button>
+      <Text layoutX="232.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Brand:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="232.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modello:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="232.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anno immatricolazione:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="232.0" layoutY="530.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Potenza:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="232.0" layoutY="570.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anno ultimo tagliando:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="brandTextField" layoutX="306.0" layoutY="348.0" prefHeight="27.0" prefWidth="153.0" />
+      <TextField fx:id="modelTextField" layoutX="328.0" layoutY="388.0" prefHeight="27.0" prefWidth="135.0" />
+      <TextField fx:id="plateTextField" layoutX="310.0" layoutY="428.0" prefHeight="27.0" prefWidth="99.0" />
+      <TextField fx:id="yearTextField" layoutX="476.0" layoutY="468.0" prefHeight="27.0" prefWidth="99.0" />
+      <TextField fx:id="powerTextField" layoutX="328.0" layoutY="508.0" prefHeight="27.0" prefWidth="99.0" />
+      <TextField fx:id="lastcheckyearTextField" layoutX="470.0" layoutY="548.0" prefHeight="27.0" prefWidth="135.0" />
+      <Text layoutX="232.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Targa:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Label fx:id="ErrorLable" layoutX="242.0" layoutY="593.0" prefHeight="17.0" prefWidth="119.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,28 @@
+package com.example.racemania.model;
+
+import java.time.LocalDate;
+
+public class Reservation {
+    protected int reservationId;
+    protected int userID;
+    protected LocalDate date;
+    protected int trackID;
+    protected int price;
+    protected int laps;
+
+    public void setReservationID(int reservationID) {this.reservationId = reservationID;}
+    public void setUserID(int userID) {this.userID = userID;}
+    public void setDate(LocalDate date) {this.date = date;}
+    public void setTrackID(int trackID) {this.trackID = trackID;}
+    public void setPrice(int price) {this.price = price;}
+    public void setLaps(int laps) {this.laps = laps;}
+
+    public int getReservationID() {return this.reservationId;}
+    public int getUserID() {return this.userID;}
+    public LocalDate getDate() {return this.date;}
+    public int getTrackID() {return this.trackID;}
+    public int getPrice() {return this.price;}
+    public int getLaps() {return this.laps;}
+
+
+}

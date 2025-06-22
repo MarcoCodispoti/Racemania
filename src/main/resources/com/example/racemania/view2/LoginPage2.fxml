@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.racemania.view2.LoginPageControllerG2">
+   <children>
+      <ImageView fitHeight="740.0" fitWidth="1200.0" mouseTransparent="true" opacity="0.45" preserveRatio="true">
+         <image>
+            <Image url="@../images/ui2backgroud.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="391.0" layoutY="125.0" prefHeight="451.0" prefWidth="446.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #3E3D80; -fx-border-width: 4;">
+         <children>
+            <TextField fx:id="emailTextField" layoutX="76.0" layoutY="162.0" prefHeight="33.0" prefWidth="296.0" promptText="Inset email" />
+            <TextField fx:id="passwordTextField" layoutX="76.0" layoutY="236.0" prefHeight="33.0" prefWidth="296.0" promptText="insert password" />
+            <Button fx:id="loginButton" layoutX="269.0" layoutY="334.0" mnemonicParsing="false" onAction="#ClickedOnLoginButton" prefHeight="48.0" prefWidth="101.0" style="-fx-background-color: #3E3D80;" text="Login" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Label layoutX="166.0" layoutY="48.0" text="Login">
+               <font>
+                  <Font size="46.0" />
+               </font>
+            </Label>
+            <Label fx:id="errorLabel" layoutX="104.0" layoutY="298.0" prefHeight="17.0" prefWidth="218.0" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="8.0" layoutY="-2.0" prefHeight="51.0" prefWidth="261.0" text="RACEMANIA" textFill="#3e3d80">
+         <font>
+            <Font name="Avenir Heavy Oblique" size="40.0" />
+         </font>
+         <padding>
+            <Insets left="1.0" />
+         </padding>
+      </Label>
+   </children>
+</AnchorPane>

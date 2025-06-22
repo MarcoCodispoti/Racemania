@@ -1,0 +1,4 @@
+1;MarcoRossi;marco@example.com;pass1234;Customer;NULL
+2;LuigiBianchi;luigi@example.com;password;TrackOwner;1
+3;AnnaVerdi;anna@example.com;pass4321;Customer;NULL
+

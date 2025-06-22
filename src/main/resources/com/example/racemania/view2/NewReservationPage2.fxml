@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.racemania.view2.NewReservationPageControllerG2">
+   <children>
+      <ImageView fitHeight="740.0" fitWidth="1200.0" mouseTransparent="true" opacity="0.25" preserveRatio="true">
+         <image>
+            <Image url="@../images/ui2backgroud.png" />
+         </image>
+      </ImageView>
+      <AnchorPane prefHeight="54.0" prefWidth="1200.0" style="-fx-background-color: white;" />
+      <Label layoutX="8.0" layoutY="-2.0" prefHeight="51.0" prefWidth="261.0" text="RACEMANIA" textFill="#3e3d80">
+         <font>
+            <Font name="Avenir Heavy Oblique" size="40.0" />
+         </font>
+         <padding>
+            <Insets left="1.0" />
+         </padding>
+      </Label>
+      <AnchorPane layoutX="296.0" layoutY="205.0" prefHeight="385.0" prefWidth="609.0" style="-fx-background-color: white; -fx-border-color: #3e3d80; -fx-border-width: 3;">
+         <children>
+            <Label layoutX="33.0" layoutY="86.0" prefHeight="52.0" prefWidth="216.0" text="Seleziona la data:">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="reservationDatePicker" layoutX="251.0" layoutY="98.0" />
+            <Label layoutX="33.0" layoutY="150.0" prefHeight="52.0" prefWidth="342.0" text="Scegli il tipo di prenotazione:">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="trackLapsRadioButton" layoutX="381.0" layoutY="164.0" mnemonicParsing="false" onAction="#ClickedOnTrackLapsRadioButton" text="Giri in pista">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="ReservationType" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="supercarLapsRadioButton" layoutX="381.0" layoutY="198.0" mnemonicParsing="false" onAction="#ClickedOnSupercarLapsRadioButton" text="Giri in supercar" toggleGroup="$ReservationType">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </RadioButton>
+            <Label layoutX="33.0" layoutY="234.0" prefHeight="52.0" prefWidth="267.0" text="Seleziona il tracciato:">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="trackChoiceBox" layoutX="297.0" layoutY="247.0" prefHeight="27.0" prefWidth="262.0" style="-fx-background-color: white; -fx-border-color: #3d3e80;" />
+            <Button fx:id="proceedButton" layoutX="450.0" layoutY="300.0" mnemonicParsing="false" onAction="#ClickedOnProceedButton" prefHeight="48.0" prefWidth="111.0" style="-fx-background-color: #3E3D80;" text="Proceed" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="backButton" layoutX="324.0" layoutY="300.0" mnemonicParsing="false" onAction="#ClickedOnBackButton" prefHeight="48.0" prefWidth="111.0" style="-fx-background-color: white; -fx-border-color: #3e3d80;" text="Indietro">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Label layoutX="36.0" layoutY="19.0" text="New reservation">
+               <font>
+                  <Font size="42.0" />
+               </font>
+            </Label>
+            <Label fx:id="errorLabel" layoutX="58.0" layoutY="316.0" prefHeight="17.0" prefWidth="209.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleClick" prefHeight="71.0" prefWidth="650.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.racemania.view1.TrackCardControllerG">
+   <children>
+       <HBox layoutX="5.0" layoutY="3.0" prefHeight="65.0" prefWidth="639.0" spacing="10" style="-fx-background-color: white; -fx-padding: 10; -fx-background-radius: 10; -fx-border-radius: 10;">
+          <children>
+              <VBox prefHeight="44.0" prefWidth="174.0">
+                 <children>
+                     <Label fx:id="trackName" prefHeight="20.0" prefWidth="171.0" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                     <Label fx:id="trackLocation" prefHeight="17.0" prefWidth="169.0" />
+                 </children>
+              </VBox>
+            <VBox prefHeight="61.0" prefWidth="15.0" />
+            <VBox prefHeight="45.0" prefWidth="104.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lunghezza" />
+                  <Label fx:id="trackLength" prefHeight="17.0" prefWidth="88.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="61.0" prefWidth="15.0" />
+            <VBox prefHeight="61.0" prefWidth="104.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prezzo Giro" />
+                  <Label fx:id="trackLapPrice" prefHeight="17.0" prefWidth="88.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="61.0" prefWidth="15.0" />
+            <VBox prefHeight="61.0" prefWidth="138.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prezzo Giornaliero" wrappingWidth="131.14508056640625" />
+                  <Label fx:id="trackDailyPrice" prefHeight="17.0" prefWidth="88.0" />
+               </children>
+            </VBox>
+          </children>
+       </HBox>
+   </children>
+</AnchorPane>

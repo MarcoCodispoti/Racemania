@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleClick" prefHeight="122.0" prefWidth="442.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.racemania.view2.TrackLapsReservationCardControllerG2">
+   <children>
+      <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="115.0" prefWidth="438.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;">
+         <children>
+             <HBox layoutX="4.0" layoutY="5.0" prefHeight="48.0" prefWidth="430.0" spacing="10" style="-fx-background-color: white; -fx-padding: 10; -fx-background-radius: 10; -fx-border-radius: 10;">
+                <children>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="117.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Circuito">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Text>
+                        <Label fx:id="TrackNameLabel" prefHeight="9.0" prefWidth="101.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="37.0" prefWidth="84.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data" wrappingWidth="49.09724426269531">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Text>
+                        <Label fx:id="DateLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="76.0" />
+                     </children>
+                  </VBox>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="69.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prezzo" wrappingWidth="49.09724426269531">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Text>
+                        <Label fx:id="PriceLabel" prefHeight="17.0" prefWidth="58.0" />
+                     </children>
+                  </VBox>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="111.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dettagli">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Text>
+                        <Label fx:id="DetailsLabel" prefHeight="17.0" prefWidth="110.0" />
+                     </children>
+                  </VBox>
+                </children>
+             </HBox>
+            <HBox layoutX="4.0" layoutY="56.0" prefHeight="48.0" prefWidth="430.0" spacing="10" style="-fx-background-color: white; -fx-padding: 10; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <children>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="209.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Veicolo">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Text>
+                        <Label fx:id="VehicleLabel" prefHeight="12.0" prefWidth="204.0" />
+                     </children>
+                  </VBox>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="184.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Stato" wrappingWidth="49.09724426269531">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Text>
+                        <Label fx:id="ConfirmationStatusLabel" prefHeight="17.0" prefWidth="179.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.racemania.view2.OwnerHomePageControllerG2">
+   <children>
+      <ImageView fitHeight="740.0" fitWidth="1200.0" mouseTransparent="true" opacity="0.45" preserveRatio="true">
+         <image>
+            <Image url="@../images/ui2backgroud.png" />
+         </image>
+      </ImageView>
+      <AnchorPane prefHeight="54.0" prefWidth="1200.0" style="-fx-background-color: white;">
+         <children>
+            <Hyperlink fx:id="profileHyperlink" layoutX="1035.0" onAction="#ClickedOnProfileHyperlink" prefHeight="54.0" prefWidth="109.0" text="Profile" textFill="#3e3d80">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink fx:id="InstructorsHyperlink" layoutX="917.0" onAction="#ClickedOnInstructorsHyperlink" prefHeight="54.0" prefWidth="126.0" text="Instructors" textFill="#3e3d80">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Hyperlink>
+            <ImageView fitHeight="40.0" fitWidth="37.0" layoutX="1110.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Profile2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="37.0" layoutX="1153.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logout2.jpg" />
+               </image>
+            </ImageView>
+            <Hyperlink fx:id="logoutHyperlink" layoutX="1149.0" layoutY="6.0" onAction="#ClickedOnLogoutHyperlink" prefHeight="41.0" prefWidth="42.0" textFill="#3e3d80">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Hyperlink>
+            <Label fx:id="errorLabel" layoutX="783.0" layoutY="20.0" prefHeight="17.0" prefWidth="126.0" textFill="#3d3e80" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="8.0" layoutY="-2.0" prefHeight="51.0" prefWidth="261.0" text="RACEMANIA" textFill="#3e3d80">
+         <font>
+            <Font name="Avenir Heavy Oblique" size="40.0" />
+         </font>
+         <padding>
+            <Insets left="1.0" />
+         </padding>
+      </Label>
+      <Button fx:id="manageReservationsButton" layoutX="416.0" layoutY="164.0" mnemonicParsing="false" onAction="#ClickedOnManageReservationsButton" prefHeight="197.0" prefWidth="356.0" style="-fx-background-color: white; -fx-border-radius: 8; -fx-background-radius: 8;" text="Manage Reservations" textFill="#3e3d80">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="activeReservationsButton" layoutX="416.0" layoutY="404.0" mnemonicParsing="false" onAction="#ClickedOnActiveReservationsButton" prefHeight="197.0" prefWidth="356.0" style="-fx-background-color: white; -fx-border-radius: 8; -fx-background-radius: 8;" text="Active Reservations" textFill="#3e3d80">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
