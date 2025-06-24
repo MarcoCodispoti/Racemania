@@ -88,7 +88,7 @@ public class TrackLapsReservationDao{
                 rs.getInt("price"),
                 rs.getInt("laps"));
 
-        trackLapsReservation.SetTrackLapsReservation(
+        trackLapsReservation.setTrackLapsReservation(
                 rs.getString("vehicle_plate"),
                 rs.getBoolean("is_daily"),
                 rs.getInt("lap_price"),
