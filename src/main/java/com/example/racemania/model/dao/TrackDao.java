@@ -17,7 +17,7 @@ import java.util.List;
 public class TrackDao {
     public List<Track> findTracks() throws FailedResearchException {
         Statement stmt = null;
-        Connection conn; // = null;
+        Connection conn;
         List<Track> tracks = new ArrayList<>();
 
         try {
@@ -26,9 +26,8 @@ public class TrackDao {
             ResultSet rs = Query.findTracksq();
             while (rs.next()) {
                 tracks.add(extractTracks(rs));
-                System.out.println("Ciao");  //dummy
             }
-        } catch (Exception e) {
+        } catch (Exception _) {
             throw new FailedResearchException("An error during research occurred.");
         } finally {
             try {
@@ -52,21 +51,6 @@ public class TrackDao {
                 rs.getInt("daily_price"));
     }
 
-//    public Track getTrackFromDB(int trackId) throws SQLException {
-//        Track track = null;
-//
-//        try {
-//            ResultSet rs = Query.findTrackInfo(trackId);
-//            while(rs.next()) {
-//                track = extractTracks(rs);
-//            }
-//        }
-//        catch (SQLException e) {
-//            throw new SQLException();
-//        }
-//        return track;
-//    }
-
     public TrackBean getTrackFromDB(int trackId) throws SQLException {
         TrackBean trackBean = null;
 
@@ -77,7 +61,7 @@ public class TrackDao {
             }
         }
         catch (SQLException e) {
-            throw new SQLException();
+            throw new SQLException(e);
         }
         return trackBean;
     }
