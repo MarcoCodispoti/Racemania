@@ -4,7 +4,6 @@ import com.example.racemania.exceptions.FailedResearchException;
 import com.example.racemania.exceptions.FailedInsertException;
 import com.example.racemania.model.LoggedUser;
 import com.example.racemania.model.Track;
-// import com.example.racemania.model.TrackLapsReservation;
 import com.example.racemania.model.dao.TrackDao;
 import com.example.racemania.model.dao.TrackLapsReservationDao;
 import com.example.racemania.model.dao.VehicleDao;
@@ -21,7 +20,7 @@ public class BookLapsReservationController{
         TrackDao trackDao = new TrackDao();
         try {
             bean.setAvailableTracks(trackDao.findTracks()); // salva nel campo della classe
-        } catch (FailedResearchException e) {
+        } catch (FailedResearchException ignored) {
             throw new FailedResearchException("Can't get available tracks");
         }
         return bean;
