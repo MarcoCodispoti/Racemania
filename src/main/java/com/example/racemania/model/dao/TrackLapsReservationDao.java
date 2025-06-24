@@ -1,8 +1,6 @@
 package com.example.racemania.model.dao;
 
 import com.example.racemania.exceptions.FailedInsertException;
-
-
 import com.example.racemania.model.service.Connector;
 import com.example.racemania.model.service.Query;
 import com.example.racemania.model.TrackLapsReservation;
@@ -21,7 +19,7 @@ public class TrackLapsReservationDao{
 
     public List<TrackLapsReservation> findUserLapsReservations(int userId) throws SQLException {
         Statement stmt = null;
-        Connection conn; // = null;
+        Connection conn;
         List<TrackLapsReservation> trackLapsReservations = new ArrayList<>();
 
         try {
@@ -30,10 +28,8 @@ public class TrackLapsReservationDao{
             ResultSet rs = Query.findLapsReservations(userId);
             while (rs.next()) {
                 trackLapsReservations.add(extractLapsReservations(rs));
-                // System.out.println("Ciao");  //dummy
             }
         } catch (Exception e) {
-            //e.printStackTrace();
             throw new SQLException(e);
         } finally {
             try {
@@ -59,8 +55,6 @@ public class TrackLapsReservationDao{
             try {
                 Query.insertTrackLapsReservation(stmt, trackLapsReservationBean);
             } catch (Exception e) {
-                System.out.println("Errore SQL reale:");
-                // e.printStackTrace(); // <<--- AGGIUNGI QUESTO
                 throw new FailedInsertException("An error during lesson insertion occurred.",e);
             }
 
@@ -95,26 +89,14 @@ public class TrackLapsReservationDao{
                 rs.getInt("daily_price"),
                 rs.getString("confirmation_status"));
 
-//                rs.getInt("lapreservation_id"),
-//                rs.getInt("user_id"),
-//                date,
-//                rs.getInt("track_id"),
-//                rs.getInt("price"),
-//                rs.getInt("laps"),
-
-//                rs.getString("vehicle_plate"),
-//                rs.getBoolean("is_daily"),
-//                rs.getInt("lap_price"),
-//                rs.getInt("daily_price"),
-//                rs.getString("confirmation_status"));
-//    }
+//
         return trackLapsReservation;
     }
 
 
     public List<TrackLapsReservation> findOwnerLapsReservations(int trackId) throws SQLException {
         Statement stmt = null;
-        Connection conn; // = null;
+        Connection conn;
         List<TrackLapsReservation> trackLapsReservations = new ArrayList<>();
 
         try {
@@ -123,10 +105,8 @@ public class TrackLapsReservationDao{
             ResultSet rs = Query.findOwnerLapsReservations(trackId);
             while (rs.next()) {
                 trackLapsReservations.add(extractLapsReservations(rs));
-                // System.out.println("Ciao");  //dummy
             }
         } catch (Exception e) {
-            // e.printStackTrace();
             throw new SQLException(e);
         } finally {
             try {
@@ -142,7 +122,7 @@ public class TrackLapsReservationDao{
 
     public List<TrackLapsReservation> findOwnerActiveLapsReservations(int trackId) throws SQLException {
         Statement stmt = null;
-        Connection conn; // = null;
+        Connection conn;
         List<TrackLapsReservation> trackLapsReservations = new ArrayList<>();
 
         try {
@@ -151,10 +131,8 @@ public class TrackLapsReservationDao{
             ResultSet rs = Query.findOwnerActiveLapsReservations(trackId);
             while (rs.next()) {
                 trackLapsReservations.add(extractLapsReservations(rs));
-                // System.out.println("Ciao");  //dummy
             }
         } catch (Exception e) {
-            // e.printStackTrace();
             throw new SQLException(e);
         } finally {
             try {
@@ -172,8 +150,7 @@ public class TrackLapsReservationDao{
         int accepted_status = -1;
 
         Statement stmt = null;
-        Connection conn; // = null;
-        // List<TrackLapsReservation> trackLapsReservations = new ArrayList<>();
+        Connection conn;
 
         if(decision.equals("Accepted")){
             accepted_status = 1;
@@ -187,7 +164,6 @@ public class TrackLapsReservationDao{
             Query.manageLapsReservation(reservationId,accepted_status);
         }
         catch (Exception e) {
-            // e.printStackTrace();
             throw new SQLException(e);
         } finally {
             try {
