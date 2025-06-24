@@ -20,7 +20,7 @@ public class BookLapsReservationController{
         TrackDao trackDao = new TrackDao();
         try {
             bean.setAvailableTracks(trackDao.findTracks()); // salva nel campo della classe
-        } catch (FailedResearchException ignored) {
+        } catch (FailedResearchException _) {
             throw new FailedResearchException("Can't get available tracks");
         }
         return bean;
