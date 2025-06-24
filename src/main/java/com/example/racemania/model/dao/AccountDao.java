@@ -51,12 +51,9 @@ public class AccountDao {
 
         try{
             conn = Connector.getInstance().getConnection();
-            if (conn != null) {
-                return true;
-            }
-            return false;
-        } catch (SQLException ex) {
-            System.out.println("SQLException: " + ex.getMessage());
+            return conn != null;
+        } catch (SQLException _) {
+            // not handled
         }
         return false;
     }
