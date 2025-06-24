@@ -24,7 +24,7 @@ public class ManageLapsReservationsController {
             trackLapsReservationBean.setOwnerTrackLapsReservations(trackLapsReservationDao.findOwnerLapsReservations(trackId));
         }
         catch (SQLException e){
-            throw new SQLException();
+            throw new SQLException(e);
         }
 
         List<TrackLapsReservation> trackLapsReservations = trackLapsReservationBean.getOwnerTrackLapsReservations();
@@ -65,7 +65,7 @@ public class ManageLapsReservationsController {
             trackLapsReservationBean.setOwnerActiveTrackLapsReservations(trackLapsReservationDao.findOwnerActiveLapsReservations(trackId));
         }
         catch (SQLException e){
-            throw new SQLException();
+            throw new SQLException(e);
         }
 
         List<TrackLapsReservation> trackLapsReservations = trackLapsReservationBean.getOwnerActiveTrackLapsReservations();
