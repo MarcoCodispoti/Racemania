@@ -33,8 +33,8 @@ public class TrackDao {
             try {
                 if (stmt != null)
                     stmt.close();
-            } catch (SQLException e) {
-                //not handled
+            } catch (SQLException _){
+                // not handled
             }
         }
         return tracks;
