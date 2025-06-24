@@ -14,13 +14,6 @@ public class TrackLapsReservation extends Reservation {
     public TrackLapsReservation(int reservationID,int userID,LocalDate date,
                                      int trackID,int price,int lapsNumber,String vehiclePlate,
                                      boolean isDaily, int lapPrice,int dailyPrice,String confirmationStatus){
-        // attributi classe padre
-//        this.reservationId = reservationID;
-//        this.userID = userID;
-//        this.date = date;
-//        this.trackID = trackID;
-//        this.price = price;
-//        this.laps = lapsNumber;
 
         // per dichiarare meno di 8 parametri nel costruttore (Non piace a sonar cloud)
         super(reservationID,userID,date,trackID,price,lapsNumber);
