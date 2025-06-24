@@ -9,22 +9,34 @@ public class TrackLapsReservation extends Reservation {
     private String vehiclePlate;
     private String confirmationStatus;
 
-    public TrackLapsReservation(){}
-
     public TrackLapsReservation(int reservationID,int userID,LocalDate date,
-                                     int trackID,int price,int lapsNumber,String vehiclePlate,
-                                     boolean isDaily, int lapPrice,int dailyPrice,String confirmationStatus){
-
-        // per dichiarare meno di 8 parametri nel costruttore (Non piace a sonar cloud)
+                                int trackID,int price,int lapsNumber){
         super(reservationID,userID,date,trackID,price,lapsNumber);
+    }
 
-        //attributi classe figlio
+//    public TrackLapsReservation(int reservationID,int userID,LocalDate date,
+//                                     int trackID,int price,int lapsNumber,String vehiclePlate,
+//                                     boolean isDaily, int lapPrice,int dailyPrice,String confirmationStatus){
+//
+//        // per dichiarare meno di 8 parametri nel costruttore (Non piace a sonar cloud)
+//        super(reservationID,userID,date,trackID,price,lapsNumber);
+//
+//        //attributi classe figlio
+//        this.vehiclePlate = vehiclePlate;
+//        this.isDaily = isDaily;
+//        this.lapPrice = lapPrice;
+//        this.dailyPrice = dailyPrice;
+//        this.confirmationStatus = confirmationStatus;
+//    }
+
+    public void SetTrackLapsReservation(String vehiclePlate, boolean isDaily, int lapPrice,int dailyPrice,String confirmationStatus){
         this.vehiclePlate = vehiclePlate;
         this.isDaily = isDaily;
         this.lapPrice = lapPrice;
         this.dailyPrice = dailyPrice;
         this.confirmationStatus = confirmationStatus;
-    }
+    };
+
 
     public void setPrice(){
         if(isDaily){
@@ -32,7 +44,7 @@ public class TrackLapsReservation extends Reservation {
         } else {
             price = lapPrice*laps;
         }
-    };
+    }
 
     public void setIsDaily(boolean daily){this.isDaily = daily;}
     public void setDailyPrice(boolean isDaily){this.isDaily = isDaily;};

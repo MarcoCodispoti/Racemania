@@ -79,18 +79,36 @@ public class TrackLapsReservationDao{
     private TrackLapsReservation extractLapsReservations(ResultSet rs) throws SQLException {
         LocalDate date = LocalDate.parse(rs.getString("reservation_date"));
 
-        return new TrackLapsReservation(
+        // Inizializzo tramite un costruttore e una funzione di supporto per non avere troppi parametri nel costruttore
+        TrackLapsReservation trackLapsReservation = new TrackLapsReservation(
                 rs.getInt("lapreservation_id"),
                 rs.getInt("user_id"),
                 date,
                 rs.getInt("track_id"),
                 rs.getInt("price"),
-                rs.getInt("laps"),
+                rs.getInt("laps"));
+
+        trackLapsReservation.SetTrackLapsReservation(
                 rs.getString("vehicle_plate"),
                 rs.getBoolean("is_daily"),
                 rs.getInt("lap_price"),
                 rs.getInt("daily_price"),
                 rs.getString("confirmation_status"));
+
+//                rs.getInt("lapreservation_id"),
+//                rs.getInt("user_id"),
+//                date,
+//                rs.getInt("track_id"),
+//                rs.getInt("price"),
+//                rs.getInt("laps"),
+
+//                rs.getString("vehicle_plate"),
+//                rs.getBoolean("is_daily"),
+//                rs.getInt("lap_price"),
+//                rs.getInt("daily_price"),
+//                rs.getString("confirmation_status"));
+//    }
+        return trackLapsReservation;
     }
 
 
