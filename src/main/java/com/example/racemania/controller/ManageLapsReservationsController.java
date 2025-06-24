@@ -14,11 +14,8 @@ import java.util.List;
 
 public class ManageLapsReservationsController {
 
-    // usata da TrackOwner
     public TrackLapsReservationBean getOwnerLapsReservation() throws SQLException{
-        System.out.println("prendo Track");
         int trackId = LoggedUser.getInstance().getTrackOwner().getTrackId();
-        System.out.println("TrackId: " + trackId);
 
         TrackLapsReservationBean trackLapsReservationBean = new TrackLapsReservationBean();
         TrackLapsReservationDao trackLapsReservationDao = new TrackLapsReservationDao();
@@ -32,14 +29,13 @@ public class ManageLapsReservationsController {
 
         List<TrackLapsReservation> trackLapsReservations = trackLapsReservationBean.getOwnerTrackLapsReservations();
         if (trackLapsReservations == null || trackLapsReservations.isEmpty()) {
-            System.out.println("Nessun circuito trovato nel database.");
             return null;
         }
 
         return trackLapsReservationBean;
     }
 
-    // Usata da owner
+
     public void manageLapsReservation(int reservationID,String decision) throws SQLException {
         TrackLapsReservationDao trackLapsReservationDao = new TrackLapsReservationDao();
         try {
@@ -49,7 +45,7 @@ public class ManageLapsReservationsController {
         }
     }
 
-    // Usata sia da owner che da Customer
+
     public VehicleBean getVehicle(String vehiclePlate) throws SQLException {
         VehicleBean vehicleBean;
         VehicleDao vehicleDao = new VehicleDao();
@@ -60,10 +56,7 @@ public class ManageLapsReservationsController {
 
 
     public TrackLapsReservationBean getActiveOwnerLapsReservation() throws SQLException{
-        // devo modificare questa
-        System.out.println("prendo Track");
         int trackId = LoggedUser.getInstance().getTrackOwner().getTrackId();
-        System.out.println("TrackId: " + trackId);
 
         TrackLapsReservationBean trackLapsReservationBean = new TrackLapsReservationBean();
         TrackLapsReservationDao trackLapsReservationDao = new TrackLapsReservationDao();
@@ -77,14 +70,13 @@ public class ManageLapsReservationsController {
 
         List<TrackLapsReservation> trackLapsReservations = trackLapsReservationBean.getOwnerActiveTrackLapsReservations();
         if (trackLapsReservations == null || trackLapsReservations.isEmpty()) {
-            System.out.println("Nessuna prenotazione trovata nel database.");
             return null;
         }
 
         return trackLapsReservationBean;
     }
 
-    // Usata da TrackOwner
+
     public UserBean getUser(int userId) throws SQLException {
         UserBean userBean = null;
         UserDao userDao = new UserDao();
