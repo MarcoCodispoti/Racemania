@@ -5,13 +5,10 @@ public class Account {
     private String role;
     private int trackId;
 
-    public Account() {}
+    public Account(){
+        // costruttore, inizializza con valori di default
+    }
 
-//    public Account(int userId, String role, int trackId){
-//        this.userId = userId;
-//        this.role = role;
-//        this.trackId = trackId;
-//    }
 
     public void setUserId(int userId) {this.userId = userId;}
     public void setRole(String role) {this.role = role;}
