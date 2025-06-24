@@ -10,6 +10,19 @@ public class Reservation {
     protected int price;
     protected int laps;
 
+    public Reservation(){
+        // default constructor
+    }
+
+    public Reservation(int reservationId, int userID, LocalDate date, int trackID,int price,int laps){
+        this.reservationId = reservationId;
+        this.userID = userID;
+        this.date = date;
+        this.trackID = trackID;
+        this.price = price;
+        this.laps = laps;
+    }
+
     public void setReservationID(int reservationID) {this.reservationId = reservationID;}
     public void setUserID(int userID) {this.userID = userID;}
     public void setDate(LocalDate date) {this.date = date;}
