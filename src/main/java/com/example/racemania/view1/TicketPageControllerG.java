@@ -108,6 +108,7 @@ public class TicketPageControllerG {
             updateTextFlow(LapsNumberTextFlow, " " + LapsNumber, 24);
             if(LapsNumber>=16){
                 LapsNumber = 0;
+                updateTextFlow(LapsNumberTextFlow, " " + LapsNumber, 24);
                 isDaily = true;
                 Total = DailyPrice;
                 DailyRadioButton.setSelected(true);
@@ -164,6 +165,8 @@ public class TicketPageControllerG {
 
     public void ClickedOnLapsRadioButton(ActionEvent actionEvent) throws IOException {
         isDaily = false;
+        LapsNumber = 1;
+        updateTextFlow(LapsNumberTextFlow, " " + LapsNumber, 24);
         Total = LapPrice*LapsNumber;
         updateTotalTextFlow();
     }
@@ -173,5 +176,4 @@ public class TicketPageControllerG {
         Total = DailyPrice;
         updateTotalTextFlow();
     }
-
 }

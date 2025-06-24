@@ -9,6 +9,7 @@ import com.example.racemania.model.bean.VehicleBean;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
@@ -44,6 +45,9 @@ public class VehiclePageControllerG {
     private TextField lastcheckyearTextField;
 
     @FXML
+    private Label ErrorLabel;
+
+    @FXML
     private Button ProceedButton;
 
     @FXML
@@ -52,7 +56,16 @@ public class VehiclePageControllerG {
 
         isFull = checkIsFull();
         if(isFull){
-            // aggiungi controllo sui tipi di dati inseriti e sul loro formato
+            if (!isValidVehicle()) {
+                return;
+            }
+
+            if(!isValidPlate(plateTextField.getText())){
+                ErrorLabel.setText("Inserisci una targa valida");
+                return;
+            }
+
+
 
             VehicleBean vehicleBean = fillVehicle();
             // Vehicle actualvehicle = setNewVehicle(vehicleBean);
@@ -61,7 +74,8 @@ public class VehiclePageControllerG {
                 bookLapsReservationController.insertVehicle(vehicleBean);
             } catch (Exception e) {
                 // to be handled
-                System.out.println("Errore nell'inserimento del vehicle.");
+                ErrorLabel.setText("Errore nell'inserimento del veicolo");
+                // System.out.println("Errore nell'inserimento del vehicle.");
             }
 
             actualLapsReservationBean.setVehiclePlate(vehicleBean.getPlate());
@@ -70,8 +84,9 @@ public class VehiclePageControllerG {
             controller.setTrackLapsReservationBean(actualLapsReservationBean);
         }
         else{
-        System.out.println("Devi compilare tutti i campi!");
-        return;
+            ErrorLabel.setText("Devi compilare tutti i campi");
+            // System.out.println("Devi compilare tutti i campi!");
+            return;
         }
 
     }
@@ -98,5 +113,54 @@ public class VehiclePageControllerG {
             return true;
         }
     }
+
+    private boolean isValidPlate(String plate) {
+        // Rimuove eventuali spazi e converte in maiuscolo
+        plate = plate.trim().toUpperCase();
+
+        // Formato Italiano: AA123AA
+        String italianPattern = "^[A-Z]{2}\\d{3}[A-Z]{2}$";
+
+        // Formati Europei comuni
+        String euroPattern1 = "^[A-Z]{2}\\d{4}$";       // AB1234
+        String euroPattern2 = "^[A-Z]{1}\\d{3}[A-Z]{2}$"; // A123BC
+        String euroPattern3 = "^[A-Z]{3}\\d{3}$";       // ABC123
+
+        return plate.matches(italianPattern) ||
+                plate.matches(euroPattern1) ||
+                plate.matches(euroPattern2) ||
+                plate.matches(euroPattern3);
+    }
+
+    private boolean isValidVehicle() {
+        try {
+            int year = Integer.parseInt(yearTextField.getText().trim());
+            int lastCheckYear = Integer.parseInt(lastcheckyearTextField.getText().trim());
+            int power = Integer.parseInt(powerTextField.getText().trim());
+
+            // L'anno deve essere nel range ragionevole (es: 1900 - anno corrente + 1)
+            int currentYear = java.time.Year.now().getValue();
+            if (year < 1900 || year > currentYear) {
+                ErrorLabel.setText("Anno di immatricolazione non valido");
+                return false;
+            }
+
+            if (lastCheckYear < year || lastCheckYear > currentYear + 1) {
+                ErrorLabel.setText("Ultimo tagliando deve essere dopo l'immatricolazione");
+                return false;
+            }
+
+            if (power <= 0 || power >= 3000) {
+                ErrorLabel.setText("La potenza deve essere un numero positivo inferiore a 3000");
+                return false;
+            }
+
+        } catch (NumberFormatException e) {
+            ErrorLabel.setText("Anno, tagliando e potenza devono essere numeri interi validi");
+            return false;
+        }
+
+        return true;
+    };
 
 }

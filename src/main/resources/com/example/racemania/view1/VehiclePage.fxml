@@ -124,6 +124,6 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Label fx:id="ErrorLable" layoutX="242.0" layoutY="593.0" prefHeight="17.0" prefWidth="119.0" />
+      <Label fx:id="ErrorLabel" layoutX="242.0" layoutY="593.0" prefHeight="17.0" prefWidth="196.0" />
    </children>
 </AnchorPane>
