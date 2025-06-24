@@ -36,8 +36,9 @@ public class AccountFSDao {
                     throw new FailedLoginException("Nessuna corrispondenza trovata");
                 }
             }
-        } catch (IOException e) {
-            throw new RuntimeException("Errore nella lettura del file Users.txt", e);
+        } catch (IOException _) {
+            // throw new RuntimeException("Errore nella lettura del file Users.txt", e);
+            throw new FailedLoginException("Errore nella lettura del file Users.txt");
         }
         throw new FailedLoginException("Email o password errata.");
     }
