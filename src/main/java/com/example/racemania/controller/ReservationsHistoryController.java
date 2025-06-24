@@ -1,6 +1,6 @@
 package com.example.racemania.controller;
 
-import com.example.racemania.model.UserDao;
+import com.example.racemania.model.dao.UserDao;
 import com.example.racemania.model.dao.TrackDao;
 import com.example.racemania.model.dao.VehicleDao;
 import com.example.racemania.model.bean.TrackBean;

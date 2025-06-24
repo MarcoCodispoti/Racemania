@@ -9,7 +9,9 @@ public class User {
 
     public enum Role { CUSTOMER, TRACK_OWNER }
 
-    public User(){};
+    public User(){
+        // default constructor
+    }
 
     public User(int userId, String username, String email, Role role) {
         this.userId = userId;

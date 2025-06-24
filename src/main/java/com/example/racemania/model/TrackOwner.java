@@ -4,7 +4,7 @@ import java.util.List;
 
 public class TrackOwner extends User {
     private int trackId;
-    protected List<Instructor> Instructors;
+    protected List<Instructor> instructors;
 
     public TrackOwner() {}
 
@@ -16,8 +16,8 @@ public class TrackOwner extends User {
     }
 
     public void setTrackId(int trackId) {this.trackId = trackId;}
-    public void setInstructors(List<Instructor> Instructors) {this.Instructors = Instructors;}
+    public void setInstructors(List<Instructor> Instructors) {this.instructors = Instructors;}
 
     public int getTrackId(){ return trackId;}
-    public List<Instructor> getInstructors() {return Instructors;}
+    public List<Instructor> getInstructors() {return instructors;}
 }

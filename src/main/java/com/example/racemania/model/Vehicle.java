@@ -11,7 +11,6 @@ public class Vehicle {
     private int power;
     private int lastcheckYear;
 
-    public Vehicle(){};
 
     public Vehicle(String plate,int ownerId, String brand, String model, int immatriculationYear, int power, int lastcheckYear){
         this.plate = plate;

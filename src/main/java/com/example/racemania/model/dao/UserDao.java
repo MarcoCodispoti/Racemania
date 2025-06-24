@@ -1,4 +1,4 @@
-package com.example.racemania.model;
+package com.example.racemania.model.dao;
 
 import com.example.racemania.model.service.Query;
 import com.example.racemania.model.bean.UserBean;
@@ -9,12 +9,8 @@ import java.sql.SQLException;
 public class UserDao {
     public UserBean getUserFromDB(int userId) throws SQLException {
         UserBean userBean = null;
-        // Statement stmt = null;
-        // Connection conn = null;
 
         try {
-            // conn = Connector.getInstance().getConnection();
-            // stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Query.findUserInfo(userId);
             while(rs.next()) {
                 userBean = extractUser(rs,userId);

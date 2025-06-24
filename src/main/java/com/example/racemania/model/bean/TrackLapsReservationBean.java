@@ -11,7 +11,6 @@ public class TrackLapsReservationBean {
         private List<TrackLapsReservation> userActiveTrackLapsReservations;
         private List<TrackLapsReservation> ownerTrackLapsReservations;
         private List<TrackLapsReservation> ownerActiveTrackLapsReservations;
-        // private int selectedTrackId;
 
         public List<TrackLapsReservation> getUserLapsReservation(int userId) throws SQLException {
                 TrackLapsReservationDao trackLapsReservationDao = new TrackLapsReservationDao();

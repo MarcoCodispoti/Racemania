@@ -2,7 +2,7 @@ package com.example.racemania.controller;
 
 import com.example.racemania.model.LoggedUser;
 import com.example.racemania.model.TrackLapsReservation;
-import com.example.racemania.model.UserDao;
+import com.example.racemania.model.dao.UserDao;
 import com.example.racemania.model.dao.TrackLapsReservationDao;
 import com.example.racemania.model.dao.VehicleDao;
 import com.example.racemania.model.bean.TrackLapsReservationBean;
