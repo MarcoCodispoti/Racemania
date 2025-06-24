@@ -6,7 +6,6 @@ import java.io.*;
 
 public class AccountFSDao {
     public Account checkAccount(String email,String password) throws FailedLoginException{
-        File file = new File("src/main/resources/com/example/racemania/Users.txt");
         Account account = new Account();
 
         try (BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/com/example/racemania/Users.txt"))) {
