@@ -36,7 +36,7 @@ public class BookLapsReservationController{
         try {
             VehicleDao vehicleDao = new VehicleDao();
             vehicleDao.insertVehicle(vehicleBean);
-        } catch (FailedInsertException e) {
+        } catch (FailedInsertException _) {
             throw new FailedInsertException("Can't insert vehicle");
         }
     }
@@ -50,7 +50,6 @@ public class BookLapsReservationController{
 
 
     public void insertLapsReservation(TrackLapsReservationBean trackLapsReservationBean) throws SQLException {
-        // TrackLapsReservation trackLapsReservation = new TrackLapsReservation();
 
         if(LoggedUser.getInstance().getCustomer().getUserId() != 0) {
             trackLapsReservationBean.setUserID(LoggedUser.getInstance().getCustomer().getUserId());
@@ -64,7 +63,6 @@ public class BookLapsReservationController{
         System.out.println("Strampo i valori del bean");
 
         System.out.println("Ho eseguito fill lapsReservation \n \n Stampo i valor della trackLapsReservation \n");
-        // StampaValoriReservation(trackLapsReservation);
 
         System.out.println("Creo l'istanza della DAO");
         TrackLapsReservationDao trackLapsReservationDao = new TrackLapsReservationDao();
