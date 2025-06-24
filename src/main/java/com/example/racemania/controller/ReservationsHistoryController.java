@@ -11,12 +11,6 @@ import java.sql.SQLException;
 
 public class ReservationsHistoryController {
 
-//    public VehicleBean getReservationVehicle(String plate){
-//        VehicleBean vehicleBean = null;
-//        VehicleDao vehicleDao = new VehicleDao();
-//
-//
-//    }
 public VehicleBean getVehicle(String vehiclePlate) throws SQLException {
     VehicleBean vehicleBean;
     VehicleDao vehicleDao = new VehicleDao();
@@ -32,7 +26,7 @@ public VehicleBean getVehicle(String vehiclePlate) throws SQLException {
         try {
             trackBean = trackDao.getTrackFromDB(reservationTrackId);
         } catch (SQLException e) {
-            throw new SQLException();
+            throw new SQLException(e);
         }
         return trackBean;
     }
@@ -45,7 +39,7 @@ public VehicleBean getVehicle(String vehiclePlate) throws SQLException {
             userBean = userDao.getUserFromDB(userId);
         }
         catch (SQLException e){
-            // to be handled
+            throw new SQLException(e);
         }
         return userBean;
     }

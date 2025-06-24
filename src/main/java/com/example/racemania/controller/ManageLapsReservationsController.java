@@ -84,7 +84,7 @@ public class ManageLapsReservationsController {
         try {
             userBean = userDao.getUserFromDB(userId);
         }
-        catch (SQLException ignored){
+        catch (SQLException _){
             // to be handled
         }
         return userBean;
