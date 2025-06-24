@@ -112,7 +112,7 @@ public class TrackLapsReservationDao{
             try {
                 if (stmt != null)
                     stmt.close();
-            } catch (SQLException e) {
+            } catch (SQLException _) {
                 //not handled
             }
         }
