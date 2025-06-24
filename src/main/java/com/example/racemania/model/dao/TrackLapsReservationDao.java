@@ -35,7 +35,7 @@ public class TrackLapsReservationDao{
             try {
                 if (stmt != null)
                     stmt.close();
-            } catch (SQLException e) {
+            } catch (SQLException _) {
                 //not handled
             }
         }
@@ -54,11 +54,11 @@ public class TrackLapsReservationDao{
             stmt = conn.createStatement();
             try {
                 Query.insertTrackLapsReservation(stmt, trackLapsReservationBean);
-            } catch (Exception e) {
-                throw new FailedInsertException("An error during lesson insertion occurred.",e);
+            } catch (Exception _) {
+                throw new FailedInsertException("An error during lesson insertion occurred.");
             }
 
-        } catch (Exception e) {
+        } catch (Exception _) {
             throw new FailedInsertException("An error during lesson insertion occurred.");
         } finally {
             try {
@@ -138,7 +138,7 @@ public class TrackLapsReservationDao{
             try {
                 if (stmt != null)
                     stmt.close();
-            } catch (SQLException e) {
+            } catch (SQLException _) {
                 //not handled
             }
         }
@@ -169,7 +169,7 @@ public class TrackLapsReservationDao{
             try {
                 if (stmt != null)
                     stmt.close();
-            } catch (SQLException e) {
+            } catch (SQLException _) {
                 //not handled
             }
         }
