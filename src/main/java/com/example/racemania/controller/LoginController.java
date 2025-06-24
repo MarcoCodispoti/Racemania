@@ -25,22 +25,14 @@ public class LoginController {
         try {
             conditionDB = connectionDao.checkConnection();
         } catch (SQLException e) {
-            System.out.println("Eseguo login in modalità FileSystem");
             throw new SQLException(e);
         }
 
         if (conditionDB) {
-            // Sono nel database
-            // chiamo il Dao del database
-            System.out.println("Sono riuscito a comunicare col database");
             AccountDao accountDao = new AccountDao();
-            // Errore capire perché in loginBean.getEmail() e loginBean.getPassword() restituiscono null
             try {
                 account = accountDao.checkAccount(loginBean.getEmail(), loginBean.getPassword());   // Funziona
 
-                System.out.println("Ruolo account:" + account.getRole());
-                System.out.println("UserID account: " + account.getUserId());
-                System.out.println("TracKID account: " + account.getTrackId());
                 actualaccountBean.setRole(account.getRole());
                 actualaccountBean.setUserId(account.getUserId());
                 actualaccountBean.setTrackId(account.getTrackId());
@@ -54,8 +46,6 @@ public class LoginController {
 
 
         } else {
-            // sono nel FileSystem
-            // chiamo il Dao del file system
             System.out.println("Non sono riuscito a comunicare col database");
             AccountFSDao accountFSDao = new AccountFSDao();
             try {
@@ -69,16 +59,6 @@ public class LoginController {
 
             }
         }
-
-        System.out.println("Valori ottenuti dal Dao: ");
-        System.out.println("Role: " + account.getRole());
-        System.out.println("UserID: " + account.getUserId());
-        System.out.println("TrackId: " + account.getTrackId());
-        // da qui devo aver estratto: Ruolo, user_id e track_id (=-1 se l'user è customer)
-        // Fino a qui la parte del database funziona
-        // per ora prendo solo Ruolo, user_id e track_id, dovrebbe funzionare bene
-
-        // UserFactory myFactory;
 
         LoggedUser.logout();
 

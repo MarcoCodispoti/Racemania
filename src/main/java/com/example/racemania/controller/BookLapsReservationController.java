@@ -56,22 +56,8 @@ public class BookLapsReservationController{
             throw new FailedInsertException("Can't insert laps reservation");
         }
         trackLapsReservationBean.setConfirmationStatus("Waiting for confirmation");
-
-        System.out.println("ho creato l'istanza di trackLapsReservation \n");
-
-        System.out.println("Strampo i valori del bean");
-
-        System.out.println("Ho eseguito fill lapsReservation \n \n Stampo i valor della trackLapsReservation \n");
-
-        System.out.println("Creo l'istanza della DAO");
         TrackLapsReservationDao trackLapsReservationDao = new TrackLapsReservationDao();
-        System.out.println("Ho creato l'istanza di TrackLapsReservation \n");
-
-        System.out.println("Faccio partire la funzione DAO che inserisce i valori nel database \n");
-        // trackLapsReservationDao.insertTrackLapsReservation(trackLapsReservation);   //L'errore è qui
         trackLapsReservationDao.insertTrackLapsReservation(trackLapsReservationBean);
-
-        System.out.println("La DAO ha inserito i valori nel database\n");
     }
 
 }
