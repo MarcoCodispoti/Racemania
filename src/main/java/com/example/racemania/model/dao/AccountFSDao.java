@@ -15,11 +15,8 @@ public class AccountFSDao {
                 String[] parts = line.split(";");
                 if (parts.length < 6) continue;
 
-                // String fileuserIdStr = parts[0];
                 String fileEmail = parts[2].trim();
                 String filePassword = parts[3].trim();
-                // String fileRole = parts[4].trim();
-                // String fileTrackIdStr = parts[5].trim();
 
 
                 if (email.equals(fileEmail) && password.equals(filePassword)) {
