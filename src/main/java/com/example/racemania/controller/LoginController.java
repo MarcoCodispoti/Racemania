@@ -46,10 +46,9 @@ public class LoginController {
 
 
         } else {
-            System.out.println("Non sono riuscito a comunicare col database");
             AccountFSDao accountFSDao = new AccountFSDao();
             try {
-                account = accountFSDao.checkAccount(loginBean.getEmail(), loginBean.getPassword()); //Funziona
+                account = accountFSDao.checkAccount(loginBean.getEmail(), loginBean.getPassword());
                 actualaccountBean.setRole(account.getRole());
                 actualaccountBean.setUserId(account.getUserId());
                 actualaccountBean.setTrackId(account.getTrackId());
