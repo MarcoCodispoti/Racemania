@@ -11,7 +11,6 @@ import com.example.racemania.model.bean.TrackBean;
 import com.example.racemania.model.bean.TrackLapsReservationBean;
 import com.example.racemania.model.bean.VehicleBean;
 
-import java.sql.SQLException;
 
 public class BookLapsReservationController{
 
