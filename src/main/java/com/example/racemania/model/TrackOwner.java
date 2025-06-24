@@ -16,7 +16,7 @@ public class TrackOwner extends User {
     }
 
     public void setTrackId(int trackId) {this.trackId = trackId;}
-    public void setInstructors(List<Instructor> Instructors) {this.instructors = Instructors;}
+    public void setInstructors(List<Instructor> instructors) {this.instructors = instructors;}
 
     public int getTrackId(){ return trackId;}
     public List<Instructor> getInstructors() {return instructors;}

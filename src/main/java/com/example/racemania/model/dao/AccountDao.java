@@ -13,12 +13,12 @@ import java.sql.Statement;
 public class AccountDao {
     public Account checkAccount(String email, String password) throws FailedLoginException, SQLException{
         Account account = new Account();
-        Statement stmt; // = null;
-        Connection conn; // = null;
+        Statement stmt;
+        Connection conn;
 
-        int userId; // = -1;
-        String role; //  = null;
-        int trackId; // = -1;
+        int userId;
+        String role;
+        int trackId;
 
         try{
             conn = Connector.getInstance().getConnection();
@@ -38,27 +38,22 @@ public class AccountDao {
                 account.setTrackId(trackId);
 
             } else {
-                System.out.println("Credenziali errate");
                 throw new FailedLoginException("Invalid credentials");
             }
         } catch (SQLException e) {
-            System.out.println("Errore nel database");
-            throw new SQLException("Errore nel database");
+            throw new SQLException("Errore nel database", e);
         }
         return account;
     }
 
     public boolean checkConnection() throws SQLException {
-        // Statement stmt = null;
-        Connection conn; // = null;
+        Connection conn;
 
         try{
             conn = Connector.getInstance().getConnection();
             if (conn != null) {
-                System.out.println("Connection established");
                 return true;
             }
-            System.out.println("Connection not established");
             return false;
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
