@@ -14,7 +14,7 @@ public class TrackLapsReservation extends Reservation {
         super(reservationID,userID,date,trackID,price,lapsNumber);
     }
 
-
+    // funzione di supporto al costruttore precedente, mi evita di avere più di 7 parametri in un costruttore
     public void setTrackLapsReservation(String vehiclePlate, boolean isDaily, int lapPrice, int dailyPrice, String confirmationStatus){
         this.vehiclePlate = vehiclePlate;
         this.isDaily = isDaily;
@@ -33,7 +33,7 @@ public class TrackLapsReservation extends Reservation {
     }
 
     public void setIsDaily(boolean daily){this.isDaily = daily;}
-    public void setDailyPrice(boolean isDaily){this.isDaily = isDaily;};
+    public void setDailyPrice(boolean isDaily){this.isDaily = isDaily;}
     public void setLapPrice(int lapPrice){this.lapPrice = lapPrice;}
     public void setDailyPrice(int dailyPrice){this.dailyPrice = dailyPrice;}
     public void setVehiclePlate(String vehiclePlate){this.vehiclePlate= vehiclePlate;}
