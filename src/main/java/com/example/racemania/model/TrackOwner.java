@@ -1,6 +1,5 @@
 package com.example.racemania.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TrackOwner extends User {
