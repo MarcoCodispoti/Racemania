@@ -13,7 +13,6 @@ import java.sql.SQLException;
 
 public class LoginController {
     public AccountBean login(LoginBean loginBean) throws FailedLoginException, SQLException, FailedFileAccessException {
-        // LoginBean actualloginBean = loginBean;
         AccountBean actualaccountBean = new AccountBean();
         Account account;
 
@@ -27,7 +26,7 @@ public class LoginController {
             conditionDB = connectionDao.checkConnection();
         } catch (SQLException e) {
             System.out.println("Eseguo login in modalità FileSystem");
-            throw new SQLException();
+            throw new SQLException(e);
         }
 
         if (conditionDB) {
@@ -46,10 +45,10 @@ public class LoginController {
                 actualaccountBean.setUserId(account.getUserId());
                 actualaccountBean.setTrackId(account.getTrackId());
             }
-            catch (com.example.racemania.exceptions.FailedLoginException e){
+            catch (com.example.racemania.exceptions.FailedLoginException _){
                 throw new FailedLoginException("Credenziali errate");
             }
-            catch (SQLException e){
+            catch (SQLException _){
                 throw new SQLException("Database error");
             }
 
@@ -65,7 +64,7 @@ public class LoginController {
                 actualaccountBean.setUserId(account.getUserId());
                 actualaccountBean.setTrackId(account.getTrackId());
             }
-            catch (com.example.racemania.exceptions.FailedLoginException e){
+            catch (com.example.racemania.exceptions.FailedLoginException _){
                 throw new FailedLoginException("Credenziali errate");
 
             }
