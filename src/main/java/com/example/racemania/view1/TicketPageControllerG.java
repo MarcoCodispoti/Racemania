@@ -106,9 +106,18 @@ public class TicketPageControllerG {
 
             LapsNumber++;
             updateTextFlow(LapsNumberTextFlow, " " + LapsNumber, 24);
-
-            Total = LapPrice * LapsNumber;
-            updateTotalTextFlow();
+            if(LapsNumber>=16){
+                LapsNumber = 0;
+                isDaily = true;
+                Total = DailyPrice;
+                DailyRadioButton.setSelected(true);
+                LapsRadioButton.setSelected(false);
+                updateTotalTextFlow();
+            } else {
+                isDaily = false;
+                Total = LapPrice * LapsNumber;
+                updateTotalTextFlow();
+            }
         } else{
             return;
         }
