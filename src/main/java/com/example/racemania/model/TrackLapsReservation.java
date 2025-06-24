@@ -9,8 +9,7 @@ public class TrackLapsReservation extends Reservation {
     private String vehiclePlate;
     private String confirmationStatus;
 
-    public TrackLapsReservation(){};
-
+    public TrackLapsReservation(){}
 
     public TrackLapsReservation(int reservationID,int userID,LocalDate date,
                                      int trackID,int price,int lapsNumber,String vehiclePlate,

@@ -20,7 +20,7 @@ public class Track {
         this.dailyPrice = dailyPrice;
     }
 
-    public void setTrackId() {}
+
     public void setName(String name){ this.name = name; }
     public void setLenght(int lenght){ this.lenght = lenght; }
     public void setPlace(String place){ this.place = place; }
