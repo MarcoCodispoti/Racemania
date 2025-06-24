@@ -49,7 +49,7 @@ public class BookLapsReservationController{
     }
 
 
-    public void insertLapsReservation(TrackLapsReservationBean trackLapsReservationBean) throws SQLException {
+    public void insertLapsReservation(TrackLapsReservationBean trackLapsReservationBean) throws FailedInsertException {
 
         if(LoggedUser.getInstance().getCustomer().getUserId() != 0) {
             trackLapsReservationBean.setUserID(LoggedUser.getInstance().getCustomer().getUserId());
