@@ -36,7 +36,7 @@ public class TrackLapsReservationBean {
         public void manageLapsReservation(int reservationID,String decision) throws SQLException {
                 TrackLapsReservationDao trackLapsReservationDao = new TrackLapsReservationDao();
                 try {
-                        trackLapsReservationDao.ManageLapsReservation(reservationID,decision);
+                        trackLapsReservationDao.manageLapsReservation(reservationID,decision);
                 } catch (SQLException e) {
                         throw new SQLException(e);
                 }

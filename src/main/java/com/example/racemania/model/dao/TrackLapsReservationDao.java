@@ -146,22 +146,22 @@ public class TrackLapsReservationDao{
     }
 
 
-    public void ManageLapsReservation(int reservationId, String decision) throws SQLException {
-        int accepted_status = -1;
+    public void manageLapsReservation(int reservationId, String decision) throws SQLException {
+        int acceptedStatus = -1;
 
         Statement stmt = null;
         Connection conn;
 
         if(decision.equals("Accepted")){
-            accepted_status = 1;
+            acceptedStatus = 1;
         } else if(decision.equals("Rejected")) {
-            accepted_status = 0;
+            acceptedStatus = 0;
         }
 
         try {
             conn = Connector.getInstance().getConnection();
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            Query.manageLapsReservation(reservationId,accepted_status);
+            Query.manageLapsReservation(reservationId,acceptedStatus);
         }
         catch (Exception e) {
             throw new SQLException(e);

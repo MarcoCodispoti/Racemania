@@ -37,7 +37,6 @@ public class AccountFSDao {
                 }
             }
         } catch (IOException _) {
-            // throw new RuntimeException("Errore nella lettura del file Users.txt", e);
             throw new FailedLoginException("Errore nella lettura del file Users.txt");
         }
         throw new FailedLoginException("Email o password errata.");
