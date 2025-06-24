@@ -3,6 +3,7 @@ package com.example.racemania.view1;
 import java.lang.reflect.Field;
 
 import com.example.racemania.controller.BookLapsReservationController;
+import com.example.racemania.exceptions.FailedInsertException;
 import com.example.racemania.model.bean.TrackLapsReservationBean;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
@@ -73,7 +74,7 @@ public class PaymentPageControllerG {
 
                 bookLapsReservationController.insertLapsReservation(actualLapsReservationBean);
 
-            } catch (SQLException e){
+            } catch (FailedInsertException e){
                 e.printStackTrace();
             }
             FxmlLoader.setPage("ConfirmationPage");
