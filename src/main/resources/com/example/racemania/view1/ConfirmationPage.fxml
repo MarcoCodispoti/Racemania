@@ -87,7 +87,7 @@
             <Font size="28.0" />
          </font>
       </Button>
-      <Button fx:id="homepageButton" layoutX="380.0" layoutY="373.0" mnemonicParsing="false" onAction="#ClickedOnHomepage" prefHeight="65.0" prefWidth="296.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Torna alla Homepage" textFill="WHITE">
+      <Button fx:id="homepageButton" layoutX="380.0" layoutY="373.0" mnemonicParsing="false" onAction="#clickedOnHomepage" prefHeight="65.0" prefWidth="296.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Torna alla Homepage" textFill="WHITE">
          <font>
             <Font size="28.0" />
          </font>

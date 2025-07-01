@@ -14,7 +14,7 @@ public class ConfirmationPageControllerG {
     private Button toReservations;
 
     @FXML
-    public void ClickedOnHomepage(ActionEvent event) {
+    public void clickedOnHomepage(ActionEvent event) {
         FxmlLoader.setPage("HomePage");
     }
 
