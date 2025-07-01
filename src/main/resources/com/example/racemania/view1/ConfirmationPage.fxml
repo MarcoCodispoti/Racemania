@@ -82,12 +82,12 @@
             <Font size="34.0" />
          </font>
       </Text>
-      <Button fx:id="ToReservations" layoutX="728.0" layoutY="373.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="283.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Vai alle prenotazioni" textFill="WHITE">
+      <Button fx:id="toReservations" layoutX="728.0" layoutY="373.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="283.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Vai alle prenotazioni" textFill="WHITE">
          <font>
             <Font size="28.0" />
          </font>
       </Button>
-      <Button fx:id="HomepageButton" layoutX="380.0" layoutY="373.0" mnemonicParsing="false" onAction="#ClickedOnHomepage" prefHeight="65.0" prefWidth="296.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Torna alla Homepage" textFill="WHITE">
+      <Button fx:id="homepageButton" layoutX="380.0" layoutY="373.0" mnemonicParsing="false" onAction="#ClickedOnHomepage" prefHeight="65.0" prefWidth="296.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Torna alla Homepage" textFill="WHITE">
          <font>
             <Font size="28.0" />
          </font>
