@@ -31,7 +31,7 @@ public class ActiveReservationsPageControllerG {
     }
 
     @FXML
-    public void clickedOnHomePageHyperlink(ActionEvent event) throws IOException {
+    public void clickedOnHomePageHyperlink(ActionEvent event){
         FxmlLoader.setPage("HomePage");
     }
 
@@ -41,12 +41,9 @@ public class ActiveReservationsPageControllerG {
 
         for (TrackLapsReservation trackLapsReservation : lapsReservationsList) {
             try {
-                System.out.println("Sto caricando una TrackCard per: " + trackLapsReservation.getReservationID());
 
                 FXMLLoader cardloader = new FXMLLoader(getClass().getResource("/com/example/racemania/view1/TrackLapsReservationCard.fxml"));
                 Parent trackLapsReservationCard = cardloader.load();
-
-                System.out.println("TrackCard.fxml caricata con successo");
 
                 TrackLapsReservationCardControllerG controller = cardloader.getController();
                 controller.setData(trackLapsReservation);

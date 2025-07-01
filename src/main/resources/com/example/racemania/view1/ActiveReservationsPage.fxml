@@ -25,7 +25,7 @@
             <AnchorPane layoutY="80.0" prefHeight="75.0" prefWidth="217.0">
                <children>
                   <AnchorPane layoutX="8.0" layoutY="74.0" prefHeight="1.0" prefWidth="201.0" style="-fx-background-color: white;" />
-                  <Hyperlink fx:id="HomePageHyperlink" layoutX="2.0" onAction="#clickedOnHomePageHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Homepage" textFill="WHITE">
+                  <Hyperlink fx:id="homePageHyperlink" layoutX="2.0" onAction="#clickedOnHomePageHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Homepage" textFill="WHITE">
                      <font>
                         <Font size="32.0" />
                      </font>
