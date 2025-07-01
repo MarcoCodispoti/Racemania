@@ -23,19 +23,18 @@ public class DatePageControllerG {
     private DatePicker reservationDatePicker;
 
     @FXML
-    private Label ErrorLabel;
+    private Label errorLabel;
 
     @FXML
-    private Button ProceedButton;
+    private Button proceedButton;
 
     @FXML
-    void ClickedOnProceed(ActionEvent event) throws IOException {        //il comando è collegato al bottone dal file FXML
+    void clickedOnProceed(ActionEvent event) throws IOException {        //il comando è collegato al bottone dal file FXML
                                                                          //Comando per cambiare pagina
         LocalDate reservationDate = reservationDatePicker.getValue();
         if(isValidDate(reservationDate)){
             actualLapsReservationBean.setDate(reservationDate);
 
-            //FxmlLoader.setPage("TicketPage");
             TicketPageControllerG controller = FxmlLoader.setPageAndReturnController("TicketPage");
             controller.setTrackLapsReservationBean(actualLapsReservationBean);
         }
@@ -43,16 +42,13 @@ public class DatePageControllerG {
 
     private boolean isValidDate(LocalDate reservationDate){
         if(reservationDate==null){
-            ErrorLabel.setText("Scegli una data");
-            // System.out.println("Scegli una data");
+            errorLabel.setText("Scegli una data");
             return false;
         }
         else if(reservationDate.isBefore(LocalDate.now()) || reservationDate.isEqual(LocalDate.now())){
-            ErrorLabel.setText("Scegli una data successiva ad oggi");
-            // System.out.println("Scegli una data successiva ad oggi");
+            errorLabel.setText("Scegli una data successiva ad oggi");
             return false;
         } else {
-            System.out.println("Hai scelto la data: " + reservationDate);
             return true;
         }
     }
