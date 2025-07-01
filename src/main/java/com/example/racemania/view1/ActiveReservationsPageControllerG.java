@@ -26,12 +26,12 @@ public class ActiveReservationsPageControllerG {
     private Hyperlink homePageHyperlink;
 
     @FXML
-    public void ClickedOnReservationsHyperlink(ActionEvent event) throws IOException {
+    public void clickedOnReservationsHyperlink(ActionEvent event) throws IOException {
         // to be implemented
     }
 
     @FXML
-    public void ClickedOnHomePageHyperlink(ActionEvent event) throws IOException {
+    public void clickedOnHomePageHyperlink(ActionEvent event) throws IOException {
         FxmlLoader.setPage("HomePage");
     }
 
