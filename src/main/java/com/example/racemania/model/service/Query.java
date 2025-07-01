@@ -43,7 +43,6 @@ public class Query {
 
     public static ResultSet checkCredentials(Statement stmt, String email, String password) throws SQLException {
         String query = "SELECT user_id,user_role,track_id FROM Users WHERE email = '" + email + "' AND user_password = '" + password + "'";
-        System.out.println(query);
         return stmt.executeQuery(query);
     }
 
@@ -89,18 +88,20 @@ public class Query {
         return stmt.executeQuery(query);
     }
 
-    public static void manageLapsReservation(int reservationID,int accepted_status) throws SQLException {
+    public static void manageLapsReservation(int reservationID,int acceptedStatus) throws SQLException {
         Connection conn = Connector.getInstance().getConnection();
         Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
         String query;
 
-
-        if(accepted_status == 1){
-            query = "UPDATE TrackLapsReservation SET confirmation_status = 'Confirmed' WHERE lapreservation_id = '" + reservationID + "'";
-        } else if (accepted_status == 0) {
-            query = "UPDATE TrackLapsReservation SET confirmation_status = 'Rejected' WHERE lapreservation_id = '" + reservationID + "'";
-        } else{
-            throw new SQLException();
+        switch(acceptedStatus) {
+            case 1:
+                query = "UPDATE TrackLapsReservation SET confirmation_status = 'Confirmed' WHERE lapreservation_id = '" + reservationID + "'";
+                break;
+            case 0:
+                query = "UPDATE TrackLapsReservation SET confirmation_status = 'Rejected' WHERE lapreservation_id = '" + reservationID + "'";
+                break;
+            default:
+                throw new SQLException();
         }
         stmt.executeUpdate(query);
 
