@@ -52,10 +52,10 @@ public class ActiveReservationsPageControllerG {
 
                 lapsReservationsVBox.getChildren().add(trackLapsReservationCard);
 
-            } catch (IOException e) {
-                e.printStackTrace(); // errore caricamento della TrackCard
-            } catch (Exception e) {
-                e.printStackTrace(); // errore generico
+            } catch (IOException _) {
+                // Non carica le trackCard, to be handled
+            } catch (Exception _) {
+                // errore generico, to be handled
             }
         }
     }
