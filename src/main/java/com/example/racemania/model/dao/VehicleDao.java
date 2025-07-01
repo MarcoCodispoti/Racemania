@@ -12,8 +12,6 @@ import java.sql.Statement;
 
 public class VehicleDao {
 
-    public VehicleDao() {}
-
     public void insertVehicle(VehicleBean vehicleBean) throws FailedInsertException {
         Statement stmt = null;
         Connection conn;
@@ -22,13 +20,13 @@ public class VehicleDao {
             conn = Connector.getInstance().getConnection();
             stmt = conn.createStatement();
             Query.insertVehicle(stmt, vehicleBean);
-        } catch (Exception e) {
+        } catch (Exception _) {
             throw new FailedInsertException("An error during lesson insertion occurred.");
         } finally {
             try {
                 if (stmt != null)
                     stmt.close();
-            } catch (SQLException e) {
+            } catch (SQLException _) {
                 //not handled
             }
         }
@@ -59,8 +57,7 @@ public class VehicleDao {
             }
         }
         catch (SQLException e) {
-            // e.printStackTrace();
-            throw new SQLException();
+            throw new SQLException(e);
         }
         return vehicleBean;
     }
