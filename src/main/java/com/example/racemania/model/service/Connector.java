@@ -29,7 +29,6 @@ public class Connector {
 
             conn = DriverManager.getConnection(connectionUrl, user, pass);
         } catch (Exception e) {
-            // e.printStackTrace();
             throw new SQLException("Errore nella creazione della connessione", e);
         }
     }
@@ -44,7 +43,6 @@ public class Connector {
     public Connection getConnection() throws SQLException {
         if (conn == null || conn.isClosed()) {
             initializeConnection();
-            System.out.println("Connessione al database stabilita con successo");
         }
         return conn;
     }
