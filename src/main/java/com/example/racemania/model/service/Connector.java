@@ -41,7 +41,7 @@ public class Connector {
     }
 
     public Connection getConnection() throws SQLException {
-        if (conn == null || conn.isClosed()) {
+        if (conn == null || conn.isClosed()){
             initializeConnection();
         }
         return conn;

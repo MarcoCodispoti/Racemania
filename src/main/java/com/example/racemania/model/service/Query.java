@@ -12,11 +12,13 @@ import java.time.format.DateTimeFormatter;
 
 public class Query {
 
+    private Query(){}
+
     public static ResultSet findTracksq() throws SQLException{
         Connection conn = Connector.getInstance().getConnection();
         Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-
-        return stmt.executeQuery("select * from track");
+        String query = "select * from track";
+        return stmt.executeQuery(query);
     }
 
 
