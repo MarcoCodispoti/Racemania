@@ -17,13 +17,13 @@ import java.util.List;
 public class ActiveReservationsPageControllerG {
 
     @FXML
-    private VBox LapsReservationsVBox;
+    private VBox lapsReservationsVBox;
 
     @FXML
-    private Hyperlink ReservationsHyperlink;
+    private Hyperlink reservationsHyperlink;
 
     @FXML
-    private Hyperlink HomePageHyperlink;
+    private Hyperlink homePageHyperlink;
 
     @FXML
     public void ClickedOnReservationsHyperlink(ActionEvent event) throws IOException {
@@ -37,7 +37,7 @@ public class ActiveReservationsPageControllerG {
 
 
     public void populateLapsReservations(List<TrackLapsReservation> lapsReservationsList ) {
-        LapsReservationsVBox.getChildren().clear();
+        lapsReservationsVBox.getChildren().clear();
 
         for (TrackLapsReservation trackLapsReservation : lapsReservationsList) {
             try {
@@ -53,7 +53,7 @@ public class ActiveReservationsPageControllerG {
                 controller.setCardUI(trackLapsReservationCard);
                 controller.setParentController(this);
 
-                LapsReservationsVBox.getChildren().add(trackLapsReservationCard);
+                lapsReservationsVBox.getChildren().add(trackLapsReservationCard);
 
             } catch (IOException e) {
                 System.out.println("ERRORE nel caricamento TrackCard.fxml");
