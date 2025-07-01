@@ -52,11 +52,7 @@ public class TrackLapsReservationDao{
                 throw new FailedInsertException("Impossibile ottenere una connessione al database.");
             }
             stmt = conn.createStatement();
-            try {
-                Query.insertTrackLapsReservation(stmt, trackLapsReservationBean);
-            } catch (Exception _) {
-                throw new FailedInsertException("An error during lesson insertion occurred.");
-            }
+            tryInsertion(stmt, trackLapsReservationBean);
 
         } catch (Exception _) {
             throw new FailedInsertException("An error during lesson insertion occurred.");
@@ -89,10 +85,16 @@ public class TrackLapsReservationDao{
                 rs.getInt("daily_price"),
                 rs.getString("confirmation_status"));
 
-//
         return trackLapsReservation;
     }
 
+    private void tryInsertion(Statement stmt, TrackLapsReservationBean trackLapsReservationBean) throws FailedInsertException {
+        try {
+            Query.insertTrackLapsReservation(stmt, trackLapsReservationBean);
+        } catch (Exception _) {
+            throw new FailedInsertException("An error during lesson insertion occurred.");
+        }
+    }
 
     public List<TrackLapsReservation> findOwnerLapsReservations(int trackId) throws SQLException {
         Statement stmt = null;
