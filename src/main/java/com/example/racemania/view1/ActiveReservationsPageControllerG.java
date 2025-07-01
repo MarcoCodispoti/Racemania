@@ -60,7 +60,7 @@ public class ActiveReservationsPageControllerG {
         }
     }
 
-    public void initialize(){
+    public void initialize() throws SQLException{
         int userId = LoggedUser.getInstance().getCustomer().getUserId();
         TrackLapsReservationBean bean = new TrackLapsReservationBean();
 
@@ -68,15 +68,12 @@ public class ActiveReservationsPageControllerG {
         try {
             lapsReservationsList = bean.getUserLapsReservation(userId);
         } catch (SQLException e) {
-            System.out.println("Errore nel caricamento delle prenotazioni effettuate");
-            throw new RuntimeException(e);
+            throw new SQLException(e);  // errore nel caricamento delle prenotazioni effettuate
         }
 
         if (lapsReservationsList == null || lapsReservationsList.isEmpty()) {
-            System.out.println("Nessun circuito trovato nel database.");
             return;
         }
-        System.out.println("Caricate " + lapsReservationsList.size() + " prenotazioni dal Bean.");
 
         populateLapsReservations(lapsReservationsList);
     }
