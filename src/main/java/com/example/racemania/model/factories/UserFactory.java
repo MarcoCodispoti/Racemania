@@ -5,6 +5,9 @@ import com.example.racemania.model.TrackOwner;
 import com.example.racemania.model.User;
 
 public class UserFactory {
+
+    private UserFactory(){};
+
     public static final String ROLE_TRACKOWNER = "TrackOwner";
     public static final String ROLE_CUSTOMER = "Customer";
 
