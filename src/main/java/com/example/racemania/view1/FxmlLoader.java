@@ -38,7 +38,7 @@ public class FxmlLoader extends Application {
             Parent root = loader.load();
             Scene scene = new Scene(root, 1200, 740);
             stage1.setScene(scene);
-        } catch (IOException e) {
+        } catch (IOException _) {
             //not handled
         }
     }
