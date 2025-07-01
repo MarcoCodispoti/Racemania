@@ -23,15 +23,12 @@ public class Query {
 
 
     public static void insertTrackLapsReservation(Statement stmt, TrackLapsReservationBean trackLapsReservationBean) throws SQLException {
-        System.out.println("Inserito la trackLapsReservation della query \n");
 
         String formattedDateTime = trackLapsReservationBean.getDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         int isDaily = trackLapsReservationBean.getIsDaily() ? 1 : 0;  //ricontrollare poi
-        System.out.println("Chiamato il metodo insertTrackLapsReservation");
         String selectedStatement = String.format("INSERT INTO TrackLapsReservation (user_id, reservation_date, track_id, vehicle_plate, price, laps, is_daily, lap_price,daily_price,confirmation_status) " + "VALUES (%d, '%s', %d, '%s', %d, %d, %d, %d, %d,'%s')"
                 , trackLapsReservationBean.getUserID(),formattedDateTime,trackLapsReservationBean.getTrackID(),trackLapsReservationBean.getVehiclePlate(), trackLapsReservationBean.getPrice(),trackLapsReservationBean.getLaps(),
                 isDaily,trackLapsReservationBean.getLapPrice(),trackLapsReservationBean.getDailyPrice(),trackLapsReservationBean.getConfirmationStatus());
-        System.out.println("SQL Query: " + selectedStatement);
         stmt.executeUpdate(selectedStatement);
     }
 
@@ -97,8 +94,6 @@ public class Query {
         Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
         String query;
 
-        System.out.println("Accepted status: " + accepted_status);
-        System.out.println("Reservation ID: " + reservationID);
 
         if(accepted_status == 1){
             query = "UPDATE TrackLapsReservation SET confirmation_status = 'Confirmed' WHERE lapreservation_id = '" + reservationID + "'";
