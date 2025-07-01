@@ -17,8 +17,7 @@ public class Query {
     public static ResultSet findTracksq() throws SQLException{
         Connection conn = Connector.getInstance().getConnection();
         Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-        String query = "select * from track";
-        return stmt.executeQuery(query);
+        return stmt.executeQuery("select track_id, trackname, length, place, owner_id, lap_price, daily_price from track");
     }
 
 
