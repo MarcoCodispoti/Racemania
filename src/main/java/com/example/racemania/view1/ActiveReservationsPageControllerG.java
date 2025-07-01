@@ -53,11 +53,9 @@ public class ActiveReservationsPageControllerG {
                 lapsReservationsVBox.getChildren().add(trackLapsReservationCard);
 
             } catch (IOException e) {
-                System.out.println("ERRORE nel caricamento TrackCard.fxml");
-                e.printStackTrace();
+                e.printStackTrace(); // errore caricamento della TrackCard
             } catch (Exception e) {
-                System.out.println("Errore generico:");
-                e.printStackTrace();
+                e.printStackTrace(); // errore generico
             }
         }
     }
