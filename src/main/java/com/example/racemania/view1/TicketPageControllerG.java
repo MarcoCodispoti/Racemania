@@ -65,7 +65,6 @@ public class TicketPageControllerG {
     private Button paymentButton;
 
 
-
     public void updateTextFlow(TextFlow selectedTextFlow, String text, int textSize){
         selectedTextFlow.getChildren().clear();
         Text info = new Text(text);
@@ -93,7 +92,8 @@ public class TicketPageControllerG {
 
     }
 
-    public void ClickedOnAddLap(ActionEvent actionEvent) throws IOException {
+    @FXML
+    public void clickedOnAddLap(ActionEvent actionEvent) throws IOException {
         if(isDaily==false) {
 
             lapsNumber++;
@@ -116,7 +116,8 @@ public class TicketPageControllerG {
         }
     }
 
-    public void ClickedOnRemoveLap(ActionEvent actionEvent) throws IOException {
+    @FXML
+    public void clickedOnRemoveLap(ActionEvent actionEvent) throws IOException {
         if(isDaily == false) {
             if (lapsNumber == 1) {
                 return;
@@ -131,7 +132,8 @@ public class TicketPageControllerG {
         }
     }
 
-    public void ClickedOnPayment(ActionEvent event) throws IOException {      //il comando è collegato al bottone dal file FXML
+    @FXML
+    public void clickedOnPayment(ActionEvent event) throws IOException {      //il comando è collegato al bottone dal file FXML
 
         bookLapsReservationController = new BookLapsReservationController();
 
@@ -155,7 +157,8 @@ public class TicketPageControllerG {
         }
     }
 
-    public void ClickedOnLapsRadioButton(ActionEvent actionEvent) throws IOException {
+    @FXML
+    public void clickedOnLapsRadioButton(ActionEvent actionEvent) throws IOException {
         isDaily = false;
         lapsNumber = 1;
         updateTextFlow(lapsNumberTextFlow, " " + lapsNumber, 24);
@@ -163,7 +166,8 @@ public class TicketPageControllerG {
         updateTotalTextFlow();
     }
 
-    public void ClickedOnDailyRadioButton(ActionEvent actionEvent) throws IOException {
+    @FXML
+    public void clickedOnDailyRadioButton(ActionEvent actionEvent) throws IOException {
         isDaily = true;
         total = dailyPrice;
         updateTotalTextFlow();
