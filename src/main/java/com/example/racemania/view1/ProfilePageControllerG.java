@@ -64,12 +64,11 @@ public class ProfilePageControllerG {
                 userRole = "TrackOwner";
            }
            if(userBean == null){
-               // to be handled
+               // da gestire
            }
        } catch (Exception e) {
-           // to be handled
+           // da gestire dopo
        }
-
 
        usernameLabel.setText(userBean.getUserName());
        userIdLabel.setText(""+userBean.getUserId());
