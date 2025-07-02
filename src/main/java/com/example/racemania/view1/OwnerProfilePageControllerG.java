@@ -12,35 +12,35 @@ public class OwnerProfilePageControllerG {
     ReservationsHistoryController reservationsHistoryController = new ReservationsHistoryController();
 
     @FXML
-    private Label ErrorLabel;
+    private Label errorLabel;
 
     @FXML
-    private Label UsernameLabel;
+    private Label usernameLabel;
 
     @FXML
-    private Label EmailLabel;
+    private Label emailLabel;
 
     @FXML
-    private Label UserIdLabel;
+    private Label userIdLabel;
 
     @FXML
-    private Label RoleLabel;
+    private Label roleLabel;
 
     @FXML
-    private Hyperlink HomepageHyperlink;
+    private Hyperlink homepageHyperlink;
 
     @FXML
-    private Hyperlink InstructorsHyperlink;
+    private Hyperlink instructorsHyperlink;
 
 
     @FXML
-    private void ClickedOnInstructorsHyperlink(ActionEvent event){
-        ErrorLabel.setText("Not implemented sorry");
-        ErrorLabel.setVisible(true);
+    private void clickedOnInstructorsHyperlink(ActionEvent event){
+        errorLabel.setText("Not implemented sorry");
+        errorLabel.setVisible(true);
     }
 
     @FXML
-    private void ClickedOnHomepageHyperlink(ActionEvent event){
+    private void clickedOnHomepageHyperlink(ActionEvent event){
         FxmlLoader.setPage("OwnerHomePage");
     }
 
@@ -57,15 +57,15 @@ public class OwnerProfilePageControllerG {
                 userRole = "TrackOwner";
             }
             if(userBean == null){
+                // userBean is null  // to be handled
                 System.out.println("userBean is null");
             }
-        } catch (Exception e) {
-            System.out.println("userBean is null");
+        } catch (Exception _) {
+            // userBean is null // to be handled
         }
-
-        UsernameLabel.setText(userBean.getUserName());
-        UserIdLabel.setText(""+userBean.getUserId());
-        RoleLabel.setText(userRole);
-        EmailLabel.setText(userBean.getEmail());
+        usernameLabel.setText(userBean.getUserName());
+        userIdLabel.setText(""+userBean.getUserId());
+        roleLabel.setText(userRole);
+        emailLabel.setText(userBean.getEmail());
     }
 }
