@@ -93,7 +93,7 @@ public class TicketPageControllerG {
     }
 
     @FXML
-    public void clickedOnAddLap(ActionEvent actionEvent) throws IOException {
+    public void clickedOnAddLap(ActionEvent actionEvent){
         if(isDaily==false) {
 
             lapsNumber++;
@@ -117,7 +117,7 @@ public class TicketPageControllerG {
     }
 
     @FXML
-    public void clickedOnRemoveLap(ActionEvent actionEvent) throws IOException {
+    public void clickedOnRemoveLap(ActionEvent actionEvent){
         if(isDaily == false) {
             if (lapsNumber == 1) {
                 return;
@@ -127,13 +127,11 @@ public class TicketPageControllerG {
             }
             total = lapPrice * lapsNumber;
             updateTotalTextFlow();
-        } else {
-            return;
         }
     }
 
     @FXML
-    public void clickedOnPayment(ActionEvent event) throws IOException {      //il comando è collegato al bottone dal file FXML
+    public void clickedOnPayment(ActionEvent event){      //il comando è collegato al bottone dal file FXML
 
         bookLapsReservationController = new BookLapsReservationController();
 
@@ -158,7 +156,7 @@ public class TicketPageControllerG {
     }
 
     @FXML
-    public void clickedOnLapsRadioButton(ActionEvent actionEvent) throws IOException {
+    public void clickedOnLapsRadioButton(ActionEvent actionEvent){
         isDaily = false;
         lapsNumber = 1;
         updateTextFlow(lapsNumberTextFlow, " " + lapsNumber, 24);
@@ -167,7 +165,7 @@ public class TicketPageControllerG {
     }
 
     @FXML
-    public void clickedOnDailyRadioButton(ActionEvent actionEvent) throws IOException {
+    public void clickedOnDailyRadioButton(ActionEvent actionEvent){
         isDaily = true;
         total = dailyPrice;
         updateTotalTextFlow();
