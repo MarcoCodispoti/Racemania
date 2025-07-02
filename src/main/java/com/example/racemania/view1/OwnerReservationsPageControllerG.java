@@ -5,49 +5,48 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
 
 public class OwnerReservationsPageControllerG {
 
     @FXML
-    private Label ErrorLabel;
+    private Label errorLabel;
 
    @FXML
-   private Label ErrorLabel2;
+   private Label errorLabel2;
 
     @FXML
-    private Button LapsReservationsButton;
+    private Button lapsReservationsButton;
 
     @FXML
-    private Button SupercarReservationsButton;
+    private Button supercarReservationsButton;
 
     @FXML
-    private Hyperlink HomePageHyperlink;
+    private Hyperlink homePageHyperlink;
 
     @FXML
-    private Hyperlink InstructorsHyperlink;
+    private Hyperlink instructorsHyperlink;
 
     @FXML
-    public void ClickedOnLapsReservationsButton(ActionEvent event){
+    public void clickedOnLapsReservationsButton(ActionEvent event){
         FxmlLoader.setPage("OwnerLapsReservationsPage");
         // to be implemented
     }
 
     @FXML
-    public void ClickedOnSupercarReservationsButton(ActionEvent event) {
-        ErrorLabel2.setText("Not implemented sorry");
-        ErrorLabel2.setVisible(true);
+    public void clickedOnSupercarReservationsButton(ActionEvent event) {
+        errorLabel2.setText("Not implemented sorry");
+        errorLabel2.setVisible(true);
     }
 
     @FXML
-    public void ClickedOnHomePageHyperlink(ActionEvent event) {
+    public void clickedOnHomePageHyperlink(ActionEvent event) {
         FxmlLoader.setPage("OwnerHomePage");
     }
 
     @FXML
-    public void ClickedOnInstructorsHyperlink(ActionEvent event) {
-        ErrorLabel.setText("Not implemented sorry");
-        ErrorLabel.setVisible(true);
+    public void clickedOnInstructorsHyperlink(ActionEvent event) {
+        errorLabel.setText("Not implemented sorry");
+        errorLabel.setVisible(true);
     }
 
 }

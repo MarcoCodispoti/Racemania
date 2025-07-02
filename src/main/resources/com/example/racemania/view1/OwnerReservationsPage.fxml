@@ -25,7 +25,7 @@
             <AnchorPane layoutY="80.0" prefHeight="75.0" prefWidth="217.0">
                <children>
                   <AnchorPane layoutX="8.0" layoutY="74.0" prefHeight="1.0" prefWidth="201.0" style="-fx-background-color: white;" />
-                  <Hyperlink fx:id="HomePageHyperlink" layoutX="2.0" onAction="#ClickedOnHomePageHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Homepage" textFill="WHITE">
+                  <Hyperlink fx:id="homePageHyperlink" layoutX="2.0" onAction="#clickedOnHomePageHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Homepage" textFill="WHITE">
                      <font>
                         <Font size="32.0" />
                      </font>
@@ -35,7 +35,7 @@
             <AnchorPane layoutY="154.0" prefHeight="75.0" prefWidth="217.0">
                <children>
                   <AnchorPane layoutX="8.0" layoutY="74.0" prefHeight="1.0" prefWidth="201.0" style="-fx-background-color: white;" />
-                  <Hyperlink fx:id="InstructorsHyperlink" layoutX="2.0" onAction="#ClickedOnInstructorsHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Instructors" textFill="WHITE">
+                  <Hyperlink fx:id="instructorsHyperlink" layoutX="2.0" onAction="#clickedOnInstructorsHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Instructors" textFill="WHITE">
                      <font>
                         <Font size="32.0" />
                      </font>
@@ -73,17 +73,17 @@
             <Font size="34.0" />
          </font>
       </Text>
-      <Button fx:id="LapsReservationsDButton" layoutX="346.0" layoutY="416.0" mnemonicParsing="false" onAction="#ClickedOnLapsReservationsButton" prefHeight="78.0" prefWidth="300.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Prenotazioni Giri" textFill="WHITE">
+      <Button fx:id="LapsReservationsDButton" layoutX="346.0" layoutY="416.0" mnemonicParsing="false" onAction="#clickedOnLapsReservationsButton" prefHeight="78.0" prefWidth="300.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Prenotazioni Giri" textFill="WHITE">
          <font>
             <Font size="28.0" />
          </font>
       </Button>
-      <Button fx:id="SupercarReservationsButton" layoutX="707.0" layoutY="418.0" mnemonicParsing="false" onAction="#ClickedOnSupercarReservationsButton" prefHeight="78.0" prefWidth="300.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Prenotazioni Supercar" textFill="WHITE">
+      <Button fx:id="supercarReservationsButton" layoutX="707.0" layoutY="418.0" mnemonicParsing="false" onAction="#clickedOnSupercarReservationsButton" prefHeight="78.0" prefWidth="300.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Prenotazioni Supercar" textFill="WHITE">
          <font>
             <Font size="28.0" />
          </font>
       </Button>
-      <Label fx:id="ErrorLabel" layoutX="34.0" layoutY="252.0" prefHeight="17.0" prefWidth="147.0" textFill="WHITE" />
-      <Label fx:id="ErrorLabel2" layoutX="785.0" layoutY="524.0" prefHeight="17.0" prefWidth="147.0" />
+      <Label fx:id="errorLabel" layoutX="34.0" layoutY="252.0" prefHeight="17.0" prefWidth="147.0" textFill="WHITE" />
+      <Label fx:id="errorLabel2" layoutX="785.0" layoutY="524.0" prefHeight="17.0" prefWidth="147.0" />
    </children>
 </AnchorPane>
