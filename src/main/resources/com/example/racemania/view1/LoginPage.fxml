@@ -39,7 +39,7 @@
                         <Font size="32.0" />
                      </font>
                   </Label>
-                  <Button fx:id="LoginButton" layoutX="290.0" layoutY="321.0" mnemonicParsing="false" onAction="#ClickedOnLogin" prefHeight="54.0" prefWidth="200.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Login" textFill="WHITE">
+                  <Button fx:id="loginButton" layoutX="290.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickedOnLogin" prefHeight="54.0" prefWidth="200.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Login" textFill="WHITE">
                      <font>
                         <Font size="28.0" />
                      </font>

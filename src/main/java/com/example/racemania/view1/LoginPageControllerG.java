@@ -30,7 +30,7 @@ public class LoginPageControllerG {
     private TextField emailTextField;
 
     @FXML
-    private Button LoginButton;
+    private Button loginButton;
 
     AccountBean accountBean = new AccountBean();
 
@@ -53,30 +53,20 @@ public class LoginPageControllerG {
         try {
             accountBean = loginController.login(loginBean);
         }
-        catch(FailedLoginException | FailedFileAccessException e) {
-            // System.out.println("Credenziali errate");
+        catch(FailedLoginException | FailedFileAccessException _) {
             setErrorLabel("Credenziali errate");
             return null;
         }
         catch (SQLException e){
-            //not handles
-            // e.printStackTrace();
-            // System.out.println("Errore nel database");
             return null;
         }
-
-        System.out.println(" ");
-        System.out.println("I valori ottenuti da accountBean:  ");
-        System.out.println("Role: " + accountBean.getRole());
-        System.out.println("UserID: " + accountBean.getUserId());
-        System.out.println("TrackID: " + accountBean.getTrackId());
 
         return accountBean;
     }
 
 
     @FXML
-    public void ClickedOnLogin(ActionEvent event){
+    public void clickedOnLogin(ActionEvent event){
         if(checkFormats()){                                     // controllo se i formati inseriti siano validi
             AccountBean actualaccountBean = getAccountBean();
             if (actualaccountBean != null) {
