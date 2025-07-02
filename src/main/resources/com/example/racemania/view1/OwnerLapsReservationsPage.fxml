@@ -25,7 +25,7 @@
             <AnchorPane layoutY="80.0" prefHeight="75.0" prefWidth="217.0">
                <children>
                   <AnchorPane layoutX="8.0" layoutY="74.0" prefHeight="1.0" prefWidth="201.0" style="-fx-background-color: white;" />
-                  <Hyperlink fx:id="HomepageHyperlink" layoutX="2.0" onAction="#ClickedOnHomepageHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Homepage" textFill="WHITE">
+                  <Hyperlink fx:id="HomepageHyperlink" layoutX="2.0" onAction="#clickedOnHomepageHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Homepage" textFill="WHITE">
                      <font>
                         <Font size="32.0" />
                      </font>
@@ -35,7 +35,7 @@
             <AnchorPane layoutY="154.0" prefHeight="75.0" prefWidth="217.0">
                <children>
                   <AnchorPane layoutX="8.0" layoutY="74.0" prefHeight="1.0" prefWidth="201.0" style="-fx-background-color: white;" />
-                  <Hyperlink fx:id="InstructorsHyperlink" layoutX="2.0" onAction="#ClickedOnInstructorsHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Istruttori" textFill="WHITE">
+                  <Hyperlink fx:id="InstructorsHyperlink" layoutX="2.0" onAction="#clickedOnInstructorsHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Istruttori" textFill="WHITE">
                      <font>
                         <Font size="32.0" />
                      </font>
@@ -58,22 +58,22 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <Button fx:id="RejetcButton" layoutX="952.0" layoutY="594.0" mnemonicParsing="false" onAction="#ClickedOnRejectButton" prefHeight="54.0" prefWidth="237.0" style="-fx-background-color: #CC0000; -fx-background-radius: 18;" text="Rifiuta prenotazione" textFill="WHITE">
+      <Button fx:id="RejetcButton" layoutX="952.0" layoutY="594.0" mnemonicParsing="false" onAction="#clickedOnRejectButton" prefHeight="54.0" prefWidth="237.0" style="-fx-background-color: #CC0000; -fx-background-radius: 18;" text="Rifiuta prenotazione" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <ScrollPane fx:id="LapsReservationsScrollPane" layoutX="236.0" layoutY="90.0" prefHeight="628.0" prefWidth="705.0" style="-fx-border-color: #FF0000; -fx-background-color: white;">
+      <ScrollPane fx:id="lapsReservationsScrollPane" layoutX="236.0" layoutY="90.0" prefHeight="628.0" prefWidth="705.0" style="-fx-border-color: #FF0000; -fx-background-color: white;">
          <content>
-            <VBox fx:id="LapsReservationsVBox" prefHeight="621.0" prefWidth="680.0" style="-fx-background-color: white;" />
+            <VBox fx:id="lapsReservationsVBox" prefHeight="621.0" prefWidth="680.0" style="-fx-background-color: white;" />
          </content>
       </ScrollPane>
-      <Button fx:id="BackButton" layoutX="967.0" layoutY="660.0" mnemonicParsing="false" onAction="#ClickedOnBackButton" prefHeight="54.0" prefWidth="202.0" style="-fx-background-color: white; -fx-background-radius: 18; -fx-border-color: black; -fx-border-radius: 18;" text="Indietro">
+      <Button fx:id="backButton" layoutX="967.0" layoutY="660.0" mnemonicParsing="false" onAction="#clickedOnBackButton" prefHeight="54.0" prefWidth="202.0" style="-fx-background-color: white; -fx-background-radius: 18; -fx-border-color: black; -fx-border-radius: 18;" text="Indietro">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="ConfirmButton" layoutX="952.0" layoutY="526.0" mnemonicParsing="false" onAction="#ClickedOnConfirmButton" prefHeight="54.0" prefWidth="237.0" style="-fx-background-color: #00CC00; -fx-background-radius: 18;" text="Conferma prenotazione" textFill="WHITE">
+      <Button fx:id="confirmButton" layoutX="952.0" layoutY="526.0" mnemonicParsing="false" onAction="#clickedOnConfirmButton" prefHeight="54.0" prefWidth="237.0" style="-fx-background-color: #00CC00; -fx-background-radius: 18;" text="Conferma prenotazione" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>

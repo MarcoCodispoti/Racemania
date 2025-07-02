@@ -20,86 +20,77 @@ public class OwnerLapsReservationsPageControllerG {
     private Parent selectedCardUI;
 
     @FXML
-    private ScrollPane LapsReservationsScrollPane;
+    private ScrollPane lapsReservationsScrollPane;
 
     @FXML
-    private Label ErrorLabel;
+    private Label errorLabel;
 
     @FXML
-    private VBox LapsReservationsVBox;
+    private VBox lapsReservationsVBox;
 
     @FXML
-    private Button ConfirmButton;
+    private Button confirmButton;
 
     @FXML
-    private Button RejectButton;
+    private Button rejectButton;
 
     @FXML
-    private Button BackButton;
+    private Button backButton;
 
     @FXML
-    private Hyperlink ReservationsHyperlink;
+    private Hyperlink reservationsHyperlink;
 
     @FXML
-    private Hyperlink HomerpageHyperlink;
+    private Hyperlink homepageHyperlink;
 
     @FXML
-    public void ClickedOnBackButton(ActionEvent event) {
+    public void clickedOnBackButton(ActionEvent event) {
         FxmlLoader.setPage("OwnerReservationsPage");
     }
 
-    public void ClickedOnConfirmButton(ActionEvent event) {
+    public void clickedOnConfirmButton(ActionEvent event) {
         if(!checkSelection(selectedLapsReservation)){
             return;
         }
-        // Vado a sostituire la funzione
-        // TrackLapsReservationBean trackLapsReservationBean = new TrackLapsReservationBean();
         try {
             manageLapsReservationsController.manageLapsReservation(selectedLapsReservation.getReservationID(),"Accepted");
-            // trackLapsReservationBean.manageLapsReservation(selectedLapsReservation.getReservationID(), "Rejected");
             initialize();
-        } catch (SQLException ex) {
-            // Errore SQL
+        } catch (SQLException _) {
+            // not handled
         }
     }
 
-    public void ClickedOnRejectButton(ActionEvent event) {
+    public void clickedOnRejectButton(ActionEvent event) {
         if(!checkSelection(selectedLapsReservation)){
             return;
         }
-        // Vado a sostituire la funzione
-        // TrackLapsReservationBean trackLapsReservationBean = new TrackLapsReservationBean();
         try {
             manageLapsReservationsController.manageLapsReservation(selectedLapsReservation.getReservationID(),"Rejected");
-            // trackLapsReservationBean.manageLapsReservation(selectedLapsReservation.getReservationID(), "Rejected");
             initialize();
-        } catch (SQLException ex) {
-            // Errore SQL
+        } catch (SQLException _) {
+            // not handled
         }
     }
 
-    public void ClickedOnHomepageHyperlink(ActionEvent event) {
+    public void clickedOnHomepageHyperlink(ActionEvent event) {
         FxmlLoader.setPage("OwnerHomePage");
     }
 
-    public void ClickedOnInstructorsHyperlink(ActionEvent event) {
-        ErrorLabel.setText("Not implemented sorry");
-        ErrorLabel.setVisible(true);
+    public void clickedOnInstructorsHyperlink(ActionEvent event) {
+        errorLabel.setText("Not implemented sorry");
+        errorLabel.setVisible(true);
     }
 
 
 
     public void initialize() {
-        TrackLapsReservationBean lapsReservationBean;
-        // List<TrackLapsReservation> lapsReservationsList;
-        System.out.println("Inizializzo la pagina delle prenotazioni \n \n");
+        TrackLapsReservationBean lapsReservationBean = new TrackLapsReservationBean();
 
         try {
             lapsReservationBean = manageLapsReservationsController.getOwnerLapsReservation();
 
-        } catch (SQLException e) {
-            System.out.println("Errore nel caricamento delle prenotazioni effettuate");
-            throw new RuntimeException(e);
+        } catch (SQLException _) {
+            // to be handled
         }
 
         populateLapsReservations(lapsReservationBean.getOwnerTrackLapsReservations());
@@ -120,7 +111,7 @@ public class OwnerLapsReservationsPageControllerG {
 
 
     public void populateLapsReservations(List<TrackLapsReservation> lapsReservationsList ) {
-        LapsReservationsVBox.getChildren().clear();
+        lapsReservationsVBox.getChildren().clear();
 
         for (TrackLapsReservation trackLapsReservation : lapsReservationsList) {
             try {
@@ -135,7 +126,7 @@ public class OwnerLapsReservationsPageControllerG {
                 controller.setCardUI(ownerLapsReservationCard);
                 controller.setParentController(this);
 
-                LapsReservationsVBox.getChildren().add(ownerLapsReservationCard);
+                lapsReservationsVBox.getChildren().add(ownerLapsReservationCard);
 
             } catch (IOException e) {
                 System.out.println("ERRORE nel caricamento TrackCard.fxml");
