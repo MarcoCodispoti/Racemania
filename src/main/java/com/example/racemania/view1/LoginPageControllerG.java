@@ -57,7 +57,7 @@ public class LoginPageControllerG {
             setErrorLabel("Credenziali errate");
             return null;
         }
-        catch (SQLException e){
+        catch (SQLException _){
             return null;
         }
 
@@ -69,25 +69,28 @@ public class LoginPageControllerG {
     public void clickedOnLogin(ActionEvent event){
         if(checkFormats()){                                     // controllo se i formati inseriti siano validi
             AccountBean actualaccountBean = getAccountBean();
-            if (actualaccountBean != null) {
-                System.out.println("\n L'account ottenuto non è nullo \n");
-
-                if(LoggedUser.getInstance().getCustomer() != null){             // doppio controllo
-                    if(LoggedUser.getInstance().getRole().equals("CUSTOMER")){
-                        FxmlLoader.setPage("HomePage");
-                    }
-                }
-                else if(LoggedUser.getInstance().getTrackOwner() != null){
-                    if(LoggedUser.getInstance().getRole().equals("TRACK_OWNER")){
-                        FxmlLoader.setPage("OwnerHomePage");
-                    }
-                }
-                else {
-                    System.out.println("Errore di inizializzazione dell'utente loggato");
-                }
+            if (actualaccountBean != null) {  // l'account ottenuto non è nullo
+                checkAccount();
             }
         }
 
+    }
+
+
+    public void checkAccount(){
+        if(LoggedUser.getInstance().getCustomer() != null){
+            if(LoggedUser.getInstance().getRole().equals("CUSTOMER")){
+                FxmlLoader.setPage("HomePage");
+            }
+        }
+        else if(LoggedUser.getInstance().getTrackOwner() != null){
+            if(LoggedUser.getInstance().getRole().equals("TRACK_OWNER")){
+                FxmlLoader.setPage("OwnerHomePage");
+            }
+        }
+        else {
+            setErrorLabel("C'è stato un errrore");
+        }
     }
 
 
