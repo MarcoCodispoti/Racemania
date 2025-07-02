@@ -47,11 +47,16 @@ public class ProfilePageControllerG {
    }
 
    @FXML
-    private void clickedOnHomepageHyperlink(ActionEvent event){
-       FxmlLoader.setPage("HomePage");
+    private void clickedOnHomepageHyperlink(ActionEvent event) {
+
+       if (LoggedUser.getInstance().getCustomer() != null) {
+           FxmlLoader.setPage("HomePage");
+       } else if(LoggedUser.getInstance().getTrackOwner() != null) {
+           FxmlLoader.setPage("OwnerHomePage");
+       }
    }
 
-   public void initialize(){
+    public void initialize(){
        UserBean userBean = new UserBean();
         String userRole = null;
 

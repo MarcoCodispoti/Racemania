@@ -39,7 +39,7 @@ public class OwnerHomeControllerG {
 
     @FXML
     private void clickedOnProfileHyperlink(ActionEvent event) {
-        FxmlLoader.setPage("OwnerProfilePage");
+        FxmlLoader.setPage("ProfilePage");
     }
 
     @FXML
