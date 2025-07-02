@@ -1,7 +1,5 @@
 package com.example.racemania.view1;
 
-import java.lang.reflect.Field;
-
 import com.example.racemania.controller.BookLapsReservationController;
 import com.example.racemania.exceptions.FailedInsertException;
 import com.example.racemania.model.bean.TrackLapsReservationBean;
@@ -17,17 +15,17 @@ import javafx.scene.text.TextFlow;
 
 public class PaymentPageControllerG {
     TrackLapsReservationBean actualLapsReservationBean;
-    private int OrderTotal;
+    private int orderTotal;
 
     public void setTrackLapsReservationBean(TrackLapsReservationBean trackLapsReservationBean) {
         this.actualLapsReservationBean = trackLapsReservationBean;
-        OrderTotal = actualLapsReservationBean.getPrice();
+        orderTotal = actualLapsReservationBean.getPrice();
         updateTotalTextFlow();
     }
 
     public void updateTotalTextFlow(){
         totalPriceTextFlow.getChildren().clear();
-        Text info = new Text(OrderTotal+" €");
+        Text info = new Text(orderTotal +" €");
         info.setFont(Font.font("Arial", 28));
         info.setId("info");
         totalPriceTextFlow.getChildren().add(info);

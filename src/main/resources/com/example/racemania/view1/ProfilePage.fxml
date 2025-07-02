@@ -25,7 +25,7 @@
             <AnchorPane layoutY="80.0" prefHeight="75.0" prefWidth="217.0">
                <children>
                   <AnchorPane layoutX="8.0" layoutY="74.0" prefHeight="1.0" prefWidth="201.0" style="-fx-background-color: white;" />
-                  <Hyperlink fx:id="HomepageHyperlink" layoutX="2.0" onAction="#ClickedOnHomepageHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Homepage" textFill="WHITE">
+                  <Hyperlink fx:id="homepageHyperlink" layoutX="2.0" onAction="#clickedOnHomepageHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Homepage" textFill="WHITE">
                      <font>
                         <Font size="32.0" />
                      </font>
@@ -35,7 +35,7 @@
             <AnchorPane layoutY="154.0" prefHeight="75.0" prefWidth="217.0">
                <children>
                   <AnchorPane layoutX="8.0" layoutY="74.0" prefHeight="1.0" prefWidth="201.0" style="-fx-background-color: white;" />
-                  <Hyperlink fx:id="ReservationsHyperlink" layoutX="2.0" onAction="#ClickedOnReservationsHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Prenotazioni" textFill="WHITE">
+                  <Hyperlink fx:id="ReservationsHyperlink" layoutX="2.0" onAction="#clickedOnReservationsHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Prenotazioni" textFill="WHITE">
                      <font>
                         <Font size="32.0" />
                      </font>
@@ -45,7 +45,7 @@
             <AnchorPane layoutY="228.0" prefHeight="75.0" prefWidth="217.0">
                <children>
                   <AnchorPane layoutX="8.0" layoutY="74.0" prefHeight="1.0" prefWidth="201.0" style="-fx-background-color: white;" />
-                  <Hyperlink fx:id="CircuitsHyperlink" layoutX="2.0" onAction="#ClickedOnCircuitsHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Circuiti" textFill="WHITE">
+                  <Hyperlink fx:id="circuitsHyperlink" layoutX="2.0" onAction="#clickedOnCircuitsHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Circuiti" textFill="WHITE">
                      <font>
                         <Font size="32.0" />
                      </font>
@@ -89,26 +89,26 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Label fx:id="UsernameLabel" layoutX="358.0" layoutY="357.0" prefHeight="29.0" prefWidth="167.0">
+      <Label fx:id="usernameLabel" layoutX="358.0" layoutY="357.0" prefHeight="29.0" prefWidth="167.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="EmailLabel" layoutX="309.0" layoutY="397.0" prefHeight="29.0" prefWidth="269.0">
+      <Label fx:id="emailLabel" layoutX="309.0" layoutY="397.0" prefHeight="29.0" prefWidth="269.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="UserIdLabel" layoutX="351.0" layoutY="437.0" prefHeight="29.0" prefWidth="167.0">
+      <Label fx:id="userIdLabel" layoutX="351.0" layoutY="437.0" prefHeight="29.0" prefWidth="167.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="RoleLabel" layoutX="309.0" layoutY="477.0" prefHeight="29.0" prefWidth="167.0">
+      <Label fx:id="roleLabel" layoutX="309.0" layoutY="477.0" prefHeight="29.0" prefWidth="167.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="ErrorLabel" layoutX="34.0" layoutY="323.0" prefHeight="17.0" prefWidth="147.0" textFill="WHITE" />
+      <Label fx:id="errorLabel" layoutX="34.0" layoutY="323.0" prefHeight="17.0" prefWidth="147.0" textFill="WHITE" />
    </children>
 </AnchorPane>
