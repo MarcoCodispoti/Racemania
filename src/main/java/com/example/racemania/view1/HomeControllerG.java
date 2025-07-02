@@ -1,6 +1,5 @@
 package com.example.racemania.view1;
 
-import com.example.racemania.model.LoggedUser;
 import com.example.racemania.model.bean.TrackLapsReservationBean;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,30 +17,26 @@ public class HomeControllerG {
     }
 
     @FXML
-    private Hyperlink LogoutHyperlink;
+    private Hyperlink logoutHyperlink;
 
     @FXML
-    private Hyperlink ReservationsHyperlink;
+    private Hyperlink reservationsHyperlink;
 
     @FXML
     private AnchorPane anchorPane;
 
     @FXML
-    private Button BookTDButton;
+    private Button bookTDButton;
 
     @FXML
-    private Button DriveSupercarButton;
+    private Button driveSupercarButton;
 
     @FXML
-    private Hyperlink ProfileHyperlink;
+    private Hyperlink profileHyperlink;
 
 
-    public void ClickedOnBookTrackDay(ActionEvent event) throws IOException {      //il comando è collegato al bottone dal file FXML
+    public void clickedOnBookTrackDay(ActionEvent event) throws IOException {      //il comando è collegato al bottone dal file FXML
         actualLapsReservationBean = new TrackLapsReservationBean();
-
-//        if(actualLapsReservationBean.getUserID()==0 ){
-//            actualLapsReservationBean.setUserID(LoggedUser.getInstance().getCustomer().getUserId());
-//        }
 
 
         TrackPageControllerG controller = FxmlLoader.setPageAndReturnController("TrackPage");
@@ -49,17 +44,17 @@ public class HomeControllerG {
     }
 
     @FXML
-    public void ClickedOnReservationsHyperlink(ActionEvent event) throws IOException {
+    public void clickedOnReservationsHyperlink(ActionEvent event){
         FxmlLoader.setPage("ActiveReservationsPage");
     }
 
     @FXML
-    public void ClickedOnProfileHyperlink(ActionEvent event) throws IOException {
+    public void clickedOnProfileHyperlink(ActionEvent event){
         FxmlLoader.setPage("ProfilePage");
     }
 
     @FXML
-    public void ClickedOnLogoutHyperlink(ActionEvent event) throws IOException {
+    public void clickedOnLogoutHyperlink(ActionEvent event){
         FxmlLoader.setPage("LoginPage");
     }
 
