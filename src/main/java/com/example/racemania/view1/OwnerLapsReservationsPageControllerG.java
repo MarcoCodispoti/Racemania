@@ -79,6 +79,7 @@ public class OwnerLapsReservationsPageControllerG {
         FxmlLoader.setPage("OwnerHomePage");
     }
 
+    @FXML
     public void clickedOnInstructorsHyperlink(ActionEvent event) {
         errorLabel.setText("Not implemented sorry");
         errorLabel.setVisible(true);
@@ -121,8 +122,6 @@ public class OwnerLapsReservationsPageControllerG {
 
                 FXMLLoader cardloader = new FXMLLoader(getClass().getResource("/com/example/racemania/view1/OwnerLapsReservationCard.fxml"));
                 Parent ownerLapsReservationCard = cardloader.load();
-
-                System.out.println("TrackCard.fxml caricata con successo");
 
                 OwnerLapsReservationCardControllerG controller = cardloader.getController();
                 controller.setData(trackLapsReservation);
