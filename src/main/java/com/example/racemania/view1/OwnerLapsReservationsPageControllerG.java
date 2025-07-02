@@ -48,6 +48,7 @@ public class OwnerLapsReservationsPageControllerG {
         FxmlLoader.setPage("OwnerReservationsPage");
     }
 
+    @FXML
     public void clickedOnConfirmButton(ActionEvent event) {
         if(!checkSelection(selectedLapsReservation)){
             return;
@@ -60,6 +61,7 @@ public class OwnerLapsReservationsPageControllerG {
         }
     }
 
+    @FXML
     public void clickedOnRejectButton(ActionEvent event) {
         if(!checkSelection(selectedLapsReservation)){
             return;
@@ -72,6 +74,7 @@ public class OwnerLapsReservationsPageControllerG {
         }
     }
 
+    @FXML
     public void clickedOnHomepageHyperlink(ActionEvent event) {
         FxmlLoader.setPage("OwnerHomePage");
     }
@@ -128,23 +131,21 @@ public class OwnerLapsReservationsPageControllerG {
 
                 lapsReservationsVBox.getChildren().add(ownerLapsReservationCard);
 
-            } catch (IOException e) {
-                System.out.println("ERRORE nel caricamento TrackCard.fxml");
-                e.printStackTrace();
-            } catch (Exception e) {
-                System.out.println("Errore generico:");
-                e.printStackTrace();
+            } catch (IOException _) {
+                // to be handled
+            } catch(Exception _) {
+                // to be handled in another way
             }
         }
     }
 
     public boolean checkSelection(TrackLapsReservation trackLapsReservation){
         if(trackLapsReservation == null){
-            System.out.println("Seleziona una prenotazione prima");
+            errorLabel.setText("Seleziona una prenotazione prima");
             return false;
         }
         if(trackLapsReservation.getConfirmationStatus().equals("Rejected") || trackLapsReservation.getConfirmationStatus().equals("Accepted")){
-            System.out.println("La prenotazione è già stata accettata/rifiutata");
+            errorLabel.setText("La prenotazione è già stata accettata/rifiutata");
             return false;
         }
         return true;
