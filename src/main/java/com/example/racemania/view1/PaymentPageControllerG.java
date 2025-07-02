@@ -9,12 +9,11 @@ import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
-
-import java.sql.SQLException;
 
 public class PaymentPageControllerG {
     TrackLapsReservationBean actualLapsReservationBean;
@@ -27,86 +26,73 @@ public class PaymentPageControllerG {
     }
 
     public void updateTotalTextFlow(){
-        TotalPriceTextFlow.getChildren().clear();
+        totalPriceTextFlow.getChildren().clear();
         Text info = new Text(OrderTotal+" €");
         info.setFont(Font.font("Arial", 28));
         info.setId("info");
-        TotalPriceTextFlow.getChildren().add(info);
+        totalPriceTextFlow.getChildren().add(info);
     }
 
     @FXML
-    private TextField CardNumberTextField;
+    private Label errorLabel;
 
     @FXML
-    private TextField CardExpireDateTextField;
+    private TextField cardNumberTextField;
 
     @FXML
-    private TextField CardOwnerTextFIeld;
+    private TextField cardExpireDateTextField;
 
     @FXML
-    private TextFlow TotalPriceTextFlow;
+    private TextField cardOwnerTextFIeld;
 
     @FXML
-    private Button PayButton;
+    private TextFlow totalPriceTextFlow;
+
+    @FXML
+    private Button payButton;
 
     @FXML
     private TextField cvvTextField;
 
     @FXML
-    void ClickedOnPayButton(ActionEvent event) {
-        //FxmlLoader.setPage("ConfirmationPage");
+    void clickedOnPayButton(ActionEvent event) {
         if(validateCardNumber() && validateCardExpireDate() && validateCardOwner() && validateCVV()){
             BookLapsReservationController bookLapsReservationController = new BookLapsReservationController();
             try {
-                // DebugUtils.printFields(bookLapsReservationController);
-                // actualLapsReservationBean.setConfirmationStatus("Waiting for confirmation");
-
-                System.out.println("Controller: "); DebugUtils.printFields(bookLapsReservationController);
-                System.out.println("Bean: ");  DebugUtils.printFields(actualLapsReservationBean);
-                System.out.println("Dati da passare al DAO:");
-                System.out.println("User ID: " + actualLapsReservationBean.getUserID());
-                System.out.println("Reservation ID: " + actualLapsReservationBean.getReservationID());
-                System.out.println("Track ID: " + actualLapsReservationBean.getTrackID());
-                System.out.println("Price: " + actualLapsReservationBean.getPrice());
-                System.out.println("Laps: " + actualLapsReservationBean.getLaps());
-                System.out.println("Vehicle Plate: " + actualLapsReservationBean.getConfirmationStatus());
-
-
                 bookLapsReservationController.insertLapsReservation(actualLapsReservationBean);
-
-            } catch (FailedInsertException e){
-                e.printStackTrace();
+            } catch (FailedInsertException _){
+                // to be handled
             }
             FxmlLoader.setPage("ConfirmationPage");
         }
     }
 
     private boolean validateCardNumber(){
-        String cardnumber = CardNumberTextField.getText();
+        String cardnumber = cardNumberTextField.getText();
         if(cardnumber.matches("\\d{16}" /*"\\d{4} \\d{4} \\d{4} \\d{4}"*/)){
             return true;
         } else{
-            System.out.println("Inserisci Numero di carta valido nel formato: xxxx xxxx xxxx xxxx");
+            errorLabel.setText("Inserisci Numero di carta valido nel formato: xxxx xxxx xxxx xxxx");
             return false;
         }
     }
 
     private boolean validateCardOwner(){
-        String cardowner = CardOwnerTextFIeld.getText();
+        String cardowner = cardOwnerTextFIeld.getText();
         if(cardowner.matches("[a-zA-Z\\s]+")){
             return true;
         } else{
-            System.out.println("Inserisci un Nome Proprietario valido");
+            errorLabel.setText("Inserisci Nome proprietario valido");
             return false;
         }
     }
 
     private boolean validateCardExpireDate(){
-        String expireDate = CardExpireDateTextField.getText();
+        String expireDate = cardExpireDateTextField.getText();
         if(expireDate.matches("\\d{2}/\\d{2}")){
             return true;
         } else{
-            System.out.println("Formato data scadenza non valido.  Usa mm/aa");
+            errorLabel.setText("Formato data scadenza non valido:  Usa 'mm/aa'");
             return false;
         }
     }
@@ -116,33 +102,9 @@ public class PaymentPageControllerG {
         if(cvv.matches("\\d{3}")){
             return true;
         } else{
-            System.out.println("Inserisci un CVV valido");
+            errorLabel.setText("Inserisci CVV valido");
             return false;
         }
     }
-
-
-    public class DebugUtils {
-        public static void printFields(Object obj) {
-            if (obj == null) {
-                System.out.println("Oggetto nullo");
-                return;
-            }
-
-            Class<?> clazz = obj.getClass();
-            System.out.println("Stampo i campi di: " + clazz.getSimpleName());
-
-            for (Field field : clazz.getDeclaredFields()) {
-                field.setAccessible(true); // Permette di accedere anche a campi privati
-                try {
-                    Object value = field.get(obj);
-                    System.out.println(field.getName() + " = " + value);
-                } catch (IllegalAccessException e) {
-                    System.out.println(field.getName() + " = accesso negato");
-                }
-            }
-        }
-    }
-
 
 }

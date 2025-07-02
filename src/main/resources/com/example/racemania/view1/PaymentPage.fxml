@@ -82,7 +82,7 @@
             <Font size="34.0" />
          </font>
       </Text>
-      <Button fx:id="PayButton" layoutX="966.0" layoutY="669.0" mnemonicParsing="false" onAction="#ClickedOnPayButton" prefHeight="54.0" prefWidth="202.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Paga" textFill="WHITE">
+      <Button fx:id="payButton" layoutX="966.0" layoutY="669.0" mnemonicParsing="false" onAction="#clickedOnPayButton" prefHeight="54.0" prefWidth="202.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Paga" textFill="WHITE">
          <font>
             <Font size="28.0" />
          </font>
@@ -92,14 +92,14 @@
             <Font size="34.0" />
          </font>
       </Text>
-      <TextFlow fx:id="TotalPriceTextFlow" layoutX="1060.0" layoutY="610.0" prefHeight="34.0" prefWidth="103.0" style="-fx-background-color: #EEEEEE; -fx-background-radius: 10; -fx-border-radius: 10;" />
+      <TextFlow fx:id="totalPriceTextFlow" layoutX="1060.0" layoutY="610.0" prefHeight="34.0" prefWidth="103.0" style="-fx-background-color: #EEEEEE; -fx-background-radius: 10; -fx-border-radius: 10;" />
       <Text layoutX="234.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titolare Carta">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="CardOwnerTextFIeld" layoutX="389.0" layoutY="357.0" prefHeight="27.0" prefWidth="291.0" promptText=" Nome Cognome" />
-      <TextField fx:id="CardNumberTextField" layoutX="389.0" layoutY="402.0" prefHeight="27.0" prefWidth="291.0" promptText="XXXX XXXX XXXX XXXX" />
+      <TextField fx:id="cardOwnerTextFIeld" layoutX="389.0" layoutY="357.0" prefHeight="27.0" prefWidth="291.0" promptText=" Nome Cognome" />
+      <TextField fx:id="cardNumberTextField" layoutX="389.0" layoutY="402.0" prefHeight="27.0" prefWidth="291.0" promptText="XXXX XXXX XXXX XXXX" />
       <Text layoutX="234.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numero Carta">
          <font>
             <Font size="24.0" />
@@ -115,7 +115,8 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="CardExpireDateTextField" layoutX="389.0" layoutY="444.0" prefHeight="27.0" prefWidth="80.0" promptText="mm/aa" />
+      <TextField fx:id="cardExpireDateTextField" layoutX="389.0" layoutY="444.0" prefHeight="27.0" prefWidth="80.0" promptText="mm/aa" />
       <TextField fx:id="cvvTextField" layoutX="602.0" layoutY="445.0" prefHeight="27.0" prefWidth="80.0" promptText="xxx" />
+      <Label fx:id="errorLabel" layoutX="238.0" layoutY="488.0" prefHeight="17.0" prefWidth="444.0" />
    </children>
 </AnchorPane>
