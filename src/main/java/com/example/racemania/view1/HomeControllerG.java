@@ -32,7 +32,7 @@ public class HomeControllerG {
     @FXML
     private Hyperlink profileHyperlink;
 
-
+    @FXML
     public void clickedOnBookTrackDay(ActionEvent event){      //il comando è collegato al bottone dal file FXML
         actualLapsReservationBean = new TrackLapsReservationBean();
 
