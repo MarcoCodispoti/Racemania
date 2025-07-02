@@ -38,8 +38,7 @@ public class OwnerLapsReservationCardControllerG {
 
     public void setData(TrackLapsReservation trackLapsReservation) throws SQLException {
         this.trackLapsReservation = trackLapsReservation;
-        TrackBean trackBean = new TrackBean();
-        VehicleBean vehicleBean = new VehicleBean();
+        VehicleBean vehicleBean;
 
         String reservationVehiclePlate = trackLapsReservation.getVehiclePlate();
 
