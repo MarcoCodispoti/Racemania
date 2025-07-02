@@ -67,7 +67,7 @@ public class OwnerHomeControllerG {
             bean = manageLapsReservationsController.getActiveOwnerLapsReservation();
             trackLapsReservationList = bean.getOwnerActiveTrackLapsReservations();
         }
-        catch (Exception e) {
+        catch (Exception _) {
             // to be handled
         }
 
