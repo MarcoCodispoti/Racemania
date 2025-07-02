@@ -22,51 +22,47 @@ public class TicketPageControllerG {
 
     public void setTrackLapsReservationBean(TrackLapsReservationBean trackLapsReservationBean) {
         this.actualLapsReservationBean = trackLapsReservationBean;
-        System.out.println("" + actualLapsReservationBean.getLapPrice());
-        System.out.println("" + actualLapsReservationBean.getDailyPrice());
         setPrices(trackLapsReservationBean);
-        System.out.println("" + actualLapsReservationBean.getLapPrice());
-        System.out.println("" + actualLapsReservationBean.getDailyPrice());
 
-        updateTextFlow(DailyPriceTextFlow, DailyPrice+ " €",24);  // nel parametro a destra mettere il testo da inserire
-        updateTextFlow(LapPriceTextFlow, LapPrice+" €",24);
+        updateTextFlow(dailyPriceTextFlow, dailyPrice + " €",24);  // nel parametro a destra mettere il testo da inserire
+        updateTextFlow(lapPriceTextFlow, lapPrice +" €",24);
     }
 
     private boolean isDaily = false;
-    private int DailyPrice;
-    private int LapsNumber = 1;
-    private int LapPrice;
-    private int Total;
+    private int dailyPrice;
+    private int lapsNumber = 1;
+    private int lapPrice;
+    private int total;
 
 
     @FXML
-    private RadioButton LapsRadioButton;
+    private RadioButton lapsRadioButton;
     @FXML
-    private ToggleGroup TicketToogleGroup;
+    private ToggleGroup ticketToogleGroup;
 
     @FXML
-    private RadioButton DailyRadioButton;
+    private RadioButton dailyRadioButton;
 
     @FXML
-    private Button AddLapButton;
+    private Button addLapButton;
 
     @FXML
-    private Button RemoveLapButton;
+    private Button removeLapButton;
 
     @FXML
-    private TextFlow DailyPriceTextFlow;
+    private TextFlow dailyPriceTextFlow;
 
     @FXML
-    private TextFlow LapsNumberTextFlow;
+    private TextFlow lapsNumberTextFlow;
 
     @FXML
-    private TextFlow LapPriceTextFlow;
+    private TextFlow lapPriceTextFlow;
 
     @FXML
-    private TextFlow TotalTextFlow;
+    private TextFlow totalTextFlow;
 
     @FXML
-    private Button PaymentButton;
+    private Button paymentButton;
 
 
 
@@ -79,44 +75,40 @@ public class TicketPageControllerG {
     }
 
     public void updateTotalTextFlow(){
-        TotalTextFlow.getChildren().clear();
-        Text info = new Text(Total+" €");
+        totalTextFlow.getChildren().clear();
+        Text info = new Text(total +" €");
         info.setFont(Font.font("Arial", 28));
         info.setId("info");
-        TotalTextFlow.getChildren().add(info);
+        totalTextFlow.getChildren().add(info);
     }
 
     public void setPrices(TrackLapsReservationBean trackLapsReservationBean){
-        DailyPrice = trackLapsReservationBean.getDailyPrice();
-        LapPrice = trackLapsReservationBean.getLapPrice();
+        dailyPrice = trackLapsReservationBean.getDailyPrice();
+        lapPrice = trackLapsReservationBean.getLapPrice();
     }
 
     public void initialize() {
-        //updateDailyPriceTextFlow();
-        //setPrices(actualLapsReservationBean);
-
-         // nel parametro a destra mettere il testo da inserire
-        updateTextFlow(LapsNumberTextFlow, " " + LapsNumber ,24);
-        updateTextFlow(TotalTextFlow, Total +" €",28);
+        updateTextFlow(lapsNumberTextFlow, " " + lapsNumber,24);
+        updateTextFlow(totalTextFlow, total +" €",28);
 
     }
 
     public void ClickedOnAddLap(ActionEvent actionEvent) throws IOException {
         if(isDaily==false) {
 
-            LapsNumber++;
-            updateTextFlow(LapsNumberTextFlow, " " + LapsNumber, 24);
-            if(LapsNumber>=16){
-                LapsNumber = 0;
-                updateTextFlow(LapsNumberTextFlow, " " + LapsNumber, 24);
+            lapsNumber++;
+            updateTextFlow(lapsNumberTextFlow, " " + lapsNumber, 24);
+            if(lapsNumber >=16){
+                lapsNumber = 0;
+                updateTextFlow(lapsNumberTextFlow, " " + lapsNumber, 24);
                 isDaily = true;
-                Total = DailyPrice;
-                DailyRadioButton.setSelected(true);
-                LapsRadioButton.setSelected(false);
+                total = dailyPrice;
+                dailyRadioButton.setSelected(true);
+                lapsRadioButton.setSelected(false);
                 updateTotalTextFlow();
             } else {
                 isDaily = false;
-                Total = LapPrice * LapsNumber;
+                total = lapPrice * lapsNumber;
                 updateTotalTextFlow();
             }
         } else{
@@ -126,13 +118,13 @@ public class TicketPageControllerG {
 
     public void ClickedOnRemoveLap(ActionEvent actionEvent) throws IOException {
         if(isDaily == false) {
-            if (LapsNumber == 1) {
+            if (lapsNumber == 1) {
                 return;
             } else {
-                LapsNumber--;
-                updateTextFlow(LapsNumberTextFlow, " " + LapsNumber, 24);
+                lapsNumber--;
+                updateTextFlow(lapsNumberTextFlow, " " + lapsNumber, 24);
             }
-            Total = LapPrice * LapsNumber;
+            total = lapPrice * lapsNumber;
             updateTotalTextFlow();
         } else {
             return;
@@ -140,40 +132,40 @@ public class TicketPageControllerG {
     }
 
     public void ClickedOnPayment(ActionEvent event) throws IOException {      //il comando è collegato al bottone dal file FXML
-        // FxmlLoader.setPage("PaymentPage");                          //Comando per cambiare pagina
+
         bookLapsReservationController = new BookLapsReservationController();
 
-        if(LapsRadioButton.isSelected() || DailyRadioButton.isSelected()) {
-            if(DailyRadioButton.isSelected()){
-                LapsNumber = 0;
+        if(lapsRadioButton.isSelected() || dailyRadioButton.isSelected()) {
+            if(dailyRadioButton.isSelected()){
+                lapsNumber = 0;
             }
 
             try {
-                bookLapsReservationController.setTicketInfo(actualLapsReservationBean, isDaily, LapPrice, Total, LapsNumber);
+                bookLapsReservationController.setTicketInfo(actualLapsReservationBean, isDaily, lapPrice, total, lapsNumber);
             }
-            catch (FailedInsertException e) {
-                e.printStackTrace();
+            catch (FailedInsertException _) {
+               // to be handled
             }
 
             PaymentPageControllerG controller = FxmlLoader.setPageAndReturnController("PaymentPage");
             controller.setTrackLapsReservationBean(actualLapsReservationBean);
         } else {
-            System.out.println("Seleziona un tipo di biglietto");
-            return;
+            // System.out.println("Seleziona un tipo di biglietto");
+            // aggiungere un error label
         }
     }
 
     public void ClickedOnLapsRadioButton(ActionEvent actionEvent) throws IOException {
         isDaily = false;
-        LapsNumber = 1;
-        updateTextFlow(LapsNumberTextFlow, " " + LapsNumber, 24);
-        Total = LapPrice*LapsNumber;
+        lapsNumber = 1;
+        updateTextFlow(lapsNumberTextFlow, " " + lapsNumber, 24);
+        total = lapPrice * lapsNumber;
         updateTotalTextFlow();
     }
 
     public void ClickedOnDailyRadioButton(ActionEvent actionEvent) throws IOException {
         isDaily = true;
-        Total = DailyPrice;
+        total = dailyPrice;
         updateTotalTextFlow();
     }
 }

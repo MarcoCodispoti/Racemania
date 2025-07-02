@@ -82,7 +82,7 @@
             <Font size="34.0" />
          </font>
       </Text>
-      <Button fx:id="PaymentButton" layoutX="966.0" layoutY="669.0" mnemonicParsing="false" onAction="#ClickedOnPayment" prefHeight="54.0" prefWidth="202.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Pagamento" textFill="WHITE">
+      <Button fx:id="paymentButton" layoutX="966.0" layoutY="669.0" mnemonicParsing="false" onAction="#ClickedOnPayment" prefHeight="54.0" prefWidth="202.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Pagamento" textFill="WHITE">
          <font>
             <Font size="28.0" />
          </font>
@@ -97,27 +97,27 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <RadioButton fx:id="LapsRadioButton" layoutX="233.0" layoutY="407.0" mnemonicParsing="false" onAction="#ClickedOnLapsRadioButton" text="Giri Singoli:">
+      <RadioButton fx:id="lapsRadioButton" layoutX="233.0" layoutY="407.0" mnemonicParsing="false" onAction="#ClickedOnLapsRadioButton" text="Giri Singoli:">
          <toggleGroup>
-            <ToggleGroup fx:id="TicketToogleGroup" />
+            <ToggleGroup fx:id="ticketToogleGroup" />
          </toggleGroup>
          <font>
             <Font size="26.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="DailyRadioButton" graphicTextGap="0.0" layoutX="234.0" layoutY="353.0" mnemonicParsing="false" onAction="#ClickedOnDailyRadioButton" text="Biglietto giornaliero:" toggleGroup="$TicketToogleGroup">
+      <RadioButton fx:id="dailyRadioButton" graphicTextGap="0.0" layoutX="234.0" layoutY="353.0" mnemonicParsing="false" onAction="#ClickedOnDailyRadioButton" text="Biglietto giornaliero:" toggleGroup="$ticketToogleGroup">
          <font>
             <Font size="26.0" />
          </font>
       </RadioButton>
-      <TextFlow fx:id="LapPriceTextFlow" layoutX="409.0" layoutY="464.0" prefHeight="27.0" prefWidth="97.0" style="-fx-background-color: #EEEEEE; -fx-background-radius: 10; -fx-border-radius: 10;" />
-      <TextFlow fx:id="LapsNumberTextFlow" layoutX="458.0" layoutY="505.0" prefHeight="33.0" prefWidth="48.0" style="-fx-background-color: #EEEEEE; -fx-background-radius: 10; -fx-border-radius: 10;" />
-      <Button fx:id="AddLapButton" layoutX="510.0" layoutY="503.0" mnemonicParsing="false" onAction="#ClickedOnAddLap" prefHeight="32.0" prefWidth="42.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="+" textFill="WHITE">
+      <TextFlow fx:id="lapPriceTextFlow" layoutX="409.0" layoutY="464.0" prefHeight="27.0" prefWidth="97.0" style="-fx-background-color: #EEEEEE; -fx-background-radius: 10; -fx-border-radius: 10;" />
+      <TextFlow fx:id="lapsNumberTextFlow" layoutX="458.0" layoutY="505.0" prefHeight="33.0" prefWidth="48.0" style="-fx-background-color: #EEEEEE; -fx-background-radius: 10; -fx-border-radius: 10;" />
+      <Button fx:id="addLapButton" layoutX="510.0" layoutY="503.0" mnemonicParsing="false" onAction="#ClickedOnAddLap" prefHeight="32.0" prefWidth="42.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="+" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="RemoveLapButton" layoutX="412.0" layoutY="503.0" mnemonicParsing="false" onAction="#ClickedOnRemoveLap" prefHeight="32.0" prefWidth="42.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="-" textFill="WHITE">
+      <Button fx:id="removeLapButton" layoutX="412.0" layoutY="503.0" mnemonicParsing="false" onAction="#ClickedOnRemoveLap" prefHeight="32.0" prefWidth="42.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="-" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -127,12 +127,12 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <TextFlow fx:id="DailyPriceTextFlow" layoutX="584.0" layoutY="358.0" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #EEEEEE; -fx-background-radius: 10; -fx-border-radius: 10;" />
+      <TextFlow fx:id="dailyPriceTextFlow" layoutX="584.0" layoutY="358.0" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #EEEEEE; -fx-background-radius: 10; -fx-border-radius: 10;" />
       <Text layoutX="950.0" layoutY="638.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Totale:">
          <font>
             <Font size="34.0" />
          </font>
       </Text>
-      <TextFlow fx:id="TotalTextFlow" layoutX="1060.0" layoutY="610.0" prefHeight="34.0" prefWidth="103.0" style="-fx-background-color: #EEEEEE; -fx-background-radius: 10; -fx-border-radius: 10;" />
+      <TextFlow fx:id="totalTextFlow" layoutX="1060.0" layoutY="610.0" prefHeight="34.0" prefWidth="103.0" style="-fx-background-color: #EEEEEE; -fx-background-radius: 10; -fx-border-radius: 10;" />
    </children>
 </AnchorPane>
