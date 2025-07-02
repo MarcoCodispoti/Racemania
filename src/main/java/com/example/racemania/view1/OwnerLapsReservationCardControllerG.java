@@ -17,16 +17,16 @@ public class OwnerLapsReservationCardControllerG {
     private Parent cardUI;
 
     @FXML
-    private Label DateLabel;
+    private Label dateLabel;
 
     @FXML
-    private Label VehicleLabel;
+    private Label vehicleLabel;
 
     @FXML
-    private Label DetailsLabel;
+    private Label detailsLabel;
 
     @FXML
-    private Label ConfirmationStatusLabel;
+    private Label confirmationStatusLabel;
 
     @FXML
     private void handleClick() {
@@ -47,21 +47,20 @@ public class OwnerLapsReservationCardControllerG {
             vehicleBean = manageLapsReservationsController.getVehicle(reservationVehiclePlate);
         }
         catch (SQLException e){
-            // not handled
-            System.out.println("Errore nell'ottenere informazioni sul tracciato o sul veicolo");
-            throw new SQLException();
+            // not handled   // errore nell'ottenere informazioni sul tracciato o veicolo
+            throw new SQLException(e);
         }
 
         if(trackLapsReservation.getIsDaily()) {
-            DetailsLabel.setText("Ingresso giornaliero");
+            detailsLabel.setText("Ingresso giornaliero");
         } else {
-            DetailsLabel.setText("Numero di giri: "+trackLapsReservation.getLaps());
+            detailsLabel.setText("Numero di giri: "+trackLapsReservation.getLaps());
         }
 
-        VehicleLabel.setText(""+vehicleBean.getBrand() + " " + vehicleBean.getModel() +
+        vehicleLabel.setText(""+vehicleBean.getBrand() + " " + vehicleBean.getModel() +
                              " IY: " + vehicleBean.getImmatriculationYear() + ", last check: " + vehicleBean.getLastcheckYear());
-        ConfirmationStatusLabel.setText(""+trackLapsReservation.getConfirmationStatus());
-        DateLabel.setText(""+trackLapsReservation.getDate());
+        confirmationStatusLabel.setText(""+trackLapsReservation.getConfirmationStatus());
+        dateLabel.setText(""+trackLapsReservation.getDate());
     }
 
 
