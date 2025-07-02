@@ -58,7 +58,6 @@ public class OwnerProfilePageControllerG {
             }
             if(userBean == null){
                 // userBean is null  // to be handled
-                System.out.println("userBean is null");
             }
         } catch (Exception _) {
             // userBean is null // to be handled
