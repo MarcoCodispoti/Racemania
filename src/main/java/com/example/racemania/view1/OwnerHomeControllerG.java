@@ -94,10 +94,10 @@ public class OwnerHomeControllerG {
 
                 activeReservationsVBox.getChildren().add(ownerActiveReservationCard);
 
-            } catch (IOException e) {
-                e.printStackTrace(); // errore nel caricamento della track_card
-            } catch (Exception e) {
-                e.printStackTrace(); // errore generico
+            } catch (IOException _) {
+                //to be handled // errore nel caricamento della track_card
+            } catch (Exception _) {
+                //to be handled // errore generico
             }
         }
     }
