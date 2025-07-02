@@ -25,7 +25,7 @@
             <AnchorPane layoutY="80.0" prefHeight="75.0" prefWidth="217.0">
                <children>
                   <AnchorPane layoutX="8.0" layoutY="74.0" prefHeight="1.0" prefWidth="201.0" style="-fx-background-color: white;" />
-                  <Hyperlink fx:id="ReservationsHyperlink" layoutX="2.0" onAction="#ClickedOnReservationsHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Prenotazioni" textFill="WHITE">
+                  <Hyperlink fx:id="reservationsHyperlink" layoutX="2.0" onAction="#clickedOnReservationsHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Prenotazioni" textFill="WHITE">
                      <font>
                         <Font size="32.0" />
                      </font>
@@ -35,7 +35,7 @@
             <AnchorPane layoutY="154.0" prefHeight="75.0" prefWidth="217.0">
                <children>
                   <AnchorPane layoutX="8.0" layoutY="74.0" prefHeight="1.0" prefWidth="201.0" style="-fx-background-color: white;" />
-                  <Hyperlink fx:id="InstructorsHyperlink" layoutX="2.0" onAction="#ClickedOnInstructorsHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Istruttori" textFill="WHITE">
+                  <Hyperlink fx:id="instructorsHyperlink" layoutX="2.0" onAction="#clickedOnInstructorsHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Istruttori" textFill="WHITE">
                      <font>
                         <Font size="32.0" />
                      </font>
@@ -44,7 +44,7 @@
             </AnchorPane>
             <AnchorPane layoutY="666.0" prefHeight="75.0" prefWidth="217.0">
                <children>
-                  <Hyperlink fx:id="ProfileHyperlink" layoutX="2.0" onAction="#ClickedOnProfileHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Profilo" textFill="WHITE">
+                  <Hyperlink fx:id="profileHyperlink" layoutX="2.0" onAction="#clickedOnProfileHyperlink" prefHeight="74.0" prefWidth="217.0" text=" Profilo" textFill="WHITE">
                      <font>
                         <Font size="32.0" />
                      </font>
@@ -58,7 +58,7 @@
             </AnchorPane>
             <AnchorPane layoutY="612.0" prefHeight="57.0" prefWidth="219.0">
                <children>
-                  <Hyperlink fx:id="logoutHyperlink" layoutX="6.0" onAction="#ClickedOnLogoutHyperlink" prefHeight="74.0" prefWidth="211.0" text=" Logout" textFill="WHITE">
+                  <Hyperlink fx:id="logoutHyperlink" layoutX="6.0" onAction="#clickedOnLogoutHyperlink" prefHeight="74.0" prefWidth="211.0" text=" Logout" textFill="WHITE">
                      <font>
                         <Font size="26.0" />
                      </font>
@@ -70,7 +70,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <Label fx:id="ErrorLabel" layoutX="34.0" layoutY="252.0" prefHeight="17.0" prefWidth="147.0" textFill="WHITE" />
+            <Label fx:id="errorLabel" layoutX="34.0" layoutY="252.0" prefHeight="17.0" prefWidth="147.0" textFill="WHITE" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="217.0" prefHeight="220.0" prefWidth="983.0">
@@ -87,9 +87,9 @@
             <Font size="34.0" />
          </font>
       </Text>
-      <ScrollPane fx:id="ActiveReservationsScrollPane" layoutX="246.0" layoutY="279.0" prefHeight="449.0" prefWidth="923.0" style="-fx-border-color: #FF0000; -fx-background-color: white;">
+      <ScrollPane fx:id="activeReservationsScrollPane" layoutX="246.0" layoutY="279.0" prefHeight="449.0" prefWidth="923.0" style="-fx-border-color: #FF0000; -fx-background-color: white;">
          <content>
-            <VBox fx:id="ActiveReservationsVBox" prefHeight="440.0" prefWidth="897.0" style="-fx-background-color: white;" />
+            <VBox fx:id="activeReservationsVBox" prefHeight="440.0" prefWidth="897.0" style="-fx-background-color: white;" />
          </content>
       </ScrollPane>
    </children>

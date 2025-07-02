@@ -20,42 +20,42 @@ public class OwnerHomeControllerG {
     private Hyperlink logoutHyperlink;
 
     @FXML
-    private ScrollPane ActiveReservationsScrollPane;
+    private ScrollPane activeReservationsScrollPane;
 
     @FXML
-    private VBox ActiveReservationsVBox;
+    private VBox activeReservationsVBox;
 
     @FXML
-    private Hyperlink ReservationsHyperlink;
+    private Hyperlink reservationsHyperlink;
 
     @FXML
-    private Hyperlink InstructorsHyperlink;
+    private Hyperlink instructorsHyperlink;
 
     @FXML
-    private Label ErrorLabel;
+    private Label errorLabel;
 
     @FXML
-    private Hyperlink ProfileHyperlink;
+    private Hyperlink profileHyperlink;
 
     @FXML
-    private void ClickedOnProfileHyperlink(ActionEvent event) throws IOException {
+    private void clickedOnProfileHyperlink(ActionEvent event) {
         FxmlLoader.setPage("OwnerProfilePage");
     }
 
     @FXML
-    private void ClickedOnLogoutHyperlink(ActionEvent event) throws IOException {
+    private void clickedOnLogoutHyperlink(ActionEvent event){
         FxmlLoader.setPage("LoginPage");
     }
 
     @FXML
-    public void ClickedOnReservationsHyperlink(ActionEvent event){
+    public void clickedOnReservationsHyperlink(ActionEvent event){
         FxmlLoader.setPage("OwnerReservationsPage");
     }
 
     @FXML
-    public void ClickedOnInstructorsHyperlink(ActionEvent event){
-        ErrorLabel.setText("Not implemented sorry");
-        ErrorLabel.setVisible(true);
+    public void clickedOnInstructorsHyperlink(ActionEvent event){
+        errorLabel.setText("Not implemented sorry");
+        errorLabel.setVisible(true);
     }
 
 
@@ -72,39 +72,32 @@ public class OwnerHomeControllerG {
         }
 
         if (trackLapsReservationList == null || trackLapsReservationList.isEmpty()) {
-            System.out.println("Nessuna prenotazione trovata nel database.");
-            return;
+            // to be handled
+            return; // nessuna prenotazione trovata
         }
-        System.out.println("Caricati " + trackLapsReservationList.size() + " tracciati dal TrackBean.");
 
         populateActiveLapsReservations(trackLapsReservationList);
     }
 
     public void populateActiveLapsReservations(List<TrackLapsReservation> trackLapsReservatonList) {
-        ActiveReservationsVBox.getChildren().clear();
+        activeReservationsVBox.getChildren().clear();
 
         for (TrackLapsReservation trackLapsReservation : trackLapsReservatonList) {
             try {
-                System.out.println("Sto caricando una LapsReservationCard per: " + trackLapsReservation.getReservationID());
-
                 FXMLLoader cardloader = new FXMLLoader(getClass().getResource("/com/example/racemania/view1/OwnerActiveReservationCard.fxml"));
                 Parent ownerActiveReservationCard = cardloader.load();
-
-                System.out.println("TrackCard.fxml caricata con successo");
 
                 OwnerActiveReservationCardControllerG controller = cardloader.getController();
                 controller.setData(trackLapsReservation);
                 controller.setCardUI(ownerActiveReservationCard);
                 controller.setParentController(this);
 
-                ActiveReservationsVBox.getChildren().add(ownerActiveReservationCard);
+                activeReservationsVBox.getChildren().add(ownerActiveReservationCard);
 
             } catch (IOException e) {
-                System.out.println("ERRORE nel caricamento TrackCard.fxml");
-                e.printStackTrace();
+                e.printStackTrace(); // errore nel caricamento della track_card
             } catch (Exception e) {
-                System.out.println("Errore generico:");
-                e.printStackTrace();
+                e.printStackTrace(); // errore generico
             }
         }
     }
