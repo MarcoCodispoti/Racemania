@@ -7,8 +7,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.layout.AnchorPane;
 
-import java.io.IOException;
-
 public class HomeControllerG {
     TrackLapsReservationBean actualLapsReservationBean;
 
@@ -35,7 +33,7 @@ public class HomeControllerG {
     private Hyperlink profileHyperlink;
 
 
-    public void clickedOnBookTrackDay(ActionEvent event) throws IOException {      //il comando è collegato al bottone dal file FXML
+    public void clickedOnBookTrackDay(ActionEvent event){      //il comando è collegato al bottone dal file FXML
         actualLapsReservationBean = new TrackLapsReservationBean();
 
 
