@@ -71,7 +71,7 @@ public class ProfilePageControllerG {
            if(userBean == null){
                // da gestire
            }
-       } catch (Exception e) {
+       } catch (Exception _) {
            // da gestire dopo
        }
 
