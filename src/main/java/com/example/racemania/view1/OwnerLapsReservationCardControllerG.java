@@ -46,7 +46,6 @@ public class OwnerLapsReservationCardControllerG {
             vehicleBean = manageLapsReservationsController.getVehicle(reservationVehiclePlate);
         }
         catch (SQLException e){
-            // not handled   // errore nell'ottenere informazioni sul tracciato o veicolo
             throw new SQLException(e);
         }
 
