@@ -94,7 +94,7 @@ public class TicketPageControllerG {
 
     @FXML
     public void clickedOnAddLap(ActionEvent actionEvent){
-        if(isDaily==false) {
+        if(!isDaily) {
 
             lapsNumber++;
             updateTextFlow(lapsNumberTextFlow, " " + lapsNumber, 24);
@@ -111,14 +111,12 @@ public class TicketPageControllerG {
                 total = lapPrice * lapsNumber;
                 updateTotalTextFlow();
             }
-        } else{
-            return;
         }
     }
 
     @FXML
     public void clickedOnRemoveLap(ActionEvent actionEvent){
-        if(isDaily == false) {
+        if(!isDaily) {
             if (lapsNumber == 1) {
                 return;
             } else {
