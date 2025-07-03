@@ -92,5 +92,6 @@
             <VBox fx:id="trackVBox" prefHeight="368.0" prefWidth="680.0" style="-fx-background-color: white;" />
          </content>
       </ScrollPane>
+      <Label fx:id="errorLabel" layoutX="952.0" layoutY="624.0" prefHeight="17.0" prefWidth="236.0" />
    </children>
 </AnchorPane>

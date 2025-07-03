@@ -11,6 +11,7 @@ import java.util.List;
 
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -23,6 +24,9 @@ public class TrackPageControllerG {
     private Track selectedTrack;
     private Parent selectedCardUI;
     private TrackLapsReservationBean actualLapsReservationBean;
+
+    @FXML
+    private Label errorLabel;
 
     @FXML
     private Button proceedButton;
