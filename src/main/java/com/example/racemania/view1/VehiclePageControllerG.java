@@ -94,16 +94,12 @@ public class VehiclePageControllerG {
     }
 
     public boolean checkIsFull(){
-        if( brandTextField.getText().isEmpty() ||
-                plateTextField.getText().isEmpty() ||
-                modelTextField.getText().isEmpty()||
-                yearTextField.getText().isEmpty()||
-                powerTextField.getText().isEmpty()||
-                lastcheckyearTextField.getText().isEmpty() ){
-            return false;
-        } else {
-            return true;
-        }
+        return !brandTextField.getText().isEmpty() &&
+                !plateTextField.getText().isEmpty() &&
+                !modelTextField.getText().isEmpty() &&
+                !yearTextField.getText().isEmpty() &&
+                !powerTextField.getText().isEmpty() &&
+                !lastcheckyearTextField.getText().isEmpty();
     }
 
     private boolean isValidPlate(String plate) {
@@ -132,12 +128,12 @@ public class VehiclePageControllerG {
 
             // L'anno deve essere nel range ragionevole (es: 1900 - anno corrente + 1)
             int currentYear = java.time.Year.now().getValue();
-            if (year < 1900 || year > currentYear) {
+            if( year < 1900 || year > currentYear) {
                 errorLabel.setText("Anno di immatricolazione non valido");
                 return false;
             }
 
-            if (lastCheckYear < year || lastCheckYear > currentYear + 1) {
+            if(lastCheckYear < year || lastCheckYear > currentYear + 1) {
                 errorLabel.setText("Ultimo tagliando deve essere dopo l'immatricolazione");
                 return false;
             }
