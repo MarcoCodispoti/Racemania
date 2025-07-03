@@ -87,12 +87,12 @@ public class VehiclePageControllerG {
 
 
     public VehicleBean fillVehicle(){
-        VehicleBean vehicleBean = new VehicleBean(plateTextField.getText(), LoggedUser.getInstance().getCustomer().getUserId(),brandTextField.getText(),
+        VehicleBean tempVehicleBean = new VehicleBean(plateTextField.getText(), LoggedUser.getInstance().getCustomer().getUserId(),brandTextField.getText(),
                                                 modelTextField.getText(),Integer.parseInt(yearTextField.getText()),
                                                 Integer.parseInt(powerTextField.getText()),
                                                 Integer.parseInt(lastcheckyearTextField.getText()));
 
-        return vehicleBean;
+        return tempVehicleBean;
     }
 
     public boolean checkIsFull(){
@@ -101,7 +101,7 @@ public class VehiclePageControllerG {
                 modelTextField.getText().isEmpty()||
                 yearTextField.getText().isEmpty()||
                 powerTextField.getText().isEmpty()||
-                lastcheckyearTextField.getText().isEmpty()){
+                lastcheckyearTextField.getText().isEmpty() ){
             return false;
         } else {
             return true;
