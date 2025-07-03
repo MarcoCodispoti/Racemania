@@ -39,9 +39,7 @@ public class TrackLapsReservationCardControllerG {
 
     @FXML
     private void handleClick() {
-//        if (parentController != null) {
-//            parentController.setSelectedTrack(track, cardUI);
-//        }
+        // dummy
     }
 
     public void setData(TrackLapsReservation trackLapsReservation) throws SQLException {
