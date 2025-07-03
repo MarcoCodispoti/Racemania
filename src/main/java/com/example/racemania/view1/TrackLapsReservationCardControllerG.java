@@ -55,7 +55,7 @@ public class TrackLapsReservationCardControllerG {
             vehicleBean = reservationsHistoryController.getVehicle(reservationVehiclePlate);
         }
         catch (SQLException e){
-            throw new SQLException();
+            throw new SQLException(e);
         }
 
         trackNameLabel.setText(trackBean.getName());
