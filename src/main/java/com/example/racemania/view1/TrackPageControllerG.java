@@ -44,14 +44,12 @@ public class TrackPageControllerG {
     @FXML
     public void clickedOnProceed(ActionEvent event){      //il comando è collegato al bottone dal file FXML
         if (selectedTrack == null) {
-            System.out.println("Seleziona una pista prima di proseguire!");
+            errorLabel.setText("Seleziona una pista prima di proseguire!");
             return;
         }
 
 
-        System.out.println("Hai scelto: " + selectedTrack.getName());
         bookLapsReservationController.saveTrackDetails(selectedTrack,actualLapsReservationBean);
-
 
         VehiclePageControllerG controller = FxmlLoader.setPageAndReturnController("VehiclePage");
         controller.setTrackLapsReservationBean(actualLapsReservationBean);
@@ -75,9 +73,9 @@ public class TrackPageControllerG {
                 trackVBox.getChildren().add(trackCard);
 
             } catch (IOException _) {
-                System.out.println("ERRORE nel caricamento TrackCard.fxml");
+                errorLabel.setText("Errore nel caricamento dei circuiti");
             } catch (Exception _) {
-                System.out.println("Errore generico:");
+                errorLabel.setText("Errore generico");
             }
         }
     }
@@ -109,7 +107,7 @@ public class TrackPageControllerG {
         }
 
         if (trackList == null || trackList.isEmpty()) {
-            System.out.println("Nessun circuito trovato nel database.");
+            errorLabel.setText("Nessun circuito trovato nel database.");
             return;
         }
 
