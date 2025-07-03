@@ -20,22 +20,22 @@ public class TrackLapsReservationCardControllerG {
     private Parent cardUI;
 
     @FXML
-    private Label TrackNameLabel;
+    private Label trackNameLabel;
 
     @FXML
-    private Label PriceLabel;
+    private Label priceLabel;
 
     @FXML
-    private Label DetailsLabel;
+    private Label detailsLabel;
 
     @FXML
-    private Label VehicleLabel;
+    private Label vehicleLabel;
 
     @FXML
-    private Label ConfirmationStatusLabel;
+    private Label confirmationStatusLabel;
 
     @FXML
-    private Label DateLabel;
+    private Label dateLabel;
 
     @FXML
     private void handleClick() {
@@ -46,35 +46,30 @@ public class TrackLapsReservationCardControllerG {
 
     public void setData(TrackLapsReservation trackLapsReservation) throws SQLException {
         this.trackLapsReservation = trackLapsReservation;
-        TrackBean trackBean = new TrackBean();
-        VehicleBean vehicleBean; // = new VehicleBean();
+        TrackBean trackBean;
+        VehicleBean vehicleBean;
 
         int reservationTrackId = trackLapsReservation.getTrackID();
         String reservationVehiclePlate = trackLapsReservation.getVehiclePlate();
 
-        Track reservationTrack;
-
         try {
             trackBean = reservationsHistoryController.getLapsReservationTrack(reservationTrackId);
-            // reservationTrack = trackBean.getTrack(reservationTrackId);
             vehicleBean = reservationsHistoryController.getVehicle(reservationVehiclePlate);
         }
         catch (SQLException e){
-            // not handled
-            System.out.println("Errore nell'ottenere informazioni sul tracciato o sul veicolo");
             throw new SQLException();
         }
 
-        TrackNameLabel.setText(trackBean.getName());
-        PriceLabel.setText(""+trackLapsReservation.getPrice()+" €");
+        trackNameLabel.setText(trackBean.getName());
+        priceLabel.setText(""+trackLapsReservation.getPrice()+" €");
         if(trackLapsReservation.getIsDaily()) {
-            DetailsLabel.setText("Ingresso giornaliero");
+            detailsLabel.setText("Ingresso giornaliero");
         } else {
-            DetailsLabel.setText("Numero di giri: "+trackLapsReservation.getLaps());
+            detailsLabel.setText("Numero di giri: "+trackLapsReservation.getLaps());
         }
-        VehicleLabel.setText(""+vehicleBean.getBrand() + " " + vehicleBean.getModel() + " : " + vehicleBean.getPlate());
-        ConfirmationStatusLabel.setText(""+trackLapsReservation.getConfirmationStatus());
-        DateLabel.setText(""+trackLapsReservation.getDate());
+        vehicleLabel.setText(""+vehicleBean.getBrand() + " " + vehicleBean.getModel() + " : " + vehicleBean.getPlate());
+        confirmationStatusLabel.setText(""+trackLapsReservation.getConfirmationStatus());
+        dateLabel.setText(""+trackLapsReservation.getDate());
     }
 
     public void setParentController(ActiveReservationsPageControllerG controller) {
