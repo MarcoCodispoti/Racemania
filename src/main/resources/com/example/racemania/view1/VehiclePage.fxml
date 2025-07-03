@@ -83,7 +83,7 @@
             <Font size="34.0" />
          </font>
       </Text>
-      <Button fx:id="ProceedButton" layoutX="966.0" layoutY="669.0" mnemonicParsing="false" onAction="#ClickedOnProceed" prefHeight="54.0" prefWidth="202.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Procedi" textFill="WHITE">
+      <Button fx:id="proceedButton" layoutX="966.0" layoutY="669.0" mnemonicParsing="false" onAction="#clickedOnProceed" prefHeight="54.0" prefWidth="202.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Procedi" textFill="WHITE">
          <font>
             <Font size="28.0" />
          </font>
@@ -124,6 +124,6 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Label fx:id="ErrorLabel" layoutX="234.0" layoutY="607.0" prefHeight="17.0" prefWidth="492.0" />
+      <Label fx:id="errorLabel" layoutX="234.0" layoutY="607.0" prefHeight="17.0" prefWidth="492.0" />
    </children>
 </AnchorPane>

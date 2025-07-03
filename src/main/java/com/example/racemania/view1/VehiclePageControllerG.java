@@ -45,13 +45,13 @@ public class VehiclePageControllerG {
     private TextField lastcheckyearTextField;
 
     @FXML
-    private Label ErrorLabel;
+    private Label errorLabel;
 
     @FXML
-    private Button ProceedButton;
+    private Button proceedButton;
 
     @FXML
-    public void ClickedOnProceed(ActionEvent event) throws IOException {      //il comando è collegato al bottone dal file FXML
+    public void clickedOnProceed(ActionEvent event) throws IOException {      //il comando è collegato al bottone dal file FXML
         bookLapsReservationController = new BookLapsReservationController();
 
         isFull = checkIsFull();
@@ -61,32 +61,26 @@ public class VehiclePageControllerG {
             }
 
             if(!isValidPlate(plateTextField.getText())){
-                ErrorLabel.setText("Inserisci una targa valida");
+                errorLabel.setText("Inserisci una targa valida");
                 return;
             }
 
 
 
-            VehicleBean vehicleBean = fillVehicle();
-            // Vehicle actualvehicle = setNewVehicle(vehicleBean);
+            vehicleBean = fillVehicle();
 
             try {
                 bookLapsReservationController.insertVehicle(vehicleBean);
-            } catch (Exception e) {
-                // to be handled
-                ErrorLabel.setText("Errore nell'inserimento del veicolo");
-                // System.out.println("Errore nell'inserimento del vehicle.");
+            } catch (Exception _) {
+                errorLabel.setText("Errore nell'inserimento del veicolo");
             }
 
             actualLapsReservationBean.setVehiclePlate(vehicleBean.getPlate());
-            //FxmlLoader.setPage("DatePage");                          //Comando per cambiare pagina
             DatePageControllerG controller = FxmlLoader.setPageAndReturnController("DatePage");
             controller.setTrackLapsReservationBean(actualLapsReservationBean);
         }
         else{
-            ErrorLabel.setText("Devi compilare tutti i campi");
-            // System.out.println("Devi compilare tutti i campi!");
-            return;
+            errorLabel.setText("Devi compilare tutti i campi");
         }
 
     }
@@ -141,22 +135,22 @@ public class VehiclePageControllerG {
             // L'anno deve essere nel range ragionevole (es: 1900 - anno corrente + 1)
             int currentYear = java.time.Year.now().getValue();
             if (year < 1900 || year > currentYear) {
-                ErrorLabel.setText("Anno di immatricolazione non valido");
+                errorLabel.setText("Anno di immatricolazione non valido");
                 return false;
             }
 
             if (lastCheckYear < year || lastCheckYear > currentYear + 1) {
-                ErrorLabel.setText("Ultimo tagliando deve essere dopo l'immatricolazione");
+                errorLabel.setText("Ultimo tagliando deve essere dopo l'immatricolazione");
                 return false;
             }
 
             if (power <= 0 || power >= 3000) {
-                ErrorLabel.setText("La potenza deve essere un numero positivo inferiore a 3000");
+                errorLabel.setText("La potenza deve essere un numero positivo inferiore a 3000");
                 return false;
             }
 
         } catch (NumberFormatException e) {
-            ErrorLabel.setText("Anno, tagliando e potenza devono essere numeri interi validi");
+            errorLabel.setText("Anno, tagliando e potenza devono essere numeri interi validi");
             return false;
         }
 
