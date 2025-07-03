@@ -111,7 +111,7 @@ public class VehiclePageControllerG {
 
         // Formati Europei comuni
         String euroPattern1 = "^[A-Z]{2}\\d{4}$";       // AB1234
-        String euroPattern2 = "^[A-Z]{1}\\d{3}[A-Z]{2}$"; // A123BC
+        String euroPattern2 = "^[A-Z]\\d{3}[A-Z]{2}$"; // A123BC
         String euroPattern3 = "^[A-Z]{3}\\d{3}$";       // ABC123
 
         return plate.matches(italianPattern) ||
@@ -143,12 +143,12 @@ public class VehiclePageControllerG {
                 return false;
             }
 
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException _) {
             errorLabel.setText("Anno, tagliando e potenza devono essere numeri interi validi");
             return false;
         }
 
         return true;
-    };
+    }
 
 }
