@@ -2,22 +2,9 @@ package com.example.racemania.view1;
 
 import com.example.racemania.model.Track;
 
-import java.io.IOException;
 import javafx.fxml.FXML;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
-
-import java.io.IOException;
 
 public class TrackCardControllerG{
     private Track track;
