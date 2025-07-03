@@ -9,6 +9,7 @@ import com.example.racemania.model.bean.TrackLapsReservationBean;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 
 import javafx.scene.control.ToggleGroup;
@@ -63,6 +64,9 @@ public class TicketPageControllerG {
 
     @FXML
     private Button paymentButton;
+
+    @FXML
+    private Label errorLabel;
 
 
     public void updateTextFlow(TextFlow selectedTextFlow, String text, int textSize){
@@ -148,8 +152,7 @@ public class TicketPageControllerG {
             PaymentPageControllerG controller = FxmlLoader.setPageAndReturnController("PaymentPage");
             controller.setTrackLapsReservationBean(actualLapsReservationBean);
         } else {
-            // System.out.println("Seleziona un tipo di biglietto");
-            // aggiungere un error label
+            errorLabel.setText("Seleziona un tipo di biglietto");
         }
     }
 
