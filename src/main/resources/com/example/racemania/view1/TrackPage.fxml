@@ -82,14 +82,14 @@
             <Font size="34.0" />
          </font>
       </Text>
-      <Button fx:id="ProceedButton" layoutX="968.0" layoutY="661.0" mnemonicParsing="false" onAction="#ClickedOnProceed" prefHeight="54.0" prefWidth="202.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Prosegui" textFill="WHITE">
+      <Button fx:id="proceedButton" layoutX="968.0" layoutY="661.0" mnemonicParsing="false" onAction="#clickedOnProceed" prefHeight="54.0" prefWidth="202.0" style="-fx-background-color: red; -fx-background-radius: 18;" text="Prosegui" textFill="WHITE">
          <font>
             <Font size="28.0" />
          </font>
       </Button>
-      <ScrollPane fx:id="TrackScrollPane" layoutX="236.0" layoutY="346.0" prefHeight="372.0" prefWidth="705.0" style="-fx-border-color: #FF0000; -fx-background-color: white;">
+      <ScrollPane fx:id="trackScrollPane" layoutX="236.0" layoutY="346.0" prefHeight="372.0" prefWidth="705.0" style="-fx-border-color: #FF0000; -fx-background-color: white;">
          <content>
-            <VBox fx:id="TrackVBox" prefHeight="368.0" prefWidth="680.0" style="-fx-background-color: white;" />
+            <VBox fx:id="trackVBox" prefHeight="368.0" prefWidth="680.0" style="-fx-background-color: white;" />
          </content>
       </ScrollPane>
    </children>

@@ -25,20 +25,20 @@ public class TrackPageControllerG {
     private TrackLapsReservationBean actualLapsReservationBean;
 
     @FXML
-    private Button ProceedButton;
+    private Button proceedButton;
 
     @FXML
-    private VBox TrackVBox;
+    private VBox trackVBox;
 
     @FXML
-    private ScrollPane TrackScrollPane;
+    private ScrollPane trackScrollPane;
 
     public void setTrackLapsReservationBean(TrackLapsReservationBean trackLapsReservationBean) {
         this.actualLapsReservationBean = trackLapsReservationBean;
     }
 
-
-    public void ClickedOnProceed(ActionEvent event) throws IOException {      //il comando è collegato al bottone dal file FXML
+    @FXML
+    public void clickedOnProceed(ActionEvent event){      //il comando è collegato al bottone dal file FXML
         if (selectedTrack == null) {
             System.out.println("Seleziona una pista prima di proseguire!");
             return;
@@ -48,7 +48,7 @@ public class TrackPageControllerG {
         System.out.println("Hai scelto: " + selectedTrack.getName());
         bookLapsReservationController.saveTrackDetails(selectedTrack,actualLapsReservationBean);
 
-        //FxmlLoader.setPage("VehiclePage");                          //Comando per cambiare pagina
+
         VehiclePageControllerG controller = FxmlLoader.setPageAndReturnController("VehiclePage");
         controller.setTrackLapsReservationBean(actualLapsReservationBean);
 
@@ -56,30 +56,24 @@ public class TrackPageControllerG {
 
 
     public void populateTracks(List<Track> trackList ) {
-        TrackVBox.getChildren().clear();
+        trackVBox.getChildren().clear();
 
         for (Track track : trackList) {
             try {
-                System.out.println("Sto caricando una TrackCard per: " + track.getName());
-
                 FXMLLoader cardloader = new FXMLLoader(getClass().getResource("/com/example/racemania/view1/TrackCard.fxml"));
                 Parent trackCard = cardloader.load();
-
-                System.out.println("TrackCard.fxml caricata con successo");
 
                 TrackCardControllerG controller = cardloader.getController();
                 controller.setData(track);
                 controller.setCardUI(trackCard);
                 controller.setParentController(this);
 
-                TrackVBox.getChildren().add(trackCard);
+                trackVBox.getChildren().add(trackCard);
 
-            } catch (IOException e) {
+            } catch (IOException _) {
                 System.out.println("ERRORE nel caricamento TrackCard.fxml");
-                e.printStackTrace();
-            } catch (Exception e) {
+            } catch (Exception _) {
                 System.out.println("Errore generico:");
-                e.printStackTrace();
             }
         }
     }
@@ -88,12 +82,10 @@ public class TrackPageControllerG {
     public void setSelectedTrack(Track track, Parent cardUI) {
         this.selectedTrack = track;
 
-        // resetta evidenziazione su vecchia card (se c'è)
         if (selectedCardUI != null) {
             selectedCardUI.setStyle(""); // oppure stile di default
         }
 
-        // evidenzia la nuova card selezionata
         selectedCardUI = cardUI;
         selectedCardUI.setStyle("-fx-border-color: red; -fx-border-width: 3; -fx-border-radius: 10;");
     }
@@ -108,7 +100,7 @@ public class TrackPageControllerG {
             availableTracksBean = bookLapsReservationController.getAvailableTracks();
             trackList = availableTracksBean.getAvailableTracks();
         }
-        catch (Exception e) {
+        catch (Exception _) {
             // to be handled
         }
 
@@ -116,7 +108,6 @@ public class TrackPageControllerG {
             System.out.println("Nessun circuito trovato nel database.");
             return;
         }
-        System.out.println("Caricati " + trackList.size() + " tracciati dal TrackBean.");
 
         populateTracks(trackList);
     }
