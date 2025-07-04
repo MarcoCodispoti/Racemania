@@ -102,8 +102,7 @@ public class LoginPageControllerG2 {
         try {
             accountBean = loginController.login(loginBean);
         }
-        catch(FailedLoginException | FailedFileAccessException e) {
-
+        catch(FailedLoginException | FailedFileAccessException _) {
             setErrorLabel("Credenziali errate");
             return null;
         }

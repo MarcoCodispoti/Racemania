@@ -14,17 +14,17 @@ public class NewReservationDetailsPageControllerG2 {
     BookLapsReservationController bookLapsReservationController = new BookLapsReservationController();
 
     private boolean isDaily = false;
-    private int DailyPrice;
-    private int LapsNumber = 1;
-    private int LapPrice;
-    private int Total;
+    private int dailyPrice;
+    private int lapsNumber = 1;
+    private int lapPrice;
+    private int total;
 
     TrackLapsReservationBean actualLapsReservationBean;
     public void setTrackLapsReservationBean(TrackLapsReservationBean trackLapsReservationBean) {
         this.actualLapsReservationBean = trackLapsReservationBean;
         setPrices(trackLapsReservationBean);
-        Total = LapsNumber * LapPrice;
-        totalPriceLabel.setText(Total + "");
+        total = lapsNumber * lapPrice;
+        totalPriceLabel.setText(total + "");
     }
 
     @FXML
@@ -64,46 +64,25 @@ public class NewReservationDetailsPageControllerG2 {
     private Button proceedButton;
 
     @FXML
-    private void ClickedOnBackButton(){
+    private void clickedOnBackButton(){
         FxmlLoader2.setPage("NewReservationPage2");
     }
 
     @FXML
-    private void ClickedOnProceedButton(){
+    private void clickedOnProceedButton(){
         if(checkTextFields() && validateHorsepower()) {
 
-            bookLapsReservationController.setTicketInfo(actualLapsReservationBean,isDaily,actualLapsReservationBean.getLapPrice(),Total,LapsNumber);
+            bookLapsReservationController.setTicketInfo(actualLapsReservationBean,isDaily,actualLapsReservationBean.getLapPrice(), total, lapsNumber);
             VehicleBean vehicleBean = fillVehicle();
-
-            System.out.println("Plate: " + vehicleBean.getPlate());
-            System.out.println("Brand: " + vehicleBean.getBrand());
-            System.out.println("Model: " + vehicleBean.getModel());
-            System.out.println("IY: " + vehicleBean.getImmatriculationYear());
-            System.out.println("Powe " + vehicleBean.getPower());
-            System.out.println("LYC: " + vehicleBean.getLastcheckYear());
-
 
             bookLapsReservationController.insertVehicle(vehicleBean);
             actualLapsReservationBean.setVehiclePlate(vehicleBean.getPlate());
 
-            System.out.println("userId" + actualLapsReservationBean.getUserID());
-            System.out.println("date: " + actualLapsReservationBean.getDate());
-            System.out.println("trackId: " + actualLapsReservationBean.getTrackID());
-            System.out.println("vehiclePlate: " + actualLapsReservationBean.getVehiclePlate());
-            System.out.println("price: " + actualLapsReservationBean.getPrice());
-            System.out.println("laps: " + actualLapsReservationBean.getLaps());
-            System.out.println("isDaily: " + actualLapsReservationBean.getIsDaily());
-            System.out.println("lapsPrice: " + actualLapsReservationBean.getLapPrice());
-            System.out.println("dailyPrice: " + actualLapsReservationBean.getDailyPrice());
-
-
-
             try {
                 bookLapsReservationController.insertLapsReservation(actualLapsReservationBean);
-            } catch (Exception e) {
-                System.out.println("Errore nel caricare la prenotazione");
+            } catch (Exception _) {
+                errorLabel.setText("Errore nel caricare la prenotazione");
             }
-
             FxmlLoader2.setPage("ConfirmationPage2");
         }
     }
@@ -125,17 +104,17 @@ public class NewReservationDetailsPageControllerG2 {
 
             if(newVal.intValue() == maxLaps){
                 lapsNumberLabel.setText("Daily");
-                LapsNumber = 0;
-                Total = DailyPrice;
-                totalPriceLabel.setText("" + Total);
+                lapsNumber = 0;
+                total = dailyPrice;
+                totalPriceLabel.setText("" + total);
                 isDaily = true;
             } else {
                 int laps = newVal.intValue();
                 isDaily = false;
-                LapsNumber = laps;
+                lapsNumber = laps;
                 lapsNumberLabel.setText("" + laps);
-                Total = LapsNumber * LapPrice;
-                totalPriceLabel.setText(""+Total);
+                total = lapsNumber * lapPrice;
+                totalPriceLabel.setText(""+ total);
             }
 
         });
@@ -169,10 +148,8 @@ public class NewReservationDetailsPageControllerG2 {
     }
 
     public void setPrices(TrackLapsReservationBean trackLapsReservationBean){
-        DailyPrice = trackLapsReservationBean.getDailyPrice();
-        System.out.println("Daily Price " + DailyPrice);
-        LapPrice = trackLapsReservationBean.getLapPrice();
-        System.out.println("Lap Price " + LapPrice);
+        dailyPrice = trackLapsReservationBean.getDailyPrice();
+        lapPrice = trackLapsReservationBean.getLapPrice();
     }
 
     public VehicleBean fillVehicle(){
