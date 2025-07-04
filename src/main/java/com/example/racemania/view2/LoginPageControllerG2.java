@@ -34,12 +34,12 @@ public class LoginPageControllerG2 {
         if (checkFormats()) {                                     // controllo se i formati inseriti siano validi
             AccountBean actualaccountBean = getAccountBean();
             if (actualaccountBean != null) {
-                loginBasedOnAccount();
+                checkAccount();
             }
         }
     }
 
-    private void loginBasedOnAccount(){
+    private void checkAccount(){
         if (LoggedUser.getInstance().getCustomer() != null) {             // doppio controllo
             if (LoggedUser.getInstance().getRole().equals("CUSTOMER")) {
                 FxmlLoader2.setPage("HomePage2");
