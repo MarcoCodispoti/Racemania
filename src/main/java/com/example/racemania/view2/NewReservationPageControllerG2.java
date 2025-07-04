@@ -76,16 +76,12 @@ public class NewReservationPageControllerG2 {
     private void clickedOnTrackLapsRadioButton(){
         lapsReservation = trackLapsRadioButton.isSelected();
         supercarReservation = supercarLapsRadioButton.isSelected();
-        System.out.println("Lap " + lapsReservation);
-        System.out.println("Supercar " + supercarReservation);
     }
 
     @FXML
     private void clickedOnSupercarLapsRadioButton(){
         lapsReservation = trackLapsRadioButton.isSelected();
         supercarReservation = supercarLapsRadioButton.isSelected();
-        System.out.println("Lap " + lapsReservation);
-        System.out.println("Supercar " + supercarReservation);
     }
 
     private boolean handleDateSelection(){
@@ -93,10 +89,8 @@ public class NewReservationPageControllerG2 {
         selectedDate = reservationDatePicker.getValue();
         if(selectedDate == null){
             errorLabel.setText("Please select a date");
-            System.out.println("Selected date is null");
             return false;
         }
-        System.out.println("Data selezionata: " + selectedDate);
         return true;
     }
 
