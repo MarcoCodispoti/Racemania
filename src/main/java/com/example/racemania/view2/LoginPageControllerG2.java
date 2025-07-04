@@ -43,12 +43,12 @@ public class LoginPageControllerG2 {
     public void checkAccount(){
         if(LoggedUser.getInstance().getCustomer() != null){
             if(LoggedUser.getInstance().getRole().equals("CUSTOMER")){
-                FxmlLoader.setPage("HomePage");
+                FxmlLoader.setPage("HomePage2");
             }
         }
         else if(LoggedUser.getInstance().getTrackOwner() != null){
             if(LoggedUser.getInstance().getRole().equals("TRACK_OWNER")){
-                FxmlLoader.setPage("OwnerHomePage");
+                FxmlLoader.setPage("OwnerHomePage2");
             }
         }
         else {
