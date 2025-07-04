@@ -34,22 +34,24 @@ public class LoginPageControllerG2 {
         if (checkFormats()) {                                     // controllo se i formati inseriti siano validi
             AccountBean actualaccountBean = getAccountBean();
             if (actualaccountBean != null) {
-
-                if (LoggedUser.getInstance().getCustomer() != null) {             // doppio controllo
-                    if (LoggedUser.getInstance().getRole().equals("CUSTOMER")) {
-                        FxmlLoader2.setPage("HomePage2");
-                    }
-                } else if (LoggedUser.getInstance().getTrackOwner() != null) {
-                    if (LoggedUser.getInstance().getRole().equals("TRACK_OWNER")) {
-                        FxmlLoader2.setPage("OwnerHomePage2");
-                    }
-                } else {
-                    setErrorLabel("Errore di inizializzazione dell'utente loggato");
-                }
+                loginBasedOnAccount();
             }
         }
     }
 
+    private void loginBasedOnAccount(){
+        if (LoggedUser.getInstance().getCustomer() != null) {             // doppio controllo
+            if (LoggedUser.getInstance().getRole().equals("CUSTOMER")) {
+                FxmlLoader2.setPage("HomePage2");
+            }
+        } else if (LoggedUser.getInstance().getTrackOwner() != null) {
+            if (LoggedUser.getInstance().getRole().equals("TRACK_OWNER")) {
+                FxmlLoader2.setPage("OwnerHomePage2");
+            }
+        } else {
+            setErrorLabel("Errore di inizializzazione dell'utente loggato");
+        }
+    }
 
         public boolean checkFormats (){
             String email = emailTextField.getText();
