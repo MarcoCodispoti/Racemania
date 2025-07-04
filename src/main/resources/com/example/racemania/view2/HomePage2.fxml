@@ -16,17 +16,17 @@
       </ImageView>
       <AnchorPane prefHeight="54.0" prefWidth="1200.0" style="-fx-background-color: white;">
          <children>
-            <Hyperlink fx:id="ProfileHyperlink" layoutX="1035.0" layoutY="-1.0" onAction="#ClickedOnProfileHyperlink" prefHeight="54.0" prefWidth="109.0" text="Profile" textFill="#3e3d80">
+            <Hyperlink fx:id="profileHyperlink" layoutX="1035.0" layoutY="-1.0" onAction="#clickedOnProfileHyperlink" prefHeight="54.0" prefWidth="109.0" text="Profile" textFill="#3e3d80">
                <font>
                   <Font size="24.0" />
                </font>
             </Hyperlink>
-            <Hyperlink fx:id="ReservationsHyperlink" layoutX="883.0" onAction="#ClickedOnReservationsHyperlink" prefHeight="54.0" prefWidth="147.0" text="Reservations" textFill="#3e3d80">
+            <Hyperlink fx:id="reservationsHyperlink" layoutX="883.0" onAction="#clickedOnReservationsHyperlink" prefHeight="54.0" prefWidth="147.0" text="Reservations" textFill="#3e3d80">
                <font>
                   <Font size="24.0" />
                </font>
             </Hyperlink>
-            <Hyperlink fx:id="CircuitsHyperlink" layoutX="783.0" onAction="#ClickedOnCircuitsHyperlink" prefHeight="54.0" prefWidth="91.0" text="Circuits" textFill="#3e3d80">
+            <Hyperlink fx:id="circuitsHyperlink" layoutX="783.0" onAction="#clickedOnCircuitsHyperlink" prefHeight="54.0" prefWidth="91.0" text="Circuits" textFill="#3e3d80">
                <font>
                   <Font size="24.0" />
                </font>
@@ -46,7 +46,7 @@
                   <Font size="24.0" />
                </font>
             </Hyperlink>
-            <Button fx:id="LogoutButton" layoutX="1155.0" layoutY="8.0" mnemonicParsing="false" onAction="#ClickedOnLogoutButton" opacity="0.0" prefHeight="38.0" prefWidth="39.0" />
+            <Button fx:id="logoutButton" layoutX="1155.0" layoutY="8.0" mnemonicParsing="false" onAction="#clickedOnLogoutButton" opacity="0.0" prefHeight="38.0" prefWidth="39.0" />
             <Label fx:id="errorLabel" layoutX="620.0" layoutY="19.0" prefHeight="17.0" prefWidth="163.0" />
          </children>
       </AnchorPane>
@@ -58,7 +58,7 @@
             <Insets left="1.0" />
          </padding>
       </Label>
-      <Button fx:id="NewReservationButton" layoutX="416.0" layoutY="267.0" mnemonicParsing="false" onAction="#ClickedOnNewReservationButton" prefHeight="197.0" prefWidth="356.0" style="-fx-background-color: white; -fx-border-radius: 8; -fx-background-radius: 8;" text="New Reservation" textFill="#3e3d80">
+      <Button fx:id="newReservationButton" layoutX="416.0" layoutY="267.0" mnemonicParsing="false" onAction="#clickedOnNewReservationButton" prefHeight="197.0" prefWidth="356.0" style="-fx-background-color: white; -fx-border-radius: 8; -fx-background-radius: 8;" text="New Reservation" textFill="#3e3d80">
          <font>
             <Font size="32.0" />
          </font>

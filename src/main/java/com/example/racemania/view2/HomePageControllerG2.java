@@ -12,43 +12,43 @@ public class HomePageControllerG2 {
     private Label errorLabel;
 
     @FXML
-    private Button NewReservationButton;
+    private Button newReservationButton;
 
     @FXML
-    private Hyperlink CircuitsHyperlink;
+    private Hyperlink circuitsHyperlink;
 
     @FXML
-    private Hyperlink ReservationsHyperlink;
+    private Hyperlink reservationsHyperlink;
 
     @FXML
-    private Hyperlink ProfileHyperlink;
+    private Hyperlink profileHyperlink;
 
     @FXML
-    private Button LogoutButton;
+    private Button logoutButton;
 
     @FXML
-    private void ClickedOnLogoutButton() {
+    private void clickedOnLogoutButton() {
         FxmlLoader2.setPage("LoginPage2");
     }
 
     @FXML
-    private void ClickedOnNewReservationButton(){
+    private void clickedOnNewReservationButton(){
         FxmlLoader2.setPage("NewReservationPage2");
     }
 
     @FXML
-    private void ClickedOnCircuitsHyperlink(ActionEvent event) {
+    private void clickedOnCircuitsHyperlink(ActionEvent event) {
         errorLabel.setText("Not implemented sorry");
 
     }
 
     @FXML
-    private void ClickedOnProfileHyperlink(){
+    private void clickedOnProfileHyperlink(){
         FxmlLoader2.setPage("ProfilePage2");
     }
 
     @FXML
-    private void ClickedOnReservationsHyperlink(){
+    private void clickedOnReservationsHyperlink(){
         FxmlLoader2.setPage("ReservationsPage2");
     }
 
