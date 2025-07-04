@@ -12,12 +12,12 @@ public class ConfirmationPageControllerG2{
     private Button reservationsButton;
 
     @FXML
-    private void ClickedOnReservationsButton(){
+    private void clickedOnReservationsButton(){
         FxmlLoader2.setPage("ReservationsPage2");
     }
 
     @FXML
-    private void ClickedOnHomePageButton(){
+    private void clickedOnHomePageButton(){
         FxmlLoader2.setPage("HomePage2");
     }
 }

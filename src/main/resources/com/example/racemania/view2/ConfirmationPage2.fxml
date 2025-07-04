@@ -63,7 +63,7 @@
                   <Font size="28.0" />
                </font>
             </Label>
-            <Button fx:id="homePageButton" layoutX="123.0" layoutY="156.0" mnemonicParsing="false" onAction="#ClickedOnHomePageButton" prefHeight="60.0" prefWidth="152.0" style="-fx-background-color: #3E3D80;" text="Homepage" textFill="WHITE">
+            <Button fx:id="homePageButton" layoutX="123.0" layoutY="156.0" mnemonicParsing="false" onAction="#clickedOnHomePageButton" prefHeight="60.0" prefWidth="152.0" style="-fx-background-color: #3E3D80;" text="Homepage" textFill="WHITE">
                <font>
                   <Font size="22.0" />
                </font>
@@ -74,7 +74,7 @@
                </font>
             </Label>
             <Label layoutX="192.0" layoutY="363.0" prefHeight="33.0" prefWidth="62.0" />
-            <Button fx:id="reservationsButton" layoutX="316.0" layoutY="156.0" mnemonicParsing="false" onAction="#ClickedOnReservationsButton" prefHeight="60.0" prefWidth="152.0" style="-fx-background-color: #3E3D80;" text="Reservations" textFill="WHITE">
+            <Button fx:id="reservationsButton" layoutX="316.0" layoutY="156.0" mnemonicParsing="false" onAction="#clickedOnReservationsButton" prefHeight="60.0" prefWidth="152.0" style="-fx-background-color: #3E3D80;" text="Reservations" textFill="WHITE">
                <font>
                   <Font size="22.0" />
                </font>
