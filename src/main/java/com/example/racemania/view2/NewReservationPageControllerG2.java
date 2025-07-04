@@ -3,12 +3,9 @@ package com.example.racemania.view2;
 
 import com.example.racemania.controller.BookLapsReservationController;
 import com.example.racemania.exceptions.FailedResearchException;
-import com.example.racemania.model.LoggedUser;
 import com.example.racemania.model.Track;
 import com.example.racemania.model.bean.TrackBean;
 import com.example.racemania.model.bean.TrackLapsReservationBean;
-import com.example.racemania.view1.FxmlLoader;
-import com.example.racemania.view1.VehiclePageControllerG;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.util.StringConverter;
@@ -45,12 +42,12 @@ public class NewReservationPageControllerG2 {
     private Button proceedButton;
 
     @FXML
-    private void ClickedOnBackButton(){
+    private void clickedOnBackButton(){
         FxmlLoader2.setPage("HomePage2");
     }
 
     @FXML
-    private void ClickedOnProceedButton(){
+    private void clickedOnProceedButton(){
         if(handleDateSelection()) {
             if(supercarLapsRadioButton.isSelected()){
                 errorLabel.setText("Supercar laps not available yet, Sorry");
@@ -65,12 +62,7 @@ public class NewReservationPageControllerG2 {
 
             actualLapsReservationBean  = new TrackLapsReservationBean();
 
-//            if( LoggedUser.getInstance().getCustomer().getUserId() != 0 ){
-//                actualLapsReservationBean.setUserID(LoggedUser.getInstance().getCustomer().getUserId());
-//            }
-
             actualLapsReservationBean.setTrackID(selectedTrack.getTrackId());
-            System.out.println("TrackId del circuito scelto: "+  actualLapsReservationBean.getTrackID());
 
             actualLapsReservationBean.setDate(reservationDatePicker.getValue());
             bookLapsReservationController.saveTrackDetails(selectedTrack,actualLapsReservationBean);
@@ -81,7 +73,7 @@ public class NewReservationPageControllerG2 {
     }
 
     @FXML
-    private void ClickedOnTrackLapsRadioButton(){
+    private void clickedOnTrackLapsRadioButton(){
         lapsReservation = trackLapsRadioButton.isSelected();
         supercarReservation = supercarLapsRadioButton.isSelected();
         System.out.println("Lap " + lapsReservation);
@@ -89,7 +81,7 @@ public class NewReservationPageControllerG2 {
     }
 
     @FXML
-    private void ClickedOnSupercarLapsRadioButton(){
+    private void clickedOnSupercarLapsRadioButton(){
         lapsReservation = trackLapsRadioButton.isSelected();
         supercarReservation = supercarLapsRadioButton.isSelected();
         System.out.println("Lap " + lapsReservation);
@@ -115,11 +107,10 @@ public class NewReservationPageControllerG2 {
         try {
             TrackBean trackBean = bookLapsReservationController.getAvailableTracks();
             tracks = trackBean.getAvailableTracks();
-        } catch (FailedResearchException e){
-            // to be handleds
+        } catch (FailedResearchException _){
+            // to be handled
         }
 
-//        trackChoiceBox.getItems().addAll(tracks);
         if (tracks != null) {
             trackChoiceBox.getItems().addAll(tracks);
         }
@@ -137,15 +128,6 @@ public class NewReservationPageControllerG2 {
             }
         });
 
-
-        trackChoiceBox.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
-            if (newVal != null) {
-                System.out.println("Codice " + newVal.getTrackId());
-                System.out.println("Selezionato: " + newVal.getName());
-                System.out.println("Lunghezza: " + newVal.getLenght());
-                System.out.println("Location: " + newVal.getPlace());
-            }
-        });
     }
 
 
