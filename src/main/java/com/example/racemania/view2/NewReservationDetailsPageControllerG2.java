@@ -153,12 +153,10 @@ public class NewReservationDetailsPageControllerG2 {
     }
 
     public VehicleBean fillVehicle(){
-        VehicleBean vehicleBean = new VehicleBean(plateTextField.getText(), LoggedUser.getInstance().getCustomer().getUserId(),brandTextField.getText(),
+        return new VehicleBean(plateTextField.getText(), LoggedUser.getInstance().getCustomer().getUserId(),brandTextField.getText(),
                 modelTextField.getText(),Integer.parseInt(immatriculationYearTextField.getText()),
                 Integer.parseInt(horsepowerTextField.getText()),
                 Integer.parseInt(lastCheckYearTextField.getText()));
-
-        return vehicleBean;
     }
 
     private boolean validateHorsepower() {
@@ -171,7 +169,7 @@ public class NewReservationDetailsPageControllerG2 {
                 errorLabel.setText("Horsepower must be between 0 and 3000");
                 return false;
             }
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException _) {
             errorLabel.setText("Power must be an integer");
             return false;
         }
