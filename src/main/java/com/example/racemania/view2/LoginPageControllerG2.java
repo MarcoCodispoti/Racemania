@@ -5,7 +5,6 @@ import com.example.racemania.exceptions.FailedFileAccessException;
 import com.example.racemania.model.LoggedUser;
 import com.example.racemania.model.bean.AccountBean;
 import com.example.racemania.model.bean.LoginBean;
-import com.example.racemania.view1.FxmlLoader;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -31,11 +30,10 @@ public class LoginPageControllerG2 {
     private Label errorLabel;
 
     @FXML
-    private void ClickedOnLoginButton() {
+    private void clickedOnLoginButton() {
         if (checkFormats()) {                                     // controllo se i formati inseriti siano validi
             AccountBean actualaccountBean = getAccountBean();
             if (actualaccountBean != null) {
-                System.out.println("\n L'account ottenuto non è nullo \n");
 
                 if (LoggedUser.getInstance().getCustomer() != null) {             // doppio controllo
                     if (LoggedUser.getInstance().getRole().equals("CUSTOMER")) {
@@ -46,7 +44,7 @@ public class LoginPageControllerG2 {
                         FxmlLoader2.setPage("OwnerHomePage2");
                     }
                 } else {
-                    System.out.println("Errore di inizializzazione dell'utente loggato");
+                    setErrorLabel("Errore di inizializzazione dell'utente loggato");
                 }
             }
         }
@@ -102,23 +100,14 @@ public class LoginPageControllerG2 {
             accountBean = loginController.login(loginBean);
         }
         catch(FailedLoginException | FailedFileAccessException e) {
-            // System.out.println("Credenziali errate");
+
             setErrorLabel("Credenziali errate");
             return null;
         }
-        catch (SQLException e){
+        catch (SQLException _){
             //not handles
-            // e.printStackTrace();
-            // System.out.println("Errore nel database");
             return null;
         }
-
-        System.out.println(" ");
-        System.out.println("I valori ottenuti da accountBean:  ");
-        System.out.println("Role: " + accountBean.getRole());
-        System.out.println("UserID: " + accountBean.getUserId());
-        System.out.println("TrackID: " + accountBean.getTrackId());
-
         return accountBean;
     }
 
