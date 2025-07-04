@@ -5,7 +5,6 @@ import com.example.racemania.exceptions.FailedFileAccessException;
 import com.example.racemania.model.LoggedUser;
 import com.example.racemania.model.bean.AccountBean;
 import com.example.racemania.model.bean.LoginBean;
-import com.example.racemania.view1.FxmlLoader;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -35,26 +34,22 @@ public class LoginPageControllerG2 {
         if (checkFormats()) {                                     // controllo se i formati inseriti siano validi
             AccountBean actualaccountBean = getAccountBean();
             if (actualaccountBean != null) {
-                checkAccount();
+
+                if (LoggedUser.getInstance().getCustomer() != null) {             // doppio controllo
+                    if (LoggedUser.getInstance().getRole().equals("CUSTOMER")) {
+                        FxmlLoader2.setPage("HomePage2");
+                    }
+                } else if (LoggedUser.getInstance().getTrackOwner() != null) {
+                    if (LoggedUser.getInstance().getRole().equals("TRACK_OWNER")) {
+                        FxmlLoader2.setPage("OwnerHomePage2");
+                    }
+                } else {
+                    setErrorLabel("Errore di inizializzazione dell'utente loggato");
+                }
             }
         }
     }
 
-    public void checkAccount(){
-        if(LoggedUser.getInstance().getCustomer() != null){
-            if(LoggedUser.getInstance().getRole().equals("CUSTOMER")){
-                FxmlLoader.setPage("HomePage2");
-            }
-        }
-        else if(LoggedUser.getInstance().getTrackOwner() != null){
-            if(LoggedUser.getInstance().getRole().equals("TRACK_OWNER")){
-                FxmlLoader.setPage("OwnerHomePage2");
-            }
-        }
-        else {
-            setErrorLabel("C'è stato un errrore");
-        }
-    }
 
         public boolean checkFormats (){
             String email = emailTextField.getText();
