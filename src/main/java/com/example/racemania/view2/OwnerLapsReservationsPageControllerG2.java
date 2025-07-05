@@ -29,10 +29,9 @@ public class OwnerLapsReservationsPageControllerG2 {
         TrackLapsReservationBean lapsReservationBean;
         try {
             lapsReservationBean = manageLapsReservationsController.getOwnerLapsReservation();
-
-        } catch (SQLException e) {
+        } catch (SQLException _) {
             errorLabel.setText("Reservations loading error");
-            throw new RuntimeException(e);
+            return;
         }
 
         populateLapsReservations(lapsReservationBean.getOwnerTrackLapsReservations());
@@ -67,7 +66,6 @@ public class OwnerLapsReservationsPageControllerG2 {
             return false;
         }
         if(trackLapsReservation.getConfirmationStatus().equals("Rejected") || trackLapsReservation.getConfirmationStatus().equals("Accepted")){
-            System.out.println("La prenotazione è già stata accettata/rifiutata");
             errorLabel.setText("Reservation already accepted/rejected");
             return false;
         }
@@ -85,12 +83,12 @@ public class OwnerLapsReservationsPageControllerG2 {
     }
 
     @FXML
-    public void ClickedOnBackButton() {
+    public void clickedOnBackButton() {
         FxmlLoader2.setPage("OwnerHomePage2");
     }
 
     @FXML
-    public void ClickedOnConfirmButton() {
+    public void clickedOnConfirmButton() {
         if(!checkSelection(selectedLapsReservation)){
             return;
         }
@@ -103,7 +101,7 @@ public class OwnerLapsReservationsPageControllerG2 {
     }
 
     @FXML
-    public void ClickedOnRejectButton(){
+    public void clickedOnRejectButton(){
         if(!checkSelection(selectedLapsReservation)){
             return;
         }
@@ -116,7 +114,7 @@ public class OwnerLapsReservationsPageControllerG2 {
     }
 
     @FXML
-    public void ClickedOnHomePageHyperlink(){
+    public void clickedOnHomePageHyperlink(){
         FxmlLoader2.setPage("OwnerHomePage2");
     }
 

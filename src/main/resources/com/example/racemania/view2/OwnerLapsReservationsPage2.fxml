@@ -16,7 +16,7 @@
       </ImageView>
       <AnchorPane prefHeight="54.0" prefWidth="1200.0" style="-fx-background-color: white;">
          <children>
-            <Hyperlink fx:id="homePageHyperlink" layoutX="1070.0" onAction="#ClickedOnHomePageHyperlink" prefHeight="54.0" prefWidth="130.0" text="Homepage" textFill="#3e3d80">
+            <Hyperlink fx:id="homePageHyperlink" layoutX="1070.0" onAction="#clickedOnHomePageHyperlink" prefHeight="54.0" prefWidth="130.0" text="Homepage" textFill="#3e3d80">
                <font>
                   <Font size="24.0" />
                </font>
@@ -38,15 +38,15 @@
                   <Font size="42.0" />
                </font>
             </Label>
-            <Button fx:id="confirmButton" layoutX="722.0" layoutY="506.0" mnemonicParsing="false" onAction="#ClickedOnConfirmButton" prefHeight="58.0" prefWidth="190.0" style="-fx-background-color: #00CC00;" text="Confirm" textFill="WHITE">
+            <Button fx:id="confirmButton" layoutX="722.0" layoutY="506.0" mnemonicParsing="false" onAction="#clickedOnConfirmButton" prefHeight="58.0" prefWidth="190.0" style="-fx-background-color: #00CC00;" text="Confirm" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Button fx:id="rejectButton" layoutX="506.0" layoutY="506.0" mnemonicParsing="false" onAction="#ClickedOnRejectButton" prefHeight="58.0" prefWidth="190.0" style="-fx-background-color: #CC0000;" text="Reject" textFill="WHITE">
+            <Button fx:id="rejectButton" layoutX="506.0" layoutY="506.0" mnemonicParsing="false" onAction="#clickedOnRejectButton" prefHeight="58.0" prefWidth="190.0" style="-fx-background-color: #CC0000;" text="Reject" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Button fx:id="backButton" layoutX="320.0" layoutY="507.0" mnemonicParsing="false" onAction="#ClickedOnBackButton" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: white; -fx-border-color: #3d3e80;" text="Back">
+            <Button fx:id="backButton" layoutX="320.0" layoutY="507.0" mnemonicParsing="false" onAction="#clickedOnBackButton" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: white; -fx-border-color: #3d3e80;" text="Back">
                <font>
                   <Font size="18.0" />
                </font></Button>
