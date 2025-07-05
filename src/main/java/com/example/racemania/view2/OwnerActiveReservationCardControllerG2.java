@@ -4,7 +4,6 @@ import com.example.racemania.controller.ManageLapsReservationsController;
 import com.example.racemania.model.TrackLapsReservation;
 import com.example.racemania.model.bean.UserBean;
 import com.example.racemania.model.bean.VehicleBean;
-import com.example.racemania.view1.OwnerHomeControllerG;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
@@ -17,19 +16,19 @@ public class OwnerActiveReservationCardControllerG2 {
 
 
     @FXML
-    private Label DateLabel;
+    private Label dateLabel;
 
     @FXML
-    private Label VehicleLabel;
+    private Label vehicleLabel;
 
     @FXML
-    private Label DetailsLabel;
+    private Label detailsLabel;
 
     @FXML
-    private Label UserLabel;
+    private Label userLabel;
 
     @FXML
-    private Label StatusLabel;
+    private Label statusLabel;
 
     @FXML
     private ScrollPane scrollPane;
@@ -51,22 +50,20 @@ public class OwnerActiveReservationCardControllerG2 {
             userBean = manageLapsReservationsController.getUser(trackLapsReservation.getUserID());
             vehicleBean = manageLapsReservationsController.getVehicle(reservationVehiclePlate);
         }
-        catch (SQLException e){
+        catch (SQLException _){
             // not handled
-            System.out.println("Errore nell'ottenere informazioni sul tracciato o sul veicolo");
-            // throw new SQLException();
         }
 
 
-        DateLabel.setText(trackLapsReservation.getDate().toString());
-        VehicleLabel.setText(vehicleBean.getBrand()+" "+vehicleBean.getModel()+" "+vehicleBean.getPlate());
+        dateLabel.setText(trackLapsReservation.getDate().toString());
+        vehicleLabel.setText(vehicleBean.getBrand()+" "+vehicleBean.getModel()+" "+vehicleBean.getPlate());
         if(trackLapsReservation.getIsDaily()) {
-            DetailsLabel.setText("Prenotazione Giri: Ingresso giornaliero");
+            detailsLabel.setText("Prenotazione Giri: Ingresso giornaliero");
         } else {
-            DetailsLabel.setText("Prenotazione Giri, Numero di giri: "+ trackLapsReservation.getLaps());
+            detailsLabel.setText("Prenotazione Giri, Numero di giri: "+ trackLapsReservation.getLaps());
         }
-        UserLabel.setText(userBean.getUserName());
-        StatusLabel.setText(trackLapsReservation.getConfirmationStatus());
+        userLabel.setText(userBean.getUserName());
+        statusLabel.setText(trackLapsReservation.getConfirmationStatus());
     }
 
     public void setParentController(OwnerActiveReservationsPageControllerG2 controller) {
