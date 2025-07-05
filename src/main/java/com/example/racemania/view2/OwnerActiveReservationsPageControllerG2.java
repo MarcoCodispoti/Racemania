@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -16,13 +17,16 @@ public class OwnerActiveReservationsPageControllerG2{
     private ManageLapsReservationsController manageLapsReservationsController = new ManageLapsReservationsController();
 
     @FXML
-    private VBox ActiveReservationsVBox;
+    private Label errorLabel;
+
+    @FXML
+    private VBox activeReservationsVBox;
 
     @FXML
     private Hyperlink homePageHyperlink;
 
     @FXML
-    private void ClickedOnHomePageHyperlink(){
+    private void clickedOnHomePageHyperlink(){
         FxmlLoader2.setPage("OwnerHomePage2");
     }
 
@@ -36,15 +40,14 @@ public class OwnerActiveReservationsPageControllerG2{
             bean = manageLapsReservationsController.getActiveOwnerLapsReservation();
             trackLapsReservationList = bean.getOwnerActiveTrackLapsReservations();
         }
-        catch (Exception e) {
+        catch (Exception _) {
             // to be handled
         }
 
         if (trackLapsReservationList == null || trackLapsReservationList.isEmpty()) {
-            System.out.println("Nessuna prenotazione trovata nel database.");
+            errorLabel.setText("Nessuna prenotazione trovata nel database.");
             return;
         }
-        System.out.println("Caricati " + trackLapsReservationList.size() + " tracciati dal TrackBean.");
 
         populateActiveLapsReservations(trackLapsReservationList);
     }
@@ -52,30 +55,23 @@ public class OwnerActiveReservationsPageControllerG2{
 
 
     public void populateActiveLapsReservations(List<TrackLapsReservation> trackLapsReservatonList) {
-        ActiveReservationsVBox.getChildren().clear();
+        activeReservationsVBox.getChildren().clear();
 
         for (TrackLapsReservation trackLapsReservation : trackLapsReservatonList) {
             try {
-                System.out.println("Sto caricando una LapsReservationCard per: " + trackLapsReservation.getReservationID());
-
                 FXMLLoader cardloader = new FXMLLoader(getClass().getResource("/com/example/racemania/view2/OwnerActiveReservationCard2.fxml"));
                 Parent ownerActiveReservationCard = cardloader.load();
-
-                System.out.println("TrackCard.fxml caricata con successo");
-
                 OwnerActiveReservationCardControllerG2 controller = cardloader.getController();
                 controller.setData(trackLapsReservation);
                 controller.setCardUI(ownerActiveReservationCard);
                 controller.setParentController(this);
 
-                ActiveReservationsVBox.getChildren().add(ownerActiveReservationCard);
+                activeReservationsVBox.getChildren().add(ownerActiveReservationCard);
 
-            } catch (IOException e) {
-                System.out.println("ERRORE nel caricamento TrackCard.fxml");
-                e.printStackTrace();
-            } catch (Exception e) {
-                System.out.println("Errore generico:");
-                e.printStackTrace();
+            } catch (IOException _) {
+                errorLabel.setText("Errore nel caricamento delle prenotazioni");
+            } catch (Exception _) {
+                errorLabel.setText("Errore di sistema");
             }
         }
     }

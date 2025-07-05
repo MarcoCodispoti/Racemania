@@ -16,7 +16,7 @@
       </ImageView>
       <AnchorPane prefHeight="54.0" prefWidth="1200.0" style="-fx-background-color: white;">
          <children>
-            <Hyperlink fx:id="homePageHyperlink" layoutX="1070.0" onAction="#ClickedOnHomePageHyperlink" prefHeight="54.0" prefWidth="129.0" text="Homepage" textFill="#3e3d80">
+            <Hyperlink fx:id="homePageHyperlink" layoutX="1070.0" onAction="#clickedOnHomePageHyperlink" prefHeight="54.0" prefWidth="129.0" text="Homepage" textFill="#3e3d80">
                <font>
                   <Font size="24.0" />
                </font>
@@ -62,9 +62,10 @@
             </Label>
             <ScrollPane fx:id="ActiveReservationsScrollPane" layoutX="39.0" layoutY="81.0" prefHeight="476.0" prefWidth="996.0" style="-fx-border-color: #3d3e80; -fx-background-color: white;">
                <content>
-                  <VBox fx:id="ActiveReservationsVBox" prefHeight="474.0" prefWidth="971.0" style="-fx-background-color: white;" />
+                  <VBox fx:id="activeReservationsVBox" prefHeight="474.0" prefWidth="971.0" style="-fx-background-color: white;" />
                </content>
             </ScrollPane>
+            <Label fx:id="errorLabel" layoutX="39.0" layoutY="566.0" prefHeight="17.0" prefWidth="442.0" />
          </children>
       </AnchorPane>
    </children>
