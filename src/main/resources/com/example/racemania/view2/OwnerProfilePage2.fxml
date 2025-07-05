@@ -16,7 +16,7 @@
       </ImageView>
       <AnchorPane prefHeight="54.0" prefWidth="1200.0" style="-fx-background-color: white;">
          <children>
-            <Hyperlink fx:id="homepageHyperlink" layoutX="1073.0" onAction="#ClickedOnHomepageHyperlink" prefHeight="54.0" prefWidth="127.0" text="Homepage" textFill="#3e3d80">
+            <Hyperlink fx:id="homepageHyperlink" layoutX="1073.0" onAction="#clickedOnHomepageHyperlink" prefHeight="54.0" prefWidth="127.0" text="Homepage" textFill="#3e3d80">
                <font>
                   <Font size="24.0" />
                </font>

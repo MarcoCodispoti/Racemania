@@ -12,10 +12,16 @@ public class OwnerProfilePageControllerG2{
     ReservationsHistoryController reservationsHistoryController = new ReservationsHistoryController();
 
     @FXML
-    private Label usernameLabel,
-            emailLabel,
-            roleLabel,
-            userIdLabel;
+    private Label usernameLabel;
+
+    @FXML
+    private Label emailLabel;
+
+    @FXML
+    private Label roleLabel;
+
+    @FXML
+    private Label userIdLabel;
 
     @FXML
     private Hyperlink homepageHyperlink;
@@ -24,7 +30,7 @@ public class OwnerProfilePageControllerG2{
     private Label errorLabel;
 
     @FXML
-    private void ClickedOnHomepageHyperlink(ActionEvent event){
+    private void clickedOnHomepageHyperlink(ActionEvent event){
         FxmlLoader2.setPage("OwnerHomePage2");
     }
 
