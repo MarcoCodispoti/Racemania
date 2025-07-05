@@ -18,9 +18,6 @@ public class OwnerLapsReservationsCardControllerG2{
     private Parent cardUI;
 
     @FXML
-    private Label errorLabel;
-
-    @FXML
     private Label dateLabel;
 
     @FXML
@@ -38,12 +35,6 @@ public class OwnerLapsReservationsCardControllerG2{
             parentController.setSelectedLapsReservation(this.trackLapsReservation, cardUI);
         }
     }
-
-    @FXML
-    public void clickedOnHomePageHyperlink(ActionEvent event){
-        // to be handled
-    }
-
 
     public void setData(TrackLapsReservation trackLapsReservation) throws SQLException {
         this.trackLapsReservation = trackLapsReservation;
@@ -79,19 +70,6 @@ public class OwnerLapsReservationsCardControllerG2{
     public void setCardUI(Parent cardUI) {
         this.cardUI = cardUI;
     }
-
-    public boolean checkSelection(TrackLapsReservation trackLapsReservation){
-        if(trackLapsReservation == null){
-            errorLabel.setText("Seleziona una prenotazione prima");
-            return false;
-        }
-        if(trackLapsReservation.getConfirmationStatus().equals("Rejected") || trackLapsReservation.getConfirmationStatus().equals("Accepted")){
-            errorLabel.setText("La prenotazione è già stata accettata/rifiutata");
-            return false;
-        }
-        return true;
-    }
-
 
 }
 
