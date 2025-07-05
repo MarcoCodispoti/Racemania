@@ -46,16 +46,16 @@
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Button fx:id="backButton" layoutX="313.0" layoutY="508.0" mnemonicParsing="false" onAction="#ClickedOnBackButton" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: white; -fx-border-color: #3d3e80;" text="Back">
+            <Button fx:id="backButton" layoutX="320.0" layoutY="507.0" mnemonicParsing="false" onAction="#ClickedOnBackButton" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: white; -fx-border-color: #3d3e80;" text="Back">
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Label fx:id="errorLabel" layoutX="38.0" layoutY="501.0" prefHeight="17.0" prefWidth="249.0" />
+            <Label fx:id="errorLabel" layoutX="38.0" layoutY="501.0" prefHeight="17.0" prefWidth="270.0" />
          </children>
       </AnchorPane>
       <ScrollPane fx:id="LapsReservationsScrollPane" layoutX="151.0" layoutY="189.0" prefHeight="409.0" prefWidth="871.0" style="-fx-border-color: #3d3e80; -fx-background-color: white;">
          <content>
-            <VBox fx:id="LapsReservationsVBox" prefHeight="402.0" prefWidth="848.0" style="-fx-background-color: white;" />
+            <VBox fx:id="lapsReservationsVBox" prefHeight="402.0" prefWidth="848.0" style="-fx-background-color: white;" />
          </content>
       </ScrollPane>
    </children>

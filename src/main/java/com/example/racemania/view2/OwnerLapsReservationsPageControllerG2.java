@@ -4,12 +4,10 @@ package com.example.racemania.view2;
 import com.example.racemania.controller.ManageLapsReservationsController;
 import com.example.racemania.model.TrackLapsReservation;
 import com.example.racemania.model.bean.TrackLapsReservationBean;
-import com.example.racemania.view1.FxmlLoader;
-import com.example.racemania.view1.OwnerLapsReservationCardControllerG;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -22,18 +20,18 @@ public class OwnerLapsReservationsPageControllerG2 {
     private Parent selectedCardUI;
 
     @FXML
-    private VBox LapsReservationsVBox;
+    private Label errorLabel;
+
+    @FXML
+    private VBox lapsReservationsVBox;
 
     public void initialize() {
         TrackLapsReservationBean lapsReservationBean;
-        // List<TrackLapsReservation> lapsReservationsList;
-        System.out.println("Inizializzo la pagina delle prenotazioni \n \n");
-
         try {
             lapsReservationBean = manageLapsReservationsController.getOwnerLapsReservation();
 
         } catch (SQLException e) {
-            System.out.println("Errore nel caricamento delle prenotazioni effettuate");
+            errorLabel.setText("Reservations loading error");
             throw new RuntimeException(e);
         }
 
@@ -41,44 +39,36 @@ public class OwnerLapsReservationsPageControllerG2 {
     }
 
     public void populateLapsReservations(List<TrackLapsReservation> lapsReservationsList) {
-        LapsReservationsVBox.getChildren().clear();
-        System.out.println("Numero di prenotazioni trovate: " + lapsReservationsList.size());
+        lapsReservationsVBox.getChildren().clear();
         for (TrackLapsReservation trackLapsReservation : lapsReservationsList) {
             try {
 
                 FXMLLoader cardloader = new FXMLLoader(getClass().getResource("/com/example/racemania/view2/OwnerLapsReservationCard2.fxml"));
-                System.out.println("Ho istanziato cardloader");
-                System.out.println(cardloader);
                 Parent ownerLapsReservationCard = cardloader.load();
-                System.out.println("Card caricata: " + ownerLapsReservationCard);
-
-                System.out.println("TrackCard.fxml caricata con successo");
 
                 OwnerLapsReservationsCardControllerG2 controller = cardloader.getController();
                 controller.setData(trackLapsReservation);
                 controller.setCardUI(ownerLapsReservationCard);
                 controller.setParentController(this);
 
-                LapsReservationsVBox.getChildren().add(ownerLapsReservationCard);
+                lapsReservationsVBox.getChildren().add(ownerLapsReservationCard);
 
-            } catch (IOException e) {
-                System.out.println("ERRORE nel caricamento TrackCard.fxml");
-                e.printStackTrace();
-            } catch (Exception e) {
-                System.out.println("Porcaccio dio");
-                System.out.println("Errore generico:");
-                // e.printStackTrace();
+            } catch (IOException _) {
+                errorLabel.setText("Loading error");
+            } catch (Exception _) {
+                errorLabel.setText("Generic error");
             }
         }
     }
 
     public boolean checkSelection(TrackLapsReservation trackLapsReservation){
         if(trackLapsReservation == null){
-            System.out.println("Seleziona una prenotazione prima");
+            errorLabel.setText("Please select a reservation first");
             return false;
         }
         if(trackLapsReservation.getConfirmationStatus().equals("Rejected") || trackLapsReservation.getConfirmationStatus().equals("Accepted")){
             System.out.println("La prenotazione è già stata accettata/rifiutata");
+            errorLabel.setText("Reservation already accepted/rejected");
             return false;
         }
         return true;
@@ -87,12 +77,9 @@ public class OwnerLapsReservationsPageControllerG2 {
     public void setSelectedLapsReservation(TrackLapsReservation trackLapsReservation, Parent cardUI) {
         this.selectedLapsReservation = trackLapsReservation;
 
-        // resetta evidenziazione su vecchia card (se c'è)
         if (selectedCardUI != null) {
             selectedCardUI.setStyle(""); // oppure stile di default
         }
-
-        // evidenzia la nuova card selezionata
         selectedCardUI = cardUI;
         selectedCardUI.setStyle("-fx-border-color: #3d3e80; -fx-border-width: 3; -fx-border-radius: 10;");
     }
@@ -107,14 +94,11 @@ public class OwnerLapsReservationsPageControllerG2 {
         if(!checkSelection(selectedLapsReservation)){
             return;
         }
-        // Vado a sostituire la funzione
-        // TrackLapsReservationBean trackLapsReservationBean = new TrackLapsReservationBean();
         try {
             manageLapsReservationsController.manageLapsReservation(selectedLapsReservation.getReservationID(),"Accepted");
-            // trackLapsReservationBean.manageLapsReservation(selectedLapsReservation.getReservationID(), "Rejected");
             initialize();
-        } catch (SQLException ex) {
-            // Errore SQL
+        } catch (SQLException _) {
+            errorLabel.setText("An error occured");
         }
     }
 
@@ -123,14 +107,11 @@ public class OwnerLapsReservationsPageControllerG2 {
         if(!checkSelection(selectedLapsReservation)){
             return;
         }
-        // Vado a sostituire la funzione
-        // TrackLapsReservationBean trackLapsReservationBean = new TrackLapsReservationBean();
         try {
             manageLapsReservationsController.manageLapsReservation(selectedLapsReservation.getReservationID(),"Rejected");
-            // trackLapsReservationBean.manageLapsReservation(selectedLapsReservation.getReservationID(), "Rejected");
             initialize();
-        } catch (SQLException ex) {
-            // Errore SQL
+        } catch (SQLException _) {
+            errorLabel.setText("An error occured");
         }
     }
 
