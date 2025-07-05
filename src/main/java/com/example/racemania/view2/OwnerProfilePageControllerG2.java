@@ -12,7 +12,10 @@ public class OwnerProfilePageControllerG2{
     ReservationsHistoryController reservationsHistoryController = new ReservationsHistoryController();
 
     @FXML
-    private Label usernameLabel, emailLabel, roleLabel, userIdLabel;
+    private Label usernameLabel,
+            emailLabel,
+            roleLabel,
+            userIdLabel;
 
     @FXML
     private Hyperlink homepageHyperlink;
