@@ -27,27 +27,27 @@ public class OwnerHomePageControllerG2 {
     private Button activeReservations;
 
     @FXML
-    private void ClickedOnInstructorsHyperlink(ActionEvent event) {
+    private void clickedOnInstructorsHyperlink(ActionEvent event) {
         errorLabel.setText("Not implemented yet");
     }
 
     @FXML
-    private void ClickedOnProfileHyperlink(ActionEvent event){
+    private void clickedOnProfileHyperlink(ActionEvent event){
         FxmlLoader2.setPage("OwnerProfilePage2");
     }
 
     @FXML
-    private void ClickedOnLogoutHyperlink(ActionEvent event){
+    private void clickedOnLogoutHyperlink(ActionEvent event){
         FxmlLoader2.setPage("LoginPage2");
     }
 
     @FXML
-    private void ClickedOnManageReservationsButton(ActionEvent event){
+    private void clickedOnManageReservationsButton(ActionEvent event){
         FxmlLoader2.setPage("OwnerReservationsPage2");
     }
 
     @FXML
-    private void ClickedOnActiveReservationsButton(ActionEvent event){
+    private void clickedOnActiveReservationsButton(ActionEvent event){
         FxmlLoader2.setPage("OwnerActiveReservationsPage2");
     }
 

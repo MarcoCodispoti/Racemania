@@ -4,7 +4,6 @@ import com.example.racemania.controller.ManageLapsReservationsController;
 import com.example.racemania.model.TrackLapsReservation;
 import com.example.racemania.model.bean.TrackBean;
 import com.example.racemania.model.bean.VehicleBean;
-import com.example.racemania.view2.OwnerLapsReservationsPageControllerG2;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
@@ -19,16 +18,16 @@ public class OwnerLapsReservationsCardControllerG2{
     private Parent cardUI;
 
     @FXML
-    private Label DateLabel;
+    private Label dateLabel;
 
     @FXML
-    private Label VehicleLabel;
+    private Label vehicleLabel;
 
     @FXML
-    private Label DetailsLabel;
+    private Label detailsLabel;
 
     @FXML
-    private Label ConfirmationStatusLabel;
+    private Label confirmationStatusLabel;
 
     @FXML
     private void handleClick() {
@@ -60,15 +59,15 @@ public class OwnerLapsReservationsCardControllerG2{
         }
 
         if(trackLapsReservation.getIsDaily()) {
-            DetailsLabel.setText("Ingresso giornaliero");
+            detailsLabel.setText("Ingresso giornaliero");
         } else {
-            DetailsLabel.setText("Numero di giri: "+trackLapsReservation.getLaps());
+            detailsLabel.setText("Numero di giri: "+trackLapsReservation.getLaps());
         }
 
-        VehicleLabel.setText(""+vehicleBean.getBrand() + " " + vehicleBean.getModel() +
+        vehicleLabel.setText(""+vehicleBean.getBrand() + " " + vehicleBean.getModel() +
                 " IY: " + vehicleBean.getImmatriculationYear() + ", last check: " + vehicleBean.getLastcheckYear());
-        ConfirmationStatusLabel.setText(""+trackLapsReservation.getConfirmationStatus());
-        DateLabel.setText(""+trackLapsReservation.getDate());
+        confirmationStatusLabel.setText(""+trackLapsReservation.getConfirmationStatus());
+        dateLabel.setText(""+trackLapsReservation.getDate());
     }
 
 
