@@ -18,6 +18,9 @@ public class OwnerLapsReservationsCardControllerG2{
     private Parent cardUI;
 
     @FXML
+    private Label errorLabel;
+
+    @FXML
     private Label dateLabel;
 
     @FXML
@@ -37,7 +40,7 @@ public class OwnerLapsReservationsCardControllerG2{
     }
 
     @FXML
-    public void ClickedOnHomePageHyperlink(ActionEvent event){
+    public void clickedOnHomePageHyperlink(ActionEvent event){
         // to be handled
     }
 
@@ -53,9 +56,7 @@ public class OwnerLapsReservationsCardControllerG2{
             vehicleBean = manageLapsReservationsController.getVehicle(reservationVehiclePlate);
         }
         catch (SQLException e){
-            // not handled
-            System.out.println("Errore nell'ottenere informazioni sul tracciato o sul veicolo");
-            throw new SQLException();
+            throw new SQLException(e);
         }
 
         if(trackLapsReservation.getIsDaily()) {
@@ -82,11 +83,11 @@ public class OwnerLapsReservationsCardControllerG2{
 
     public boolean checkSelection(TrackLapsReservation trackLapsReservation){
         if(trackLapsReservation == null){
-            System.out.println("Seleziona una prenotazione prima");
+            errorLabel.setText("Seleziona una prenotazione prima");
             return false;
         }
         if(trackLapsReservation.getConfirmationStatus().equals("Rejected") || trackLapsReservation.getConfirmationStatus().equals("Accepted")){
-            System.out.println("La prenotazione è già stata accettata/rifiutata");
+            errorLabel.setText("La prenotazione è già stata accettata/rifiutata");
             return false;
         }
         return true;

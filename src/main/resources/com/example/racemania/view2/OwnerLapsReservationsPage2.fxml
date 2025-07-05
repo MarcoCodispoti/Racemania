@@ -50,6 +50,7 @@
                <font>
                   <Font size="18.0" />
                </font></Button>
+            <Label fx:id="errorLabel" layoutX="38.0" layoutY="501.0" prefHeight="17.0" prefWidth="249.0" />
          </children>
       </AnchorPane>
       <ScrollPane fx:id="LapsReservationsScrollPane" layoutX="151.0" layoutY="189.0" prefHeight="409.0" prefWidth="871.0" style="-fx-border-color: #3d3e80; -fx-background-color: white;">
