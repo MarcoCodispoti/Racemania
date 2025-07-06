@@ -49,12 +49,11 @@ public class OwnerProfilePageControllerG2{
                 userRole = "TrackOwner";
             }
             if(userBean == null){
-                System.out.println("userBean is null");
+                return;
             }
-        } catch (Exception e) {
-            System.out.println("userBean is null");
+        } catch (Exception _) {
+           return;
         }
-
 
         usernameLabel.setText(userBean.getUserName());
         userIdLabel.setText(""+userBean.getUserId());
