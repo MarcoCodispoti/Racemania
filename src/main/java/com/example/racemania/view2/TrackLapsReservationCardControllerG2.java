@@ -21,8 +21,6 @@ public class TrackLapsReservationCardControllerG2 {
     private ReservationsPageControllerG2 parentController;
     private Parent cardUI;
 
-    @FXML
-    private Label errorLabel;
 
     @FXML
     private Label trackNameLabel;
@@ -43,15 +41,7 @@ public class TrackLapsReservationCardControllerG2 {
     private Label dateLabel;
 
 
-
-//    @FXML
-//    private void handleClick(){
-//        // to be handled
-//    }
-
-
-
-    public void setData(TrackLapsReservation trackLapsReservation){
+    public void setData(TrackLapsReservation trackLapsReservation) throws SQLException {
         this.trackLapsReservation = trackLapsReservation;
         TrackBean trackBean;
         VehicleBean vehicleBean;
@@ -63,9 +53,8 @@ public class TrackLapsReservationCardControllerG2 {
             trackBean = reservationsHistoryController.getLapsReservationTrack(reservationTrackId);
             vehicleBean = reservationsHistoryController.getVehicle(reservationVehiclePlate);
         }
-        catch (SQLException _){
-            errorLabel.setText("Can't obtain track or vehicle info");
-            return;
+        catch (SQLException e){
+            throw new SQLException(e);
         }
 
         trackNameLabel.setText(trackBean.getName());
