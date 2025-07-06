@@ -3,6 +3,7 @@ package com.example.racemania.view2;
 import com.example.racemania.controller.ReservationsHistoryController;
 import com.example.racemania.model.LoggedUser;
 import com.example.racemania.model.bean.UserBean;
+import com.example.racemania.view1.FxmlLoader;
 import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -23,24 +24,18 @@ public class ProfilePageControllerG2 {
     private Hyperlink reservationsHyperlink;
 
     @FXML
-    public void ClickedOnHomePageHyperlink(){
-        FxmlLoader2.setPage("HomePage2");
-    }
-
-    @FXML
-    public void ClickedOnCircuitsHyperlink(){
-        errorLabel.setText("Not implemented yet");
-    }
-
-    @FXML
-    public void ClickedOnReservationsHyperlink(){
-        FxmlLoader2.setPage("ReservationsPage2");
+    public void clickedOnHomePageHyperlink(){
+        if (LoggedUser.getInstance().getCustomer() != null) {
+            FxmlLoader.setPage("HomePage2");
+        } else if(LoggedUser.getInstance().getTrackOwner() != null) {
+            FxmlLoader.setPage("OwnerHomePage2");
+        }
     }
 
 
     public void initialize(){
-        UserBean userBean = new UserBean();
-        String userRole = null;
+        UserBean userBean;
+        String userRole;
 
         try {
             if (LoggedUser.getInstance().getCustomer() != null) {
@@ -51,10 +46,10 @@ public class ProfilePageControllerG2 {
                 userRole = "TrackOwner";
             }
             if(userBean == null){
-                System.out.println("userBean is null");
+               return;
             }
-        } catch (Exception e) {
-            System.out.println("userBean is null");
+        } catch (Exception _) {
+            return;
         }
 
 
