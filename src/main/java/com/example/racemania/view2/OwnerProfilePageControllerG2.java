@@ -11,6 +11,8 @@ import javafx.scene.control.Label;
 public class OwnerProfilePageControllerG2{
     ReservationsHistoryController reservationsHistoryController = new ReservationsHistoryController();
 
+
+
     @FXML
     private Label usernameLabel;
 
