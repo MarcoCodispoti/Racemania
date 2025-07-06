@@ -12,7 +12,19 @@ public class ProfilePageControllerG2 {
     ReservationsHistoryController reservationsHistoryController = new ReservationsHistoryController();
 
     @FXML
-    private Label usernameLabel, emailLabel, roleLabel, userIdLabel, errorLabel;
+    private Label usernameLabel;
+
+    @FXML
+    private Label emailLabel;
+
+    @FXML
+    private Label roleLabel;
+
+    @FXML
+    private Label userIdLabel;
+
+    @FXML
+    private Label errorLabel;
 
     @FXML
     private Hyperlink homepageHyperlink;

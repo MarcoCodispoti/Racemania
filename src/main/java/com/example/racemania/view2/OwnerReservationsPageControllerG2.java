@@ -10,18 +10,18 @@ public class OwnerReservationsPageControllerG2{
     private Label errorLabel;
 
     @FXML
-    private void ClickedOnLapsReservationsButton(ActionEvent event){
+    private void clickedOnLapsReservationsButton(ActionEvent event){
         FxmlLoader2.setPage("OwnerLapsReservationsPage2");
     }
 
 
     @FXML
-    private void ClickedOnSupercarReservationsButton(ActionEvent event){
+    private void clickedOnSupercarReservationsButton(ActionEvent event){
         errorLabel.setText("Not implemented sorry");
     }
 
     @FXML
-    private void ClickedOnBackButton(ActionEvent event){
+    private void clickedOnBackButton(ActionEvent event){
         FxmlLoader2.setPage("OwnerHomePage2");
     }
 

@@ -25,18 +25,18 @@
       </Label>
       <AnchorPane layoutX="335.0" layoutY="192.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="520.0" style="-fx-background-color: white; -fx-border-color: #3e3d80; -fx-border-width: 3;">
          <children>
-            <Button fx:id="backButton" layoutX="179.0" layoutY="325.0" mnemonicParsing="false" onAction="#ClickedOnBackButton" prefHeight="68.0" prefWidth="179.0" style="-fx-background-color: white; -fx-border-color: #3e3d80;" text="Indietro">
+            <Button fx:id="backButton" layoutX="179.0" layoutY="325.0" mnemonicParsing="false" onAction="#clickedOnBackButton" prefHeight="68.0" prefWidth="179.0" style="-fx-background-color: white; -fx-border-color: #3e3d80;" text="Indietro">
                <font>
                   <Font size="22.0" />
                </font>
             </Button>
             <Label layoutX="489.0" layoutY="97.0" prefHeight="33.0" prefWidth="62.0" />
-            <Button fx:id="lapsReservationsButton" layoutX="100.0" layoutY="52.0" mnemonicParsing="false" onAction="#ClickedOnLapsReservationsButton" prefHeight="93.0" prefWidth="323.0" style="-fx-background-color: #3E3D80;" text="Laps Reservations" textFill="WHITE">
+            <Button fx:id="lapsReservationsButton" layoutX="100.0" layoutY="52.0" mnemonicParsing="false" onAction="#clickedOnLapsReservationsButton" prefHeight="93.0" prefWidth="323.0" style="-fx-background-color: #3E3D80;" text="Laps Reservations" textFill="WHITE">
                <font>
                   <Font size="28.0" />
                </font>
             </Button>
-            <Button fx:id="supercarReservationsButton" layoutX="100.0" layoutY="189.0" mnemonicParsing="false" onAction="#ClickedOnSupercarReservationsButton" prefHeight="93.0" prefWidth="323.0" style="-fx-background-color: #3E3D80;" text="Supecar Reservations" textFill="WHITE">
+            <Button fx:id="supercarReservationsButton" layoutX="100.0" layoutY="189.0" mnemonicParsing="false" onAction="#clickedOnSupercarReservationsButton" prefHeight="93.0" prefWidth="323.0" style="-fx-background-color: #3E3D80;" text="Supecar Reservations" textFill="WHITE">
                <font>
                   <Font size="28.0" />
                </font>
