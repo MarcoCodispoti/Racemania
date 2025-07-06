@@ -16,12 +16,12 @@
       </ImageView>
       <AnchorPane prefHeight="54.0" prefWidth="1200.0" style="-fx-background-color: white;">
          <children>
-            <Hyperlink fx:id="circuitsHyperlink" layoutX="1101.0" onAction="#ClickedOnCircuitsHyperlink" prefHeight="54.0" prefWidth="91.0" text="Circuits" textFill="#3e3d80">
+            <Hyperlink fx:id="circuitsHyperlink" layoutX="1101.0" onAction="#clickedOnCircuitsHyperlink" prefHeight="54.0" prefWidth="91.0" text="Circuits" textFill="#3e3d80">
                <font>
                   <Font size="24.0" />
                </font>
             </Hyperlink>
-            <Hyperlink fx:id="homePageHyperlink" layoutX="979.0" onAction="#ClickedOnHomePageHyperlink" prefHeight="54.0" prefWidth="129.0" text="Homepage" textFill="#3e3d80">
+            <Hyperlink fx:id="homePageHyperlink" layoutX="979.0" onAction="#clickedOnHomePageHyperlink" prefHeight="54.0" prefWidth="129.0" text="Homepage" textFill="#3e3d80">
                <font>
                   <Font size="24.0" />
                </font>
@@ -67,7 +67,7 @@
             </Label>
             <ScrollPane fx:id="TrackScrollPane" layoutX="44.0" layoutY="122.0" prefHeight="450.0" prefWidth="470.0" style="-fx-border-color: #3e3e80; -fx-background-color: white;">
                <content>
-                  <VBox fx:id="LapsReservationsVBox" prefHeight="461.0" prefWidth="450.0" style="-fx-background-color: white;" />
+                  <VBox fx:id="lapsReservationsVBox" prefHeight="461.0" prefWidth="450.0" style="-fx-background-color: white;" />
                </content>
             </ScrollPane>
             <ScrollPane fx:id="TrackScrollPane1" layoutX="561.0" layoutY="120.0" prefHeight="450.0" prefWidth="470.0" style="-fx-border-color: #3e3d80; -fx-background-color: white;">
