@@ -33,7 +33,7 @@ public class OwnerHomePageControllerG2 {
 
     @FXML
     private void clickedOnProfileHyperlink(ActionEvent event){
-        FxmlLoader2.setPage("OwnerProfilePage2");
+        FxmlLoader2.setPage("ProfilePage2");
     }
 
     @FXML
