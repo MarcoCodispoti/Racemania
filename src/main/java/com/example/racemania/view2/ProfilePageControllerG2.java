@@ -26,9 +26,9 @@ public class ProfilePageControllerG2 {
     @FXML
     public void clickedOnHomePageHyperlink(){
         if (LoggedUser.getInstance().getCustomer() != null) {
-            FxmlLoader.setPage("HomePage2");
+            FxmlLoader2.setPage("HomePage2");
         } else if(LoggedUser.getInstance().getTrackOwner() != null) {
-            FxmlLoader.setPage("OwnerHomePage2");
+            FxmlLoader2.setPage("OwnerHomePage2");
         }
     }
 
