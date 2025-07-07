@@ -77,19 +77,19 @@ public class LoginController {
         return actualaccountBean;
     }
 
-    public void redirectToHomePage(int uiVersion) {
+    public void redirectToHomePage(int uiVersion){
         if (LoggedUser.getInstance().getCustomer() != null) {
-            if(uiVersion == 1){
-                FxmlLoader.setPage("HomePage");
-            } else if (uiVersion == 2){
-                FxmlLoader2.setPage("HomePage2");
-            }
+            pageSelector(uiVersion, "Home");
         } else if(LoggedUser.getInstance().getTrackOwner() != null) {
-            if(uiVersion == 1){
-                FxmlLoader.setPage("OwnerHomePage");
-            } else if (uiVersion == 2){
-                FxmlLoader2.setPage("OwnerHomePage2");
-            }
+            pageSelector(uiVersion, "OwnerHome");
+        }
+    }
+
+    public void pageSelector(int uiVersion,String page){
+        if(uiVersion == 1){
+            FxmlLoader.setPage(page + "Page");
+        } else if (uiVersion == 2){
+            FxmlLoader2.setPage(page + "Page2");
         }
     }
 
