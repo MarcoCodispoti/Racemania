@@ -77,14 +77,6 @@ public class LoginController {
         return actualaccountBean;
     }
 
-    public AccountBean authenticate(String email, String password) throws FailedLoginException, SQLException {
-        LoginBean loginBean = new LoginBean();
-        loginBean.setEmail(email);
-        loginBean.setPassword(password);
-
-        return login(loginBean); // o altra logica già esistente
-    }
-
     public void redirectToHomePage(int uiVersion){
         if (LoggedUser.getInstance().getCustomer() != null) {
             pageSelector(uiVersion, "Home");

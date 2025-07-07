@@ -42,19 +42,22 @@ public class LoginPageControllerG {
 
     public AccountBean getAccountBean(){
 
-        if (!checkFormats()) {
+        if(!checkFormats()){    //controllo il formato di testo
             return null;
         }
 
-        String email = emailTextField.getText();
-        String password = passwordTextField.getText();
+        LoginBean loginBean = new LoginBean();
+        loginBean.setEmail(emailTextField.getText());
+        loginBean.setPassword(passwordTextField.getText());
 
         try {
-            accountBean = loginController.authenticate(email, password);
-        } catch (FailedLoginException | FailedFileAccessException _) {
+            accountBean = loginController.login(loginBean);
+        }
+        catch(FailedLoginException | FailedFileAccessException _) {
             setErrorLabel("Credenziali errate");
             return null;
-        } catch (SQLException _) {
+        }
+        catch (SQLException _){
             return null;
         }
 
