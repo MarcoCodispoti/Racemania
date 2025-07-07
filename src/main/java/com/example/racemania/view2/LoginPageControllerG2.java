@@ -91,25 +91,22 @@ public class LoginPageControllerG2 {
 
     public AccountBean getAccountBean(){
 
-        if(!checkFormats()){    //controllo il formato di testo
+        if (!checkFormats()) {
             return null;
         }
 
-        LoginBean loginBean = new LoginBean();
-        loginBean.setEmail(emailTextField.getText());
-        loginBean.setPassword(passwordTextField.getText());
+        String email = emailTextField.getText();
+        String password = passwordTextField.getText();
 
         try {
-            accountBean = loginController.login(loginBean);
-        }
-        catch(FailedLoginException | FailedFileAccessException _) {
+            accountBean = loginController.authenticate(email, password);
+        } catch (FailedLoginException | FailedFileAccessException _) {
             setErrorLabel("Credenziali errate");
             return null;
-        }
-        catch (SQLException _){
-            //not handles
+        } catch (SQLException _) {
             return null;
         }
+
         return accountBean;
     }
 
