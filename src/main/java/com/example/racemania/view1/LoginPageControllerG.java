@@ -96,7 +96,6 @@ public class LoginPageControllerG {
     }
 
     public boolean checkFormats(){
-
         if(emailTextField.getText().isEmpty()){ setErrorLabel("Campo email vuoto");
             return false;
         }
@@ -110,7 +109,6 @@ public class LoginPageControllerG {
         if(passwordTextField.getText().length() < 8){ setErrorLabel("La password deve essere lunga almeno 8 caratteri");
             return false;
         }
-
         return true;
     }
 
