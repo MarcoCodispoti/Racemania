@@ -79,24 +79,16 @@ public class LoginController {
 
     public void redirectToHomePage(int uiVersion) {
         if (LoggedUser.getInstance().getCustomer() != null) {
-            switch(uiVersion) {
-                case 1:
-                    FxmlLoader.setPage("HomePage");
-                    break;
-
-                case 2:
-                    FxmlLoader2.setPage("HomePage2");
-                    break;
+            if(uiVersion == 1){
+                FxmlLoader.setPage("HomePage");
+            } else if (uiVersion == 2){
+                FxmlLoader2.setPage("HomePage2");
             }
         } else if(LoggedUser.getInstance().getTrackOwner() != null) {
-            switch(uiVersion) {
-                case 1:
-                    FxmlLoader.setPage("OwnerHomePage");
-                    break;
-
-                case 2:
-                    FxmlLoader2.setPage("OwnerHomePage2");
-                    break;
+            if(uiVersion == 1){
+                FxmlLoader.setPage("OwnerHomePage");
+            } else if (uiVersion == 2){
+                FxmlLoader2.setPage("OwnerHomePage2");
             }
         }
     }
