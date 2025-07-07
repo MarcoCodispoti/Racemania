@@ -85,13 +85,13 @@ public class LoginController {
                     break;
 
                 case 2:
-                    FxmlLoader2.setPage("OwnerHomePage2");
+                    FxmlLoader2.setPage("HomePage2");
                     break;
             }
         } else if(LoggedUser.getInstance().getTrackOwner() != null) {
             switch(uiVersion) {
                 case 1:
-                    FxmlLoader.setPage("HomePage");
+                    FxmlLoader.setPage("OwnerHomePage");
                     break;
 
                 case 2:
