@@ -96,20 +96,18 @@ public class LoginPageControllerG {
     }
 
     public boolean checkFormats(){
-        String email = emailTextField.getText();
-        String password = passwordTextField.getText();
 
-        if(email.isEmpty()){ setErrorLabel("Campo email vuoto");
+        if(emailTextField.getText().isEmpty()){ setErrorLabel("Campo email vuoto");
             return false;
         }
-        if(password.isEmpty()){ setErrorLabel("Campo password vuoto");
+        if(passwordTextField.getText().isEmpty()){ setErrorLabel("Campo password vuoto");
             return false;
         }
 
-        if(!isValidEmail(email)){ setErrorLabel("Campo email non valido");
+        if(!isValidEmail(emailTextField.getText())){ setErrorLabel("Campo email non valido");
             return false;
         }
-        if(password.length() < 8){ setErrorLabel("La password deve essere lunga almeno 8 caratteri");
+        if(passwordTextField.getText().length() < 8){ setErrorLabel("La password deve essere lunga almeno 8 caratteri");
             return false;
         }
 
