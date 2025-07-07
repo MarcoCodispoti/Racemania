@@ -1,5 +1,6 @@
 package com.example.racemania.view1;
 
+import com.example.racemania.controller.LoginController;
 import com.example.racemania.controller.ReservationsHistoryController;
 import com.example.racemania.model.LoggedUser;
 import com.example.racemania.model.bean.UserBean;
@@ -10,6 +11,7 @@ import javafx.scene.control.Label;
 
 public class ProfilePageControllerG {
     ReservationsHistoryController reservationsHistoryController = new ReservationsHistoryController();
+    LoginController loginController = new LoginController();
 
     @FXML
     private Label errorLabel;
@@ -48,12 +50,7 @@ public class ProfilePageControllerG {
 
    @FXML
     private void clickedOnHomepageHyperlink(ActionEvent event) {
-
-       if (LoggedUser.getInstance().getCustomer() != null) {
-           FxmlLoader.setPage("HomePage");
-       } else if(LoggedUser.getInstance().getTrackOwner() != null) {
-           FxmlLoader.setPage("OwnerHomePage");
-       }
+        loginController.redirectToHomePage(1);
    }
 
     public void initialize(){

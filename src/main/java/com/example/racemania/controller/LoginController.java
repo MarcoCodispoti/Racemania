@@ -7,6 +7,8 @@ import com.example.racemania.model.dao.AccountDao;
 import com.example.racemania.model.factories.UserFactory;
 import com.example.racemania.model.bean.AccountBean;
 import com.example.racemania.model.bean.LoginBean;
+import com.example.racemania.view1.FxmlLoader;
+import com.example.racemania.view2.FxmlLoader2;
 
 import javax.security.auth.login.FailedLoginException;
 import java.sql.SQLException;
@@ -74,5 +76,30 @@ public class LoginController {
 
         return actualaccountBean;
     }
+
+    public void redirectToHomePage(int uiVersion) {
+        if (LoggedUser.getInstance().getCustomer() != null) {
+            switch(uiVersion) {
+                case 1:
+                    FxmlLoader.setPage("HomePage");
+                    break;
+
+                case 2:
+                    FxmlLoader2.setPage("OwnerHomePage2");
+                    break;
+            }
+        } else if(LoggedUser.getInstance().getTrackOwner() != null) {
+            switch(uiVersion) {
+                case 1:
+                    FxmlLoader.setPage("HomePage");
+                    break;
+
+                case 2:
+                    FxmlLoader2.setPage("OwnerHomePage2");
+                    break;
+            }
+        }
+    }
+
 }
 
